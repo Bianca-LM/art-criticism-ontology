@@ -17,11 +17,22 @@
 	display: none;
 }
 
-.italianTerm:hover + .translation{
+.italianTerm:hover + span.translation{
 	display: inline;
+}
+
+.italianTerm:hover + blockquote.translation{
+	display: block;
+}
+
+.italianTerm:hover + .translation {
 	background-color: #FAEBD7;
 	text-decoration: none;
 	padding: 0.5em;
-	margin: 0.2em;
-	border-radius: 15%;
+	margin-top: 0.7em;
+	border-radius: 0.5em;
+}
+
+blockquote {
+  margin:revert;
 }
