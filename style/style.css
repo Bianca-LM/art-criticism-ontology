@@ -1,0 +1,27 @@
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+  background-image: url('C:\\Users\\bianc\\OneDrive\\Desktop\\website\\images\\Background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  opacity: 0.8;
+}
+
+.italianTerm {
+	text-decoration: underline;
+}
+
+.translation {
+	display: none;
+}
+
+.italianTerm:hover + .translation{
+	display: inline;
+	background-color: #FAEBD7;
+	text-decoration: none;
+	padding: 0.5em;
+	margin: 0.2em;
+	border-radius: 15%;
+}
