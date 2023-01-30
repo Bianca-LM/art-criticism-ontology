@@ -1,3 +1,11 @@
+nav {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+#firstSection {
+  margin-top: 10%;
+}
+
 .masthead {
   height: 100vh;
   min-height: 500px;
@@ -8,6 +16,30 @@
   color: white;
   opacity: 0.8;
 }
+
+.arrow {
+  border: solid #fff;
+  border-width: 0 0.2em 0.2em 0;
+  border-radius: 5%;
+  display: inline-block;
+  padding: 3%;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  animation: jumpInfinite 1.5s infinite;
+}
+
+@keyframes jumpInfinite {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 20px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
 
 .italianTerm {
 	text-decoration: underline;
