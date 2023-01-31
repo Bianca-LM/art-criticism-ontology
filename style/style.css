@@ -30,6 +30,7 @@ nav {
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
+  background-color: #597272;
   text-decoration: none;
   display: block;
 }
