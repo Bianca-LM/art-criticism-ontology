@@ -7,6 +7,10 @@ nav {
   background-color: #597272;
 }
 
+nav i {
+  padding: 0.2em;
+}
+
 .navbar-brand {
   color: #0a0d0d;
 }
@@ -51,8 +55,14 @@ nav a:hover {
   display: block;
 }
 
-#firstSection, #about {
+#firstSection, #about, #Project {
   padding-top: 5%;
+}
+
+@media screen and (max-width:992px) {
+  #firstSection, #about, #Project {
+    margin-top: 5%;
+  }
 }
 
 #firstSection li::marker, .bold {
