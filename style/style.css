@@ -55,6 +55,11 @@ nav a:hover {
   padding-top: 5%;
 }
 
+#firstSection li::marker, .bold {
+  font-weight: bold;
+  font-size: large;
+}
+
 .masthead {
   height: 100vh;
   min-height: 500px;
@@ -130,14 +135,10 @@ img {
   height: 15em;
 }
 
-
-#cards img {
-  width: 80%;
-  padding: 5%;
-}
-
 #cards {
   text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 #cards a {
