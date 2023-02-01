@@ -16,7 +16,7 @@
 		<div class="container">
 			<a class="navbar-brand" href="index.html">OM&TA</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-		  		<span class="navbar-toggler-icon"></span>
+		  		<span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 			  <ul class="navbar-nav ms-auto">
@@ -42,17 +42,46 @@
 	</nav>
 
 	<!-- Page Content -->
-	<section id="Projects">
+	<section id="Project">
 		<div class="container">
 			<h2 class="fw-light">Documentation</h2>
             <h2>Conceptual model</h2>
-			<p>From those definition it is possible to extract the first entities and relations that could formalize the concepts of materials and techniques in the artworks.</p>
+			<p>From the chapters "I materiali" and "Le tecniche" it is possible to extract the first entities and relations that could formalize the concepts of materials and techniques in the artworks.</p>
+			<p>Those relations have been formalized in the following conceptual model</p>
 			<figure>
 	    		<img src="images\TMmAP.png" alt="Conceptual model">
 	    	</figure>
+			<h2>Reverse Engineering</h2>
+			<p>Since this ontology is domain-oriented, the best way to prove that the conceptual model fits the reality is by inspecting the actual data.</p>
+			<p>We performed a statystical analysis over existing dataset which contain description of artworks. In order to provide a coherent dataset, the description concerned only paintings and in particular the dataset is composed of: 
+				<ul>
+					<li>21381 description of paintings extracted from the SemArt dataset;</li>
+					<li>3 volumes of the catalogue "Italian Paintings: A Catalogue of the Collection of The Metropolitan Museum of Art"</li>
+				</ul>
+			</p>
+			<p>Through the topic modelling, performed by means of Mallet, we selected the five most diffused topics along the dataset ("paintings" and "painted" were removed as stopwords since they were too frequent), which are:
+				<table>
+					<tr>
+						<th>Topic 1 (9)</th>
+						<th>Topic 2 (11)</th>
+						<th>Topic 3 (17)</th>
+						<th>Topic 4 (7)</th>
+						<th>Topic 5 (4)</th>
+					</tr>
+					<tr>
+						<td>work light figures art artist style works composition colour  painter picture time colours century early  great period
+						</td>
+						<td>work collection composition subject version museum works artist picture dated signed gallery art series versions executed canvas </td>
+						<td>hand man figure left woman red head young face white portrait background blue holding hair gold holds wearing picture dark </td>
+						<td>left figures picture scene composition foreground space background side view centre perspective city church front sky wall light group landscape </td>
+						<td>christ virgin mary child john angels left cross figures holy christ's scene picture angel god jesus madonna side joseph baptist <td>
+					</tr>
+				</table>
+			</p>
+			<p>The second and the fourth topic seems particularly related to a description of materials and techniques, so since we have also the table with all the topics and their presence in the dataset we can do a second topic modelling only on the descriptions that statistically are more related to the topic 2</p>
 		</div>
 	</section>
-	<section id="Ontology Design">
+	<section id="Ontology">
 
 	</section>
 	<section id="Results">
