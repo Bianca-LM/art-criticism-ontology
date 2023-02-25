@@ -165,6 +165,19 @@ img {
   padding: 5%;
 }
 
+h1 {
+  text-align: center;
+}
+
+img {
+  width: 80%;
+  margin: auto;
+  display: block;
+}
+
+#ER {
+  width: 60%;
+}
 
 footer {
   text-align: center;
