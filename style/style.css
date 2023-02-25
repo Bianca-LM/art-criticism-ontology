@@ -179,6 +179,26 @@ img {
   width: 60%;
 }
 
+button {
+  text-align: center;
+  margin: auto !important;
+  display: block;
+  background-color: transparent;
+  border: solid 0.1em black;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 0.5em !important;
+  padding: 0.5em;
+}
+
+button:hover {
+  background-color: rgba(236, 65, 8, 0.699);
+}
+
+#Ontology a {
+  text-decoration: none;
+}
+
+
 footer {
   text-align: center;
   background-color:#516162;
