@@ -1,0 +1,372 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "http://www.w3.org/2000/01/rdf-schema", "http://www.semanticweb.org/bianc/ontologies/2023/1/mat", "http://www.w3.org/2001/XMLSchema", "http://www.w3.org/TR/2004/REC-xmlschema-2-20041028" ],
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "comments" : {
+      "undefined" : "OM&TA (Ontology of Materials & Techniques in Art) is an ontology which aims at representing the relationship between materials and techniques for the description of artworks in a semantic way."
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Original_Support",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Original_Support"
+    },
+    "comment" : {
+      "undefined" : "The original support used by the artist."
+    },
+    "id" : "3",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Signature",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Signature"
+    },
+    "comment" : {
+      "undefined" : "The signature of the author left on the artwork itself."
+    },
+    "id" : "5"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "id" : "6",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Technique",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Technique"
+    },
+    "comment" : {
+      "undefined" : "\"The union of all the principles, rules and manners elaborated by the artists for the material processing over time, experimented in the workshops and artistic laboratories\" as defined by Sciolla."
+    },
+    "id" : "7"
+  }, {
+    "instances" : 0,
+    "union" : [ "9", "4" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "8"
+  }, {
+    "instances" : 0,
+    "union" : [ "12", "13" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "11"
+  }, {
+    "instances" : 0,
+    "union" : [ "15", "16" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "14"
+  }, {
+    "instances" : 0,
+    "union" : [ "12", "15", "13", "16" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "17"
+  }, {
+    "instances" : 0,
+    "union" : [ "3", "4", "19" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "18"
+  }, {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Artwork"
+    },
+    "subClasses" : [ "13" ],
+    "comment" : {
+      "undefined" : "The proper work of art, with all the additional elements."
+    },
+    "id" : "12"
+  }, {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Signature_Datation",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Signature_Datation"
+    },
+    "comment" : {
+      "undefined" : "The datation of the signature left by the author on the artwork itself."
+    },
+    "id" : "1"
+  }, {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Material",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Material"
+    },
+    "comment" : {
+      "undefined" : "It is the proper material which the support is made of."
+    },
+    "id" : "9"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "2",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Ornament",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Ornament"
+    },
+    "comment" : {
+      "undefined" : "An additional element other from the main body of the artwork, which helps through repeated patterns, and natural elements at the visual organization of the artwork, in which prevails the aesthetic function."
+    },
+    "id" : "15"
+  }, {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Support",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Support"
+    },
+    "subClasses" : [ "3", "19" ],
+    "comment" : {
+      "undefined" : "The support on which the technique is performed, \"given from nature or elaborated by human beings\" (Sciolla)."
+    },
+    "id" : "4"
+  }, {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork_Component",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Artwork_Component"
+    },
+    "comment" : {
+      "undefined" : "A subcomponent of an artwork which can have its own material and technique."
+    },
+    "id" : "13",
+    "superClasses" : [ "12" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Decoration",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Decoration"
+    },
+    "comment" : {
+      "undefined" : "An additional element which is main purpose is not practical or aesthetic, but brings \"decorum\" to another element."
+    },
+    "id" : "16"
+  }, {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Current_Support",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Current_Support"
+    },
+    "comment" : {
+      "undefined" : "The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.)."
+    },
+    "id" : "19",
+    "superClasses" : [ "4" ]
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "10",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "20",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "21",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "22",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "24",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "25",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "27",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "29",
+    "type" : "rdfs:SubClassOf"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/dateOfSignature",
+    "baseIri" : "http://www.w3.org/TR/2004/REC-xmlschema-2-20041028",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "dateOfSignature"
+    },
+    "domain" : "1",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isDated",
+    "baseIri" : "http://www.w3.org/TR/2004/REC-xmlschema-2-20041028",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "isDated"
+    },
+    "domain" : "5",
+    "attributes" : [ "external", "object" ],
+    "id" : "10"
+  }, {
+    "range" : "12",
+    "domain" : "13",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "20"
+  }, {
+    "range" : "4",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isPerformedOn",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "isPerformedOn"
+    },
+    "domain" : "7",
+    "attributes" : [ "object" ],
+    "id" : "22"
+  }, {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasTechnique",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "hasTechnique"
+    },
+    "domain" : "17",
+    "attributes" : [ "object" ],
+    "id" : "23"
+  }, {
+    "range" : "15",
+    "domain" : "16",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "24"
+  }, {
+    "iri" : "http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasSignature",
+    "baseIri" : "http://www.w3.org/TR/2004/REC-xmlschema-2-20041028",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "hasSignature"
+    },
+    "domain" : "5",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "25"
+  }, {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isPartOf",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "isPartOf"
+    },
+    "domain" : "14",
+    "attributes" : [ "object" ],
+    "id" : "26"
+  }, {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isMadeOf",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "isMadeOf"
+    },
+    "domain" : "18",
+    "attributes" : [ "object" ],
+    "id" : "27"
+  }, {
+    "iri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isSigned",
+    "baseIri" : "http://www.semanticweb.org/bianc/ontologies/2023/1/mat",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "isSigned"
+    },
+    "domain" : "12",
+    "attributes" : [ "object" ],
+    "id" : "28"
+  }, {
+    "range" : "4",
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "29"
+  } ]
+}
