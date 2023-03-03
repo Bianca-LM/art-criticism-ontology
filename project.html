@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Art Ontology: Materials and Techniques</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="style/style.css"> 
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+	</head>
+
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">OM&TA</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+		  		<span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+			  <ul class="navbar-nav ms-auto">
+			    <li class="nav-item active">
+			      <a class="nav-link" href="index.html">Home</a>
+			    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Project</a>
+                  </li>
+				<li class="nav-item">
+					<div class="dropdown">
+						<a class="nav-link dropbtn" href="documentation.html">Documentation</a>
+						<div class="dropdown-content">
+						  <a href="documentation.html#Project">Project</a>
+						  <a href="documentation.html#Ontology">Ontology Design</a>
+						  <a href="documentation.html#Results">Results</a>
+						</div>
+					  </div>
+				  </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="about.html">About</a>
+			    </li>
+			  </ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Page Content -->
+	<section id="Project">
+		<div class="container">
+            <h1>Project</h1>
+            <h2>Methodology</h2>
+            <p>This ontology has been built following the guidelines for ontology requirements specification document (ORSD) proposed in the paper "How to Write and Use the Ontology Requirements Specification Document" by Suárez-Figueroa et al.</br>
+            By following the template proposed by the authors, we have identified the requirements to develop this ontology as exposed in the following table.
+            </p> 
+            <h2>Ontology requirements specification document (ORSD)</h2>
+            <ol>
+                <li><b>Purpose:</b> represent the relationship between materials and techniques in art;</li>
+                <li><b>Scope:</b> the ontology will define artworks at the level of denotative description taking under consideration all the elements that can be related to a material or technique.</li>
+                <li><b>Implementation Language:</b> it is developed through <a href="https://protege.stanford.edu/">Protégé</a> which supports OWL and RDF.</li>
+                <li><b>Intended End-Users:</b> public or private institutions which need to make available information about artworks in Linked Open Data (LOD).</li>
+                <li><b>Intended Uses:</b> domain experts which wants to search for specific associations of materials and techniques; privates who wants to explore materials and techniques in arts.</li>
+                <li><b>Ontology Requirements:</b>
+                    <ul>
+                        <li>Non-Functional Requirements: the ontology must be compliant with international standards.</li>
+                        <li><b>Functional Requirements:</b> Competency Questions (CQs) which in the end the user will be able to answer through the queries performed on a SPARQL endpoint.</br>
+                            In this first draft the CQs will be written in natural language, since they are real questions between human beign, not yet formalized to be understandable by a machine.</b> 
+                            <table>
+                                <caption>Groups of Competency Questions</caption>
+                                <tr>
+                                    <th>CQ1</th>
+                                    <th>CQ2</th>
+                                    <th>CQ3</th>
+                                    <th>CQ4</th>
+                                    <th>CQ5</th>
+                                </tr>
+                                <tr>
+                                    <td>Which technique has been used in arwork X?</td>
+                                    <td>From which material is artwork Y made of?</td>
+                                    <td>Which are the most common materials on which is performed technique Z?</td>
+                                    <td>Which are the most common materials in art?</td>
+                                    <td>Which technique has been used only once?<td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ul>
+                </li>
+                <li>Pre-Glossary of Terms
+                    <ul>
+                        <li>Terms from Competency Questions</li>
+                        <li>Terms from Answers</li>
+                        <li>Objects</li>
+                    </ul>
+                </li>
+
+            </ol>
+		</div>
+	</section>
+	<footer>
+		<p>A project for the course "Knowledge Representation and Extraction"</p>
+		<p>MA "Digital Humanities and Digital Knowledge", University of Bologna</p>
+		<p>Powered by Bootstrap</p>
+	</footer>
+	</body>
+</html>
