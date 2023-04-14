@@ -108,29 +108,130 @@
 		<div class="container">
 			<h2>Results</h2>
 			<p>Now we can translate the Competency Questions in SPARQL queries that can be performed using OM&TA ontology on our sparql endpoint.</p>
-			<table>
-				<tr>
-					<th>CQ1</th>
-					<th>CQ2</th>
-					<th>CQ3</th>
-					<th>CQ4</th>
-					<th>CQ5</th>
-				</tr>
-				<tr>
-					<td>Which technique has been used in arwork X?</td>
-					<td>From which material is artwork Y made of?</td>
-					<td>Which are the most common materials on which is performed technique Z?</td>
-					<td>Which are the most common materials in art?</td>
-					<td>Which technique has been used only once?<td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td><td>
-				</tr>
-			</table>
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+						  <div class="flip-card-front">
+							<h2>CQ1</h2>
+							<p>Which technique has been used in arwork X?</p>
+						  </div>
+						  <div class="flip-card-back">
+							<p>PREFIX omeka: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat&gt; 
+								<hr>
+								SELECT ?technique WHERE {</br>
+								omeka:MadonnaConBambino omeka:hasTechnique ?technique.
+							}</p>
+							<button>Run the query</button>
+						  </div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="col-lg-4">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<h2>CQ2</h2>
+								<p>From which material is artwork Y made of?</p>
+							</div>
+							<div class="flip-card-back">
+								<p>
+									PREFIX omeka: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat&gt; 
+									<hr>
+									SELECT ?material WHERE {</br>
+									omeka:MadonnaConBambino omeka:hasTechnique ?technique.</br>
+									?technique omeka:isPerformedOn ?material.</br>
+								}</p>
+								<button>Run the query</button>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="col-lg-4">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<h2>CQ3</h2>
+								<p>Which are the most common materials on which is performed technique Z?</p>
+							</div>
+							<div class="flip-card-back">
+								<p>PREFIX omeka: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat&gt; </br>
+									PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
+									<hr>
+									SELECT DISTINCT(?materialLabel) COUNT(?material as ?materialCount) WHERE {</br>
+									?technique omeka:isPerformedOn ?material;</br>
+									rdfs:label ?techniqueLabel</br>
+									FILTER(contains(str(?techniqueLabel), "pittura a olio"))</br>
+									?material rdfs:label ?materialLabel</br>
+								}</br>
+								
+								LIMIT 5</p>
+								<button>Run the query</button>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+			<div class="row">
+				<div class="col-lg-2">
+				</div>
+				<div class="col-lg-4">
+					<div class="col-lg-4">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+							  <div class="flip-card-front">
+								<h2>CQ4</h2>
+								<p>Which are the most common materials in art?</p>
+							  </div>
+							  <div class="flip-card-back">
+								<p>PREFIX omeka: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat&gt;
+									<hr>
+									SELECT DISTINCT(?material) WHERE {</br>
+									?artwork omeka:hasTechnique ?technique.</br>
+									?technique omeka:isPerformedOn ?material</br>
+								}</br>
+			
+								ORDER BY DESC(?material)</p>
+								<button>Run the query</button>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="col-lg-4">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+							  <div class="flip-card-front">
+								<h2>CQ5</h2>
+								<p>Which technique has been used only once?</p>
+							  </div>
+							  <div class="flip-card-back">
+								<p>PREFIX omeka: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat&gt; </br>
+									PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
+									<hr>
+									SELECT DISTINCT(?techniqueLabel) COUNT(?technique as ?count) WHERE {</br>
+									?technique a omeka:Technique;</br>
+									rdfs:label ?techniqueLabel.</br>
+									}</br>
+				
+									GROUP BY ?techniqueLabel</br>
+									HAVING (?count = 1)  </p>
+									<button>Run the query</button>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-2">
+
+				</div>
+			</div>
 		</div>
 	</section>
 	<footer>
