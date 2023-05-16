@@ -1,0 +1,443 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/bianc/ontologies/2023/1/mat"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/bianc/ontologies/2023/1/mat">
+    <Prefix name="" IRI="http://www.semanticweb.org/bianc/ontologies/2023/1/mat"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>OM&amp;TA (Ontology of Materials &amp; Techniques in Art) is an ontology which aims at representing the relationship between materials and techniques for the description of artworks in a semantic way.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Artwork"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Artwork_Component"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Current_Support"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Decoration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Material"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Original_Support"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ornament"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Signature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Signature_Datation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Support"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Technique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Frame"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Inscription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Mark"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Mark_of_Carter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Mark_of_Founder"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMadeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPerformedOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSigned"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasDecoration"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasFrame"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasOrnament"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasSupport"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasTechnique"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isComponentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isDated"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isInscribed"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isMarked"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isMountedOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isPartOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/transferredFrom"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/dateOfSignature"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasInscription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasSignature"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Current_Support"/>
+        <Class IRI="#Support"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Original_Support"/>
+        <Class IRI="#Support"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Mark_of_Carter"/>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Mark"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Mark_of_Founder"/>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Mark"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Decoration"/>
+        <Class IRI="#Ornament"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isMountedOn"/>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasSupport"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMadeOf"/>
+        <Class IRI="#Current_Support"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMadeOf"/>
+        <Class IRI="#Original_Support"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMadeOf"/>
+        <Class IRI="#Support"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMadeOf"/>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Frame"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPerformedOn"/>
+        <Class IRI="#Technique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSigned"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasDecoration"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasDecoration"/>
+        <Class IRI="#Artwork_Component"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasFrame"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasOrnament"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasOrnament"/>
+        <Class IRI="#Artwork_Component"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasSupport"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasTechnique"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasTechnique"/>
+        <Class IRI="#Artwork_Component"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasTechnique"/>
+        <Class IRI="#Decoration"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasTechnique"/>
+        <Class IRI="#Ornament"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasTechnique"/>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Frame"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isComponentOf"/>
+        <Class IRI="#Artwork_Component"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isDated"/>
+        <Class IRI="#Signature"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isInscribed"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isMarked"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isMountedOn"/>
+        <Class IRI="#Material"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isPartOf"/>
+        <Class IRI="#Decoration"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isPartOf"/>
+        <Class IRI="#Ornament"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isPartOf"/>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Frame"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/transferredFrom"/>
+        <Class IRI="#Current_Support"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMadeOf"/>
+        <Class IRI="#Material"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPerformedOn"/>
+        <Class IRI="#Material"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isSigned"/>
+        <Class IRI="#Signature"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasDecoration"/>
+        <Class IRI="#Decoration"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasFrame"/>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Frame"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasOrnament"/>
+        <Class IRI="#Ornament"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasSupport"/>
+        <Class IRI="#Current_Support"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasSupport"/>
+        <Class IRI="#Support"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasTechnique"/>
+        <Class IRI="#Technique"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isComponentOf"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isDated"/>
+        <Class IRI="#Signature_Datation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isInscribed"/>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Inscription"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isMarked"/>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Mark"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isMarked"/>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Mark_of_Carter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isMarked"/>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Mark_of_Founder"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isMountedOn"/>
+        <Class IRI="#Current_Support"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isMountedOn"/>
+        <Class IRI="#Support"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isPartOf"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/isPartOf"/>
+        <Class IRI="#Artwork_Component"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/transferredFrom"/>
+        <Class IRI="#Original_Support"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/dateOfSignature"/>
+        <Class IRI="#Signature_Datation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasInscription"/>
+        <Class IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Inscription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasSignature"/>
+        <Class IRI="#Signature"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/dateOfSignature"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasInscription"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasSignature"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Artwork</IRI>
+        <Literal>The proper work of art, with all the additional elements.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Artwork_Component</IRI>
+        <Literal>A subcomponent of an artwork which can have its own material and technique.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Current_Support</IRI>
+        <Literal>The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Decoration</IRI>
+        <Literal>An additional element which is main purpose is not practical or aesthetic, but brings &quot;decorum&quot; to another element.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Material</IRI>
+        <Literal>It is the proper material on which the work of art has been made. It can be different from the support.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Original_Support</IRI>
+        <Literal>The original support used by the artist.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ornament</IRI>
+        <Literal>An additional element other from the main body of the artwork, which helps through repeated patterns, and natural elements at the visual organization of the artwork, in which prevails the aesthetic function.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Signature</IRI>
+        <Literal>The signature of the author left on the artwork itself.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Signature_Datation</IRI>
+        <Literal>The datation of the signature left by the author on the artwork itself.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Support</IRI>
+        <Literal>The support on which the technique is performed, &quot;given from nature or elaborated by human beings&quot; (Sciolla).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Technique</IRI>
+        <Literal>&quot;The union of all the principles, rules and manners elaborated by the artists for the material processing over time, experimented in the workshops and artistic laboratories&quot; as defined by Sciolla.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Frame</IRI>
+        <Literal>Some works of art comes with a frame, which has a material and can  have a decoration.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Inscription</IRI>
+        <Literal>Every kind of text added to the work of art.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Mark</IRI>
+        <Literal>The sign of an external contribution out of the author. It can be the founder or the carter, mainly used with scultpures.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Mark_of_Carter</IRI>
+        <Literal></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Mark_of_Carter</IRI>
+        <Literal>The mark of a workshop or factory for model plasters.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Mark_of_Founder</IRI>
+        <Literal>The mark of a workshop or factory for casting metal.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
