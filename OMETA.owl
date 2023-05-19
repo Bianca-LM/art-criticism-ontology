@@ -1,0 +1,362 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/bianc/ontologies/2023/1/mat"
+     xml:base="http://www.semanticweb.org/bianc/ontologies/2023/1/mat"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat/1.0"/>
+        <rdfs:comment>OM&amp;TA (Ontology of Materials &amp; Techniques in Art) is an ontology which aims at representing the relationship between materials and techniques for the description of artworks in a semantic way.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasDecoration -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasDecoration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Decoration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasDecorativeTechnique -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasDecorativeTechnique">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasTechnique"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Decoration"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Technique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasFrame -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasFrame">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Frame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasInscription -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasInscription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Inscription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasOrnament -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasOrnament">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Ornament"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasOrnamentalTechnique -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasOrnamentalTechnique">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasTechnique"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Ornament"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Technique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasSupport -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasSupport">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Current_Support"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasTechnique -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasTechnique">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Technique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isDated -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isDated">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Signature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Signature_Datation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isMadeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isMadeOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Current_Support"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Frame"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Original_Support"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Support"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isMarked -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isMarked">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Mark"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Mark_of_Carter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Mark_of_Founder"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isMountedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isMountedOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasSupport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Material"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Current_Support"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Support"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isPerformedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isPerformedOn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Technique"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isSigned -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isSigned">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Signature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#transferredFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#transferredFrom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Current_Support"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Original_Support"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#dateOfSignature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#dateOfSignature">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Signature_Datation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasInscriptionContent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasInscriptionContent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Inscription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasSignature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasSignature">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Signature"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork"/>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork_Component -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork_Component">
+        <rdfs:comment>A subcomponent of an artwork which can have its own material and technique.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Current_Support -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Current_Support">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Support"/>
+        <rdfs:comment>The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Decoration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Decoration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork_Component"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Ornament"/>
+        <rdfs:comment>An additional element which is main purpose is not practical or aesthetic, but brings &quot;decorum&quot; to another element.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Frame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Frame">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork_Component"/>
+        <rdfs:comment>Some works of art comes with a frame, which has a material and can  have a decoration.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Inscription -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Inscription">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork_Component"/>
+        <rdfs:comment>Every kind of text added to the work of art.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Mark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Mark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork_Component"/>
+        <rdfs:comment>The sign of an external contribution out of the author. It can be the founder or the carter, mainly used with scultpures.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Mark_of_Carter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Mark_of_Carter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Mark"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:comment>The mark of a workshop or factory for model plasters.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Mark_of_Founder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Mark_of_Founder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Mark"/>
+        <rdfs:comment>The mark of a workshop or factory for casting metal.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Material -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Material">
+        <rdfs:comment>It is the proper material on which the work of art has been made. It can be different from the support.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Original_Support -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Original_Support">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Support"/>
+        <rdfs:comment>The original support used by the artist.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Ornament -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Ornament">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork_Component"/>
+        <rdfs:comment>An additional element other from the main body of the artwork, which helps through repeated patterns, and natural elements at the visual organization of the artwork, in which prevails the aesthetic function.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Signature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Signature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork_Component"/>
+        <rdfs:comment>The signature of the author left on the artwork itself.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Signature_Datation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Signature_Datation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork_Component"/>
+        <rdfs:comment>The datation of the signature left by the author on the artwork itself.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Support -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Support">
+        <rdfs:comment>The support on which the technique is performed, &quot;given from nature or elaborated by human beings&quot; (Sciolla).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Technique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Technique">
+        <rdfs:comment>&quot;The union of all the principles, rules and manners elaborated by the artists for the material processing over time, experimented in the workshops and artistic laboratories&quot; as defined by Sciolla.</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
