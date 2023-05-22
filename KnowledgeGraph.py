@@ -2,6 +2,11 @@ from pandas import read_csv, Series
 from rdflib import RDF, Graph, URIRef, RDFS, Literal, Namespace
 import os
 
+
+from rdflib.plugins.stores.sparqlstore import SPARQLUpdateStore
+
+endpoint = "http://192.168.1.2:9999/blazegraph/sparql"
+
 #All the Entities
 Artwork = URIRef('http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork')
 ArtworkComponent = URIRef('http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork_Component')
@@ -113,29 +118,23 @@ for idx, row in paintingsData.iterrows():
                     knowledgeGraph.add((URIRef(baseUrl + "Technique/" + i), isPerformedOn, (URIRef(baseUrl + "Material/" + row["Material"]))))
                     knowledgeGraph.add((URIRef(baseUrl + "Material/" + row["Material"]), RDF.type, Material))
                     knowledgeGraph.add((URIRef(baseUrl + "Material/" + row["Material"]), RDFS.Literal, Literal(row["Material"])))
-'''
-venue_internal_id = {}
-for idx, row in venues.iterrows():
-    local_id = "venue-" + str(idx)
-    
-    # The shape of the new resources that are venues is
-    # 'https://comp-data.github.io/res/venue-<integer>'
-    subj = URIRef(base_url + local_id)
-    
-    # We put the new venue resources created here, to use them
-    # when creating publications
-    venue_internal_id[row["id"]] = subj
-    
-    if row["type"] == "journal":
-        # RDF.type is the URIRef already provided by rdflib of the property 
-        # 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
-        my_graph.add((subj, RDF.type, Journal))
-    else:
-        my_graph.add((subj, RDF.type, Book))
-    
-    my_graph.add((subj, name, Literal(row["name"])))
-    my_graph.add((subj, identifier, Literal(row["id"])))
 
+
+ttlSerialization = knowledgeGraph.serialize(format="ttl")
+
+store = SPARQLUpdateStore()
+
+store.open((endpoint, endpoint))
+
+print(len(knowledgeGraph))
+
+
+for triple in knowledgeGraph.triples((None, None, None)):
+   print(triple)
+   store.add(triple)
+    
+store.close()
+'''
 
 endpoint = "http://192.168.1.2:9999/blazegraph/"
 
