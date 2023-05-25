@@ -1,12 +1,12 @@
 from pandas import read_csv, Series
-from rdflib import RDF, Graph, URIRef, RDFS, Literal, Namespace
+from rdflib import RDF, Graph, URIRef, RDFS, Literal, Namespace, serializer
 import os
 
 
 from rdflib.plugins.stores.sparqlstore import SPARQLUpdateStore
 
 #java -server -Xmx1g -jar blazegraph.jar
-endpoint = "http://10.201.24.240:9999/blazegraph/sparql"
+endpoint = "http://192.168.1.2:9999/blazegraph/sparql"
 
 #All the Entities
 Artwork = URIRef('http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork')
@@ -39,14 +39,16 @@ isDated = URIRef('http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isDated
 isMadeOf = URIRef('http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isMadeOf')
 isMarked = URIRef('http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isMarked')
 isMountedOn = URIRef('http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isMountedOn')
-transferredFrom = URIRef('ttp://www.semanticweb.org/bianc/ontologies/2023/1/mat#transferredFrom')
+transferredFrom = URIRef('http://www.semanticweb.org/bianc/ontologies/2023/1/mat#transferredFrom')
 isPerformedOn = URIRef('http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isPerformedOn')
 isSigned = URIRef('http://www.semanticweb.org/bianc/ontologies/2023/1/mat#isSigned')
 
 #All the Data Properties
-dateOfSignature = URIRef('http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/dateOfSignature')
+dateOfSignature = URIRef('http://www.semanticweb.org/bianc/ontologies/2023/1/mat#dateOfSignature')
 hasInscriptionContent = URIRef('http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasInscriptionContent')
-hasSignature = URIRef('http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/hasSignature')
+hasSignature = URIRef('http://www.semanticweb.org/bianc/ontologies/2023/1/mat#hasSignature')
+
+nameSpace = Namespace('http://www.semanticweb.org/bianc/ontologies/2023/1/mat#')
 
 baseUrl = Namespace("http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/")
 
@@ -54,7 +56,8 @@ directory = 'data'
 
 knowledgeGraph = Graph()
 
-knowledgeGraph.bind("mat", baseUrl)
+knowledgeGraph.bind("mat", nameSpace)
+knowledgeGraph.bind("mat-r", baseUrl)
 
 for filename in os.listdir(directory):
     f = os.path.join(directory, filename)
@@ -181,8 +184,6 @@ for idx, row in sculpturesData.iterrows():
                     knowledgeGraph.add((URIRef(baseUrl + "Material/" + row["Material"]), RDFS.Literal, Literal(row["Material"])))
 
 
-ttlSerialization = knowledgeGraph.serialize(format="ttl")
-
 store = SPARQLUpdateStore()
 
 store.open((endpoint, endpoint))
@@ -195,6 +196,9 @@ for triple in knowledgeGraph.triples((None, None, None)):
    store.add(triple)
     
 store.close()
+
+ttl = knowledgeGraph.serialize(destination='knowledgeGraph.txt', format='turtle')
+
 '''
 
 endpoint = "http://192.168.1.2:9999/blazegraph/"
