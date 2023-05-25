@@ -1,0 +1,486 @@
+@prefix mat: <http://www.semanticweb.org/bianc/ontologies/2023/1/mat#> .
+@prefix mat-r: <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+mat-r:P001 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P002 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P002> ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P003 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/oil>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/tempera> .
+
+mat-r:P004 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P004> ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P005 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P005> ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P006 a mat:Artwork ;
+    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P006> ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P006> ;
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/oil>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/tempera> .
+
+mat-r:P007 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/oil>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/tempera> .
+
+mat-r:P008 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P008> ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P009 a mat:Artwork ;
+    mat:hasDecoration <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-P009> ;
+    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P009> ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P010 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P011 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P012 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P013 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P014 a mat:Artwork ;
+    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P014> ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P014> ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P015 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P016 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P017 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P018 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/oil>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/tempera> .
+
+mat-r:P019 a mat:Artwork ;
+    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P019> ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P020 a mat:Artwork ;
+    mat:hasDecoration <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-P020> ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P021 a mat:Artwork ;
+    mat:hasDecoration <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-P021> ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P022 a mat:Artwork ;
+    mat:hasDecoration <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-P022> ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P023 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P023> ;
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/gold>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/tempera> .
+
+mat-r:P024 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P025 a mat:Artwork ;
+    mat:hasDecoration <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-P025> ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P026 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P026> ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P027 a mat:Artwork ;
+    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P027> ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P027> ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P028 a mat:Artwork ;
+    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P028> ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P029 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P030 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P031 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P032 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P033 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P034 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P034> ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:P035 a mat:Artwork ;
+    mat:hasSupport mat:Current_Support .
+
+mat-r:S001 a mat:Artwork ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/gilded>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/sculpture> .
+
+mat-r:S002 a mat:Artwork ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/painted>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/sculpture> .
+
+mat-r:S003 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S003> .
+
+mat-r:S004 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S004> .
+
+mat-r:S005 a mat:Artwork ;
+    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S005> .
+
+mat-r:S006 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S006> ;
+    mat:isMarked <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Founder/founder-S006> .
+
+mat-r:S007 a mat:Artwork .
+
+mat-r:S008 a mat:Artwork ;
+    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S008> .
+
+mat-r:S009 a mat:Artwork .
+
+mat-r:S010 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S010> .
+
+mat-r:S011 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S011> .
+
+mat-r:S012 a mat:Artwork ;
+    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S012> ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S012> .
+
+mat-r:S013 a mat:Artwork .
+
+mat-r:S014 a mat:Artwork ;
+    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S014> ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S014> ;
+    mat:isMarked <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Founder/founder-S014> .
+
+mat-r:S015 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S015> ;
+    mat:isMarked <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Carter/carter-S015>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Founder/founder-S015> .
+
+mat-r:S016 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S016> ;
+    mat:isMarked <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Founder/founder-S016> .
+
+mat-r:S017 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S017> ;
+    mat:isMarked <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Founder/founder-S017> .
+
+mat-r:S018 a mat:Artwork ;
+    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S018> ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S018> .
+
+mat-r:S019 a mat:Artwork ;
+    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S019> ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S019> .
+
+mat-r:S020 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S020> .
+
+mat-r:S021 a mat:Artwork ;
+    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S021> ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S021> .
+
+mat-r:S022 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S022> .
+
+mat-r:S023 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S023> .
+
+mat-r:S024 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S024> .
+
+mat-r:S025 a mat:Artwork ;
+    mat:hasDecoration <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-S025> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/relief>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/sculpture> .
+
+mat-r:S026 a mat:Artwork ;
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S026> .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Carter/carter-S015> a mat:Mark_of_Carter ;
+    rdfs:Literal "P. P. Caproni & Bro. Plaster Casts, Boston" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-P009> a mat:Decoration ;
+    rdfs:Literal "golden ground" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-P020> a mat:Decoration ;
+    rdfs:Literal "tooled golden ground" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-P021> a mat:Decoration ;
+    rdfs:Literal "tooled golden ground" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-P022> a mat:Decoration ;
+    rdfs:Literal "tooled golden ground" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-P025> a mat:Decoration ;
+    rdfs:Literal "embossed blood and crown of thorns, incised Wounds" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-S025> a mat:Decoration ;
+    rdfs:Literal "painted brown" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Founder/founder-S006> a mat:Mark_of_Founder ;
+    rdfs:Literal "Gruet jne. Founders, Paris" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Founder/founder-S014> a mat:Mark_of_Founder ;
+    rdfs:Literal "The Henry-Bonnard Bronze Co. Founders N. Y. 1900." .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Founder/founder-S015> a mat:Mark_of_Founder ;
+    rdfs:Literal "Jno. Williams Inc. Bronze Foundry N.Y." .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Founder/founder-S016> a mat:Mark_of_Founder ;
+    rdfs:Literal "Gorham Co. Founders." .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Founder/founder-S017> a mat:Mark_of_Founder ;
+    rdfs:Literal "Jno. Williams Inc. Bronze Foundry N.Y." .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P006> a mat:Inscription ;
+    rdfs:Literal "\"ECCE AGNVS DEI\"" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P009> a mat:Inscription ;
+    rdfs:Literal "... MARIA." .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P014> a mat:Inscription ;
+    rdfs:Literal "\"with a cry\", \"Israel\",  \"crown\", \"Israel\", \"that my Redeemer liveth\", \"19\"" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P019> a mat:Inscription ;
+    rdfs:Literal "\"IOANNES BELLINVS FACIEBAT\"" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P027> a mat:Inscription ;
+    rdfs:Literal "Vuduta del Same di Rialto / in Venezia / del Guardi" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P028> a mat:Inscription ;
+    rdfs:Literal "dalla / Veduta Salute in Venezia / del F.co Guardi" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S005> a mat:Inscription ;
+    rdfs:Literal "Executed for W.B. Astor by Hiram Powers April 3d 1858" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S008> a mat:Inscription ;
+    rdfs:Literal "C. B. Ives fecit Romae 1866" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S012> a mat:Inscription ;
+    rdfs:Literal "The Gift of Hamilton Fish" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S014> a mat:Inscription ;
+    rdfs:Literal "Maj. Gen. Philip Kearny U.S.V. Killed in Battle Semptermber 1, 1862 In Memoriam A.D. 1900 by His Aide de Camp Maj. George B. Halstead U.S.V. April 16, 1861 - March 12, ,1866 Jerseymen Dulce et Decorum est Pro Patria Mon [Mori]" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S018> a mat:Inscription ;
+    rdfs:Literal "The Gift of Hamilton Fish" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S019> a mat:Inscription ;
+    rdfs:Literal "The Gift of Hamilton Fish" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S021> a mat:Inscription ;
+    rdfs:Literal "Cleopatra" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P002> a mat:Signature ;
+    rdfs:Literal "ANTONELLUS MESS. N... ME PIN.. T." .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P004> a mat:Signature ;
+    rdfs:Literal "\"IOANNES BELLINVS\"" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P005> a mat:Signature ;
+    rdfs:Literal "\"IOANNES BELLINVS\"" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P006> a mat:Signature ;
+    rdfs:Literal "\"IOANNES BELLINVS\"" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P008> a mat:Signature ;
+    rdfs:Literal "IOANNES BELLINVS" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P014> a mat:Signature ;
+    rdfs:Literal "vjctorjs carpattjj venettj opus" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P023> a mat:Signature ;
+    rdfs:Literal "OPVS.KAROLI.CRIVELLI.VENETI" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P026> a mat:Signature ;
+    rdfs:Literal "GVARA.F." .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P027> a mat:Signature ;
+    rdfs:Literal "Fran co De' Guardi" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P034> a mat:Signature ;
+    rdfs:Literal "Fran/ Guardi" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S003> a mat:Signature ;
+    rdfs:Literal "Hiram Powers Sculp" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S004> a mat:Signature ;
+    rdfs:Literal "H. Powers Sculp" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S006> a mat:Signature ;
+    rdfs:Literal "Hughes" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S010> a mat:Signature ;
+    rdfs:Literal "Crawford fecit" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S011> a mat:Signature ;
+    rdfs:Literal "Crawford fecit" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S012> a mat:Signature ;
+    rdfs:Literal "T.C. " .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S014> a mat:Signature ;
+    rdfs:Literal "From H. K. Brown-Sculp" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S015> a mat:Signature ;
+    rdfs:Literal "W. Rimmer Sc. " .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S016> a mat:Signature ;
+    rdfs:Literal "W. Rimmer " .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S017> a mat:Signature ;
+    rdfs:Literal "W. Rimmer" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S018> a mat:Signature ;
+    rdfs:Literal "E. D. Palmer Sc." .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S019> a mat:Signature ;
+    rdfs:Literal "E. D. Palmer, Sc." .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S020> a mat:Signature ;
+    rdfs:Literal "Bracket. Sc." .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S021> a mat:Signature ;
+    rdfs:Literal "W W S " .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S022> a mat:Signature ;
+    rdfs:Literal "W S" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S023> a mat:Signature ;
+    rdfs:Literal "W S " .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S024> a mat:Signature ;
+    rdfs:Literal "T. Ball. " .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S026> a mat:Signature ;
+    rdfs:Literal "Wilson MacDonald" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S004> a mat:Signature_Datation ;
+    rdfs:Literal "1848" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S010> a mat:Signature_Datation ;
+    rdfs:Literal "Roma MDCCCXLIII" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S011> a mat:Signature_Datation ;
+    rdfs:Literal "Rome 1848" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S012> a mat:Signature_Datation ;
+    rdfs:Literal "December 31, 1851" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S014> a mat:Signature_Datation ;
+    rdfs:Literal "1872" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S018> a mat:Signature_Datation ;
+    rdfs:Literal "1856" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S019> a mat:Signature_Datation ;
+    rdfs:Literal "1859" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S021> a mat:Signature_Datation ;
+    rdfs:Literal "1869" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S022> a mat:Signature_Datation ;
+    rdfs:Literal "Roma 1868" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S023> a mat:Signature_Datation ;
+    rdfs:Literal "Roma 1871" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S024> a mat:Signature_Datation ;
+    rdfs:Literal "1868" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Support/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/gilded> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "gilded" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/gold> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "gold" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/painted> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/plaster> ;
+    rdfs:Literal "painted" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/relief> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/plaster> ;
+    rdfs:Literal "relief" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Support/wood> a mat:Material,
+        mat:Original_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/plaster> a mat:Material ;
+    rdfs:Literal "plaster" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/plaster>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/tempera> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "tempera" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+mat:Signature mat:isDated <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S004>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S010>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S011>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S012>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S014>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S018>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S019>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S021>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S022>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S023>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S024> .
+
+mat:Current_Support mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Support/wood> ;
+    mat:transferredFrom <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Support/wood> .
+
