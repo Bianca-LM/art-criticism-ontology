@@ -1,27 +1,27 @@
-﻿Author;Artwork;Artwork component;Current support;Decoration;Material ;Original support;Ornament;Carter's mark;Founder's mark;Signature;Inscription;Signature datation;Technique;ID;Frame
-Unknown;American Eagle;;;;wood;;;;;;;;sculpture, gilded;;
-Horatio Greenough;Samuel Finley Breese Morse;;;;plaster;;;;;;;;sculpture, painted;;
-Hiram Powers;President Andrew Jackson;;;;marble;;;;;Hiram Powers Sculp;;;scuplture;;
-Hiram Powers;The Fisher Boy;;;;marble;;;;;H. Powers Sculp;;1848;sculpture;;
-Hiram Powers;California;;;;marble;;;;;;Executed for W.B. Astor by Hiram Powers April 3d 1858;;sculpture;;
-Ball Hughes;John Watts ;;;;bronze;;;;Gruet jne. Founders, Paris;Hughes;;;sculpture;;
-Joel Tanner Hart;Henry Clay;;;;marble;;;;;;;;sculpture;;
-Joel Tanner Hart;Rebecca at the Well;;;;marble;;;;;;C. B. Ives fecit Romae 1866;;sculpture;;
-Shobal Vail Clevenger;Henry Clay;;;;white marble;;;;;;;;sculpture;;
-Thomas Crawford;The Genius of Mirth;;;;marble;;;;;Crawford fecit;;Roma MDCCCXLIII;sculpture;;
-Thomas Crawford;The Dying Mexican Princess;;;;marble;;;;;Crawford fecit;;Rome 1848;sculpture;;
-Thomas Crawford;The Babes in the Wood;;;;marble;;;;;T.C. ;The Gift of Hamilton Fish;December 31, 1851;sculpture;;
-Henry Kirke Brown;Thomas Cole;;;;marble;;;;;;;;sculpture;;
-Henry Kirke Brown;Major General Philip Kearny;;;;bronze;;;;The Henry-Bonnard Bronze Co. Founders N. Y. 1900.;From H. K. Brown-Sculp;Maj. Gen. Philip Kearny U.S.V. Killed in Battle Semptermber 1, 1862 In Memoriam A.D. 1900 by His Aide de Camp Maj. George B. Halstead U.S.V. April 16, 1861 - March 12, ,1866 Jerseymen Dulce et Decorum est Pro Patria Mon [Mori];1872;sculpture;;
-William Rimmer;The Falling Gladiator;;;;bronze;;;P. P. Caproni & Bro. Plaster Casts, Boston;Jno. Williams Inc. Bronze Foundry N.Y.;W. Rimmer Sc. ;;;sculpture;;
-William Rimmer;The Dying Centaur;;;;bronze;;;;Gorham Co. Founders.;W. Rimmer ;;;sculpture;;
-William Rimmer;Fighting Lions ;;;;bronze;;;;Jno. Williams Inc. Bronze Foundry N.Y.;W. Rimmer;;;sculpture;;
-Erastus Dow Palmer;The Indian Girl or The Dawn of Christianity;;;;marble;;;;;E. D. Palmer Sc.;The Gift of Hamilton Fish;1856;sculpture;;
-Erastus Dow Palmer;The White Captive;;;;marble;;;;;E. D. Palmer, Sc.;The Gift of Hamilton Fish;1859;sculpture;;
-Edwars Augustus Brackett;Washington Allston;;;;marble;;;;;Bracket. Sc.;;;sculpture;;
-William Wetmore Story;Cleopatra;;;;marble;;;;;W W S ;Cleopatra;1869;sculpture;;
-William Wetmore Story;Medea;;;;marble;;;;;W S;;Roma 1868;sculpture;;
-William Wetmore Story;Salome;;;;marble;;;;;W S ;;Roma 1871;sculpture;;
-Thomas Ball;Daniel Webster;;;;white marble;;;;;T. Ball. ;;1868;sculpture;;
-William Morris Hunt;The Horses of Anahita or The Flight of Night;;;painted brown;plaster;;;;;;;;sculpture, relief;;walnut molding
-Wilson MacDonald;Brigadier General Winfield Scott Hancock;;;;bronze;;;;;Wilson MacDonald;;;;;
+﻿Author;Artwork;Artwork component;Current support;Decoration;Material;Original support;Ornament;Carter's mark;Founder's mark;Signature;Inscription;Signature datation;Technique;ID;Frame
+Unknown;American Eagle;;;;wood;;;;;;;;sculpture, gilded;S001;
+Horatio Greenough;Samuel Finley Breese Morse;;;;plaster;;;;;;;;sculpture, painted;S002;
+Hiram Powers;President Andrew Jackson;;;;marble;;;;;Hiram Powers Sculp;;;scuplture;S003;
+Hiram Powers;The Fisher Boy;;;;marble;;;;;H. Powers Sculp;;1848;sculpture;S004;
+Hiram Powers;California;;;;marble;;;;;;Executed for W.B. Astor by Hiram Powers April 3d 1858;;sculpture;S005;
+Ball Hughes;"John Watts ";;;;bronze;;;;Gruet jne. Founders, Paris;Hughes;;;sculpture;S006;
+Joel Tanner Hart;Henry Clay;;;;marble;;;;;;;;sculpture;S007;
+Joel Tanner Hart;Rebecca at the Well;;;;marble;;;;;;C. B. Ives fecit Romae 1866;;sculpture;S008;
+Shobal Vail Clevenger;Henry Clay;;;;white marble;;;;;;;;sculpture;S009;
+Thomas Crawford;The Genius of Mirth;;;;marble;;;;;Crawford fecit;;Roma MDCCCXLIII;sculpture;S010;
+Thomas Crawford;The Dying Mexican Princess;;;;marble;;;;;Crawford fecit;;Rome 1848;sculpture;S011;
+Thomas Crawford;The Babes in the Wood;;;;marble;;;;;"T.C. ";The Gift of Hamilton Fish;December 31, 1851;sculpture;S012;
+Henry Kirke Brown;Thomas Cole;;;;marble;;;;;;;;sculpture;S013;
+Henry Kirke Brown;Major General Philip Kearny;;;;bronze;;;;The Henry-Bonnard Bronze Co. Founders N. Y. 1900.;From H. K. Brown-Sculp;Maj. Gen. Philip Kearny U.S.V. Killed in Battle Semptermber 1, 1862 In Memoriam A.D. 1900 by His Aide de Camp Maj. George B. Halstead U.S.V. April 16, 1861 - March 12, ,1866 Jerseymen Dulce et Decorum est Pro Patria Mon [Mori];1872;sculpture;S014;
+William Rimmer;The Falling Gladiator;;;;bronze;;;P. P. Caproni & Bro. Plaster Casts, Boston;Jno. Williams Inc. Bronze Foundry N.Y.;"W. Rimmer Sc. ";;;sculpture;S015;
+William Rimmer;The Dying Centaur;;;;bronze;;;;Gorham Co. Founders.;"W. Rimmer ";;;sculpture;S016;
+William Rimmer;"Fighting Lions ";;;;bronze;;;;Jno. Williams Inc. Bronze Foundry N.Y.;W. Rimmer;;;sculpture;S017;
+Erastus Dow Palmer;The Indian Girl or The Dawn of Christianity;;;;marble;;;;;E. D. Palmer Sc.;The Gift of Hamilton Fish;1856;sculpture;S018;
+Erastus Dow Palmer;The White Captive;;;;marble;;;;;E. D. Palmer, Sc.;The Gift of Hamilton Fish;1859;sculpture;S019;
+Edwars Augustus Brackett;Washington Allston;;;;marble;;;;;Bracket. Sc.;;;sculpture;S020;
+William Wetmore Story;Cleopatra;;;;marble;;;;;"W W S ";Cleopatra;1869;sculpture;S021;
+William Wetmore Story;Medea;;;;marble;;;;;W S;;Roma 1868;sculpture;S022;
+William Wetmore Story;Salome;;;;marble;;;;;"W S ";;Roma 1871;sculpture;S023;
+Thomas Ball;Daniel Webster;;;;white marble;;;;;"T. Ball. ";;1868;sculpture;S024;
+William Morris Hunt;The Horses of Anahita or The Flight of Night;;;painted brown;plaster;;;;;;;;sculpture, relief;S025;walnut molding
+Wilson MacDonald;Brigadier General Winfield Scott Hancock;;;;bronze;;;;;Wilson MacDonald;;;;S026;
