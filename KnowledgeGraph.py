@@ -5,7 +5,8 @@ import os
 
 from rdflib.plugins.stores.sparqlstore import SPARQLUpdateStore
 
-endpoint = "http://192.168.1.2:9999/blazegraph/sparql"
+#java -server -Xmx1g -jar blazegraph.jar
+endpoint = "http://10.201.24.240:9999/blazegraph/sparql"
 
 #All the Entities
 Artwork = URIRef('http://www.semanticweb.org/bianc/ontologies/2023/1/mat#Artwork')
@@ -102,6 +103,66 @@ for idx, row in paintingsData.iterrows():
             knowledgeGraph.add((Signature, isDated, URIRef(baseUrl + "SignatureDatation/" + "signatureDatation-" + row["ID"])))
             knowledgeGraph.add((URIRef(baseUrl + "SignatureDatation/" + "signatureDatation-" + row["ID"]), RDF.type, SignatureDatation ))
             knowledgeGraph.add((URIRef(baseUrl + "SignatureDatation/" + "signatureDatation-" + row["ID"]), RDFS.Literal, Literal(row["Signature datation"])))
+    if row["Inscription"] != '':
+        knowledgeGraph.add((id, hasInscription, URIRef(baseUrl + "Inscription/" + "inscription-" + row["ID"])))
+        knowledgeGraph.add((URIRef(baseUrl + "Inscription/" + "inscription-" + row["ID"]), RDF.type, Inscription))
+        knowledgeGraph.add((URIRef(baseUrl + "Inscription/" + "inscription-" + row["ID"]), RDFS.Literal, Literal(row["Inscription"])))
+    if row["Technique"] != '':
+        if "," in row["Technique"]:
+            technique = str(row["Technique"]).split(",")
+            for i in technique:
+                i = i.replace(" ", "")
+                knowledgeGraph.add((id, hasTechnique, URIRef(baseUrl + "Technique/" + i)))
+                knowledgeGraph.add((URIRef(baseUrl + "Technique/" + i), RDF.type, Technique))
+                knowledgeGraph.add((URIRef(baseUrl + "Technique/" + i), RDFS.Literal, Literal(i)))
+                if row["Material"] != '':
+                    knowledgeGraph.add((URIRef(baseUrl + "Technique/" + i), isPerformedOn, (URIRef(baseUrl + "Material/" + row["Material"]))))
+                    knowledgeGraph.add((URIRef(baseUrl + "Material/" + row["Material"]), RDF.type, Material))
+                    knowledgeGraph.add((URIRef(baseUrl + "Material/" + row["Material"]), RDFS.Literal, Literal(row["Material"])))
+
+for idx, row in sculpturesData.iterrows():
+    if row["Artwork component"] != '':
+        id = URIRef(baseUrl + row["ID"])
+        knowledgeGraph.add((id, RDF.type, ArtworkComponent))
+    else: 
+        id = URIRef(baseUrl + row["ID"])
+        knowledgeGraph.add((id, RDF.type, Artwork))
+    if row["Current support"] != '':
+        knowledgeGraph.add((id, hasSupport, CurrentSupport))
+        if row["Material"] != '':
+            knowledgeGraph.add((CurrentSupport, isMadeOf, URIRef(baseUrl + "Support/" + row["Current support"])))
+            knowledgeGraph.add((URIRef(baseUrl + "Support/" + row["Current support"]), RDF.type, Material))
+            knowledgeGraph.add((URIRef(baseUrl + "Support/" + row["Current support"]), RDFS.Literal, Literal(row["Current support"])))
+    if row["Original support"] != '':
+        knowledgeGraph.add((CurrentSupport, transferredFrom, URIRef(baseUrl + "Support/" + row["Original support"])))
+        knowledgeGraph.add((URIRef(baseUrl + "Support/" + row["Original support"]), RDF.type, OriginalSupport))
+        knowledgeGraph.add((URIRef(baseUrl + "Support/" + row["Original support"]), isMadeOf, URIRef(baseUrl + "Material/" + row["Original support"])))
+        knowledgeGraph.add((URIRef(baseUrl + "Material/" + row["Original support"]), RDF.type, Material))
+        knowledgeGraph.add((URIRef(baseUrl + "Material/" + row["Original support"]), RDFS.Literal, Literal(row["Original support"])))
+    if row["Decoration"] != '':
+        knowledgeGraph.add((id, hasDecoration, URIRef(baseUrl + "Decoration/" + "decoration-" + row["ID"])))
+        knowledgeGraph.add((URIRef(baseUrl + "Decoration/" +  "decoration-" + row["ID"]), RDF.type, Decoration))
+        knowledgeGraph.add((URIRef(baseUrl + "Decoration/" +  "decoration-" + row["ID"]), RDFS.Literal, Literal(row["Decoration"])))
+    if row["Ornament"] != '':
+        knowledgeGraph.add((id, hasOrnament, URIRef(baseUrl + "Ornament/" + "ornament-" + row["ID"])))
+        knowledgeGraph.add((URIRef(baseUrl + "Ornament/" +"ornament-" + row["ID"]), RDF.type, Ornament))
+        knowledgeGraph.add((URIRef(baseUrl + "Ornament/" + "ornament-" + row["ID"]), RDFS.Literal, Literal(row["Ornament"])))
+    if row["Signature"] != '':
+        knowledgeGraph.add((id, hasSignature, URIRef(baseUrl + "Signature/" + "signature-" + row["ID"])))
+        knowledgeGraph.add((URIRef(baseUrl + "Signature/" + "signature-" + row["ID"]), RDF.type, Signature))
+        knowledgeGraph.add((URIRef(baseUrl + "Signature/" + "signature-" + row["ID"]), RDFS.Literal, Literal(row["Signature"])))
+        if row["Signature datation"] != '':
+            knowledgeGraph.add((Signature, isDated, URIRef(baseUrl + "SignatureDatation/" + "signatureDatation-" + row["ID"])))
+            knowledgeGraph.add((URIRef(baseUrl + "SignatureDatation/" + "signatureDatation-" + row["ID"]), RDF.type, SignatureDatation ))
+            knowledgeGraph.add((URIRef(baseUrl + "SignatureDatation/" + "signatureDatation-" + row["ID"]), RDFS.Literal, Literal(row["Signature datation"])))
+    if row["Carter's mark"] != '':
+        knowledgeGraph.add((id, isMarked, URIRef(baseUrl + "Carter/" + "carter-" + row["ID"])))
+        knowledgeGraph.add((URIRef(baseUrl + "Carter/" + "carter-" + row["ID"]), RDF.type, MarkOfCarter))
+        knowledgeGraph.add((URIRef(baseUrl + "Carter/" + "carter-" + row["ID"]), RDFS.Literal, Literal(row["Carter's mark"])))
+    if row["Founder's mark"] != '':
+        knowledgeGraph.add((id, isMarked, URIRef(baseUrl + "Founder/" + "founder-" + row["ID"])))
+        knowledgeGraph.add((URIRef(baseUrl + "Founder/" + "founder-" + row["ID"]), RDF.type, MarkOfFounder))
+        knowledgeGraph.add((URIRef(baseUrl + "Founder/" + "founder-" + row["ID"]), RDFS.Literal, Literal(row["Founder's mark"])))
     if row["Inscription"] != '':
         knowledgeGraph.add((id, hasInscription, URIRef(baseUrl + "Inscription/" + "inscription-" + row["ID"])))
         knowledgeGraph.add((URIRef(baseUrl + "Inscription/" + "inscription-" + row["ID"]), RDF.type, Inscription))
