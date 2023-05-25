@@ -3,227 +3,286 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 mat-r:P001 a mat:Artwork ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P001Technique/oil> .
 
 mat-r:P002 a mat:Artwork ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P002> ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P002Technique/oil-over-tempera-(?)> .
 
 mat-r:P003 a mat:Artwork ;
     mat:hasSupport mat:Current_Support ;
-    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/oil>,
-        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/tempera> .
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P003Technique/oil>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P003Technique/tempera> .
 
 mat-r:P004 a mat:Artwork ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P004> ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P004Technique/oil> .
 
 mat-r:P005 a mat:Artwork ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P005> ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P005Technique/tempera> .
 
 mat-r:P006 a mat:Artwork ;
     mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P006> ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P006> ;
     mat:hasSupport mat:Current_Support ;
-    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/oil>,
-        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/tempera> .
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P006Technique/oil>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P006Technique/tempera> .
 
 mat-r:P007 a mat:Artwork ;
     mat:hasSupport mat:Current_Support ;
-    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/oil>,
-        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/tempera> .
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P007Technique/oil>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P007Technique/tempera> .
 
 mat-r:P008 a mat:Artwork ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P008> ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P008Technique/oil> .
 
 mat-r:P009 a mat:Artwork ;
     mat:hasDecoration <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-P009> ;
     mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P009> ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P009Technique/tempera> .
 
 mat-r:P010 a mat:Artwork ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P010Technique/oil> .
 
 mat-r:P011 a mat:Artwork ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P011Technique/oil> .
 
 mat-r:P012 a mat:Artwork ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P012Technique/oil> .
 
 mat-r:P013 a mat:Artwork ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P013Technique/oil> .
 
 mat-r:P014 a mat:Artwork ;
     mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P014> ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P014> ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P014Technique/tempera> .
 
 mat-r:P015 a mat:Artwork ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P015Technique/oil> .
 
 mat-r:P016 a mat:Artwork ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P016Technique/oil> .
 
 mat-r:P017 a mat:Artwork ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P017Technique/oil> .
 
 mat-r:P018 a mat:Artwork ;
     mat:hasSupport mat:Current_Support ;
-    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/oil>,
-        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/tempera> .
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P018Technique/oil>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P018Technique/tempera> .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P018Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
 
 mat-r:P019 a mat:Artwork ;
     mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P019> ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P019Technique/tempera> .
 
 mat-r:P020 a mat:Artwork ;
     mat:hasDecoration <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-P020> ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P020Technique/tempera> .
 
 mat-r:P021 a mat:Artwork ;
     mat:hasDecoration <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-P021> ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P021Technique/tempera> .
 
 mat-r:P022 a mat:Artwork ;
     mat:hasDecoration <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-P022> ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P022Technique/tempera> .
 
 mat-r:P023 a mat:Artwork ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P023> ;
     mat:hasSupport mat:Current_Support ;
-    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/gold>,
-        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/tempera> .
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P023Technique/gold>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P023Technique/tempera> .
 
 mat-r:P024 a mat:Artwork ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P024Technique/oil> .
 
 mat-r:P025 a mat:Artwork ;
     mat:hasDecoration <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-P025> ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P025Technique/tempera> .
 
 mat-r:P026 a mat:Artwork ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P026> ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P026Technique/oil> .
 
 mat-r:P027 a mat:Artwork ;
     mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P027> ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P027> ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P027Technique/oil> .
 
 mat-r:P028 a mat:Artwork ;
     mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-P028> ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P028Technique/oil> .
 
 mat-r:P029 a mat:Artwork ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P029Technique/oil> .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P029Material/canvas> a mat:Material .
 
 mat-r:P030 a mat:Artwork ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P030Technique/oil> .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P030Material/canvas> a mat:Material .
 
 mat-r:P031 a mat:Artwork ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P031Technique/oil> .
 
 mat-r:P032 a mat:Artwork ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P032Technique/oil> .
 
 mat-r:P033 a mat:Artwork ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P033Technique/oil> .
 
 mat-r:P034 a mat:Artwork ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P034> ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P034Technique/oil> .
 
 mat-r:P035 a mat:Artwork ;
-    mat:hasSupport mat:Current_Support .
+    mat:hasSupport mat:Current_Support ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P035Technique/oil> .
 
 mat-r:S001 a mat:Artwork ;
-    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/gilded>,
-        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/sculpture> .
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S001Technique/gilded>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S001Technique/sculpture> .
 
 mat-r:S002 a mat:Artwork ;
-    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/painted>,
-        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/sculpture> .
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S002Technique/painted>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S002Technique/sculpture> .
 
 mat-r:S003 a mat:Artwork ;
-    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S003> .
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S003> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S003Technique/scuplture> .
 
 mat-r:S004 a mat:Artwork ;
-    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S004> .
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S004> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S004Technique/sculpture> .
 
 mat-r:S005 a mat:Artwork ;
-    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S005> .
+    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S005> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S005Technique/sculpture> .
 
 mat-r:S006 a mat:Artwork ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S006> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S006Technique/sculpture> ;
     mat:isMarked <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Founder/founder-S006> .
 
-mat-r:S007 a mat:Artwork .
+mat-r:S007 a mat:Artwork ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S007Technique/sculpture> .
 
 mat-r:S008 a mat:Artwork ;
-    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S008> .
+    mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S008> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S008Technique/sculpture> .
 
-mat-r:S009 a mat:Artwork .
+mat-r:S009 a mat:Artwork ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S009Technique/sculpture> .
 
 mat-r:S010 a mat:Artwork ;
-    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S010> .
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S010> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S010Technique/sculpture> .
 
 mat-r:S011 a mat:Artwork ;
-    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S011> .
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S011> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S011Technique/sculpture> .
 
 mat-r:S012 a mat:Artwork ;
     mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S012> ;
-    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S012> .
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S012> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S012Technique/sculpture> .
 
-mat-r:S013 a mat:Artwork .
+mat-r:S013 a mat:Artwork ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S013Technique/sculpture> .
 
 mat-r:S014 a mat:Artwork ;
     mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S014> ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S014> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S014Technique/sculpture> ;
     mat:isMarked <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Founder/founder-S014> .
 
 mat-r:S015 a mat:Artwork ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S015> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S015Technique/sculpture> ;
     mat:isMarked <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Carter/carter-S015>,
         <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Founder/founder-S015> .
 
 mat-r:S016 a mat:Artwork ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S016> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S016Technique/sculpture> ;
     mat:isMarked <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Founder/founder-S016> .
 
 mat-r:S017 a mat:Artwork ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S017> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S017Technique/sculpture> ;
     mat:isMarked <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Founder/founder-S017> .
 
 mat-r:S018 a mat:Artwork ;
     mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S018> ;
-    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S018> .
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S018> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S018Technique/sculpture> .
 
 mat-r:S019 a mat:Artwork ;
     mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S019> ;
-    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S019> .
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S019> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S019Technique/sculpture> .
 
 mat-r:S020 a mat:Artwork ;
-    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S020> .
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S020> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S020Technique/sculpture> .
 
 mat-r:S021 a mat:Artwork ;
     mat:hasInscription <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S021> ;
-    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S021> .
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S021> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S021Technique/sculpture> .
 
 mat-r:S022 a mat:Artwork ;
-    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S022> .
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S022> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S022Technique/sculpture> .
 
 mat-r:S023 a mat:Artwork ;
-    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S023> .
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S023> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S023Technique/sculpture> .
 
 mat-r:S024 a mat:Artwork ;
-    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S024> .
+    mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S024> ;
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S024Technique/sculpture> .
 
 mat-r:S025 a mat:Artwork ;
     mat:hasDecoration <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Decoration/decoration-S025> ;
-    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/relief>,
-        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/sculpture> .
+    mat:hasTechnique <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S025Technique/relief>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S025Technique/sculpture> .
 
 mat-r:S026 a mat:Artwork ;
     mat:hasSignature <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-S026> .
@@ -302,6 +361,577 @@ mat-r:S026 a mat:Artwork ;
 
 <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Inscription/inscription-S021> a mat:Inscription ;
     rdfs:Literal "Cleopatra" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P001Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P001Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P001Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P001Material/wood> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P002Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P002Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P002Technique/oil-over-tempera-(?)> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P002Material/wood> ;
+    rdfs:Literal "oil-over-tempera-(?)" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P003Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P003Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P003Material/wood> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P003Technique/tempera> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P003Material/wood> ;
+    rdfs:Literal "tempera" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P004Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P004Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P004Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P004Material/wood> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P005Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P005Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P005Technique/tempera> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P005Material/wood> ;
+    rdfs:Literal "tempera" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P006Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P006Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P006Material/wood> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P006Technique/tempera> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P006Material/wood> ;
+    rdfs:Literal "tempera" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P007Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P007Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P007Material/wood> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P007Technique/tempera> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P007Material/wood> ;
+    rdfs:Literal "tempera" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P008Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P008Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P008Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P008Material/wood> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P009Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P009Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P009Technique/tempera> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P009Material/wood> ;
+    rdfs:Literal "tempera" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P010Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P010Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P010Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P010Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P011Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P011Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P011Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P011Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P012Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P012Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P012Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P012Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P013Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P013Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P013Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P013Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P014Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P014Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P014Technique/tempera> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P014Material/wood> ;
+    rdfs:Literal "tempera" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P015Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P015Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P015Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P015Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P016Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P016Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P016Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P016Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P017Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P017Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P017Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P017Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P018Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P018Support/wood> a mat:Original_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P018Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P018Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P018Technique/tempera> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P018Material/canvas> ;
+    rdfs:Literal "tempera" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P019Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P019Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P019Technique/tempera> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P019Material/wood> ;
+    rdfs:Literal "tempera" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P020Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P020Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P020Technique/tempera> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P020Material/wood> ;
+    rdfs:Literal "tempera" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P021Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P021Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P021Technique/tempera> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P021Material/wood> ;
+    rdfs:Literal "tempera" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P022Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P022Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P022Technique/tempera> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P022Material/wood> ;
+    rdfs:Literal "tempera" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P023Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P023Technique/gold> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P023Material/wood> ;
+    rdfs:Literal "gold" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P023Technique/tempera> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P023Material/wood> ;
+    rdfs:Literal "tempera" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P024Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P024Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P024Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P024Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P025Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P025Support/wood> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P025Technique/tempera> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P025Material/wood> ;
+    rdfs:Literal "tempera" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P026Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P026Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P026Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P026Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P027Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P027Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P027Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P027Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P028Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P028Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P028Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P028Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P029Material/paper> a mat:Material ;
+    rdfs:Literal "paper" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P029Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P029Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P029Material/paper> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P030Material/paper> a mat:Material ;
+    rdfs:Literal "paper" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P030Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P030Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P030Material/paper> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P031Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P031Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P031Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P031Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P032Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P032Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P032Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P032Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P033Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P033Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P033Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P033Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P034Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P034Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P034Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P034Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P035Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P035Support/canvas> a mat:Current_Support ;
+    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P035Technique/oil> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P035Material/canvas> ;
+    rdfs:Literal "oil" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S001Technique/gilded> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S001Material/wood> ;
+    rdfs:Literal "gilded" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S001Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S001Material/wood> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S002Technique/painted> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S002Material/plaster> ;
+    rdfs:Literal "painted" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S002Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S002Material/plaster> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S003Material/marble> a mat:Material ;
+    rdfs:Literal "marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S003Technique/scuplture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S003Material/marble> ;
+    rdfs:Literal "scuplture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S004Material/marble> a mat:Material ;
+    rdfs:Literal "marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S004Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S004Material/marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S005Material/marble> a mat:Material ;
+    rdfs:Literal "marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S005Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S005Material/marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S006Material/bronze> a mat:Material ;
+    rdfs:Literal "bronze" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S006Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S006Material/bronze> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S007Material/marble> a mat:Material ;
+    rdfs:Literal "marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S007Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S007Material/marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S008Material/marble> a mat:Material ;
+    rdfs:Literal "marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S008Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S008Material/marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S009Material/white-marble> a mat:Material ;
+    rdfs:Literal "white marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S009Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S009Material/white-marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S010Material/marble> a mat:Material ;
+    rdfs:Literal "marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S010Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S010Material/marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S011Material/marble> a mat:Material ;
+    rdfs:Literal "marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S011Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S011Material/marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S012Material/marble> a mat:Material ;
+    rdfs:Literal "marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S012Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S012Material/marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S013Material/marble> a mat:Material ;
+    rdfs:Literal "marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S013Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S013Material/marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S014Material/bronze> a mat:Material ;
+    rdfs:Literal "bronze" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S014Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S014Material/bronze> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S015Material/bronze> a mat:Material ;
+    rdfs:Literal "bronze" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S015Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S015Material/bronze> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S016Material/bronze> a mat:Material ;
+    rdfs:Literal "bronze" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S016Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S016Material/bronze> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S017Material/bronze> a mat:Material ;
+    rdfs:Literal "bronze" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S017Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S017Material/bronze> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S018Material/marble> a mat:Material ;
+    rdfs:Literal "marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S018Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S018Material/marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S019Material/marble> a mat:Material ;
+    rdfs:Literal "marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S019Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S019Material/marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S020Material/marble> a mat:Material ;
+    rdfs:Literal "marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S020Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S020Material/marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S021Material/marble> a mat:Material ;
+    rdfs:Literal "marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S021Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S021Material/marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S022Material/marble> a mat:Material ;
+    rdfs:Literal "marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S022Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S022Material/marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S023Material/marble> a mat:Material ;
+    rdfs:Literal "marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S023Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S023Material/marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S024Material/white-marble> a mat:Material ;
+    rdfs:Literal "white marble" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S024Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S024Material/white-marble> ;
+    rdfs:Literal "sculpture" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S025Technique/relief> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S025Material/plaster> ;
+    rdfs:Literal "relief" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S025Technique/sculpture> a mat:Technique ;
+    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S025Material/plaster> ;
+    rdfs:Literal "sculpture" .
 
 <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Signature/signature-P002> a mat:Signature ;
     rdfs:Literal "ANTONELLUS MESS. N... ME PIN.. T." .
@@ -420,53 +1050,29 @@ mat-r:S026 a mat:Artwork ;
 <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S024> a mat:Signature_Datation ;
     rdfs:Literal "1868" .
 
-<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Support/canvas> a mat:Material ;
-    rdfs:Literal "canvas" .
-
-<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/gilded> a mat:Technique ;
-    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
-    rdfs:Literal "gilded" .
-
-<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/gold> a mat:Technique ;
-    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
-    rdfs:Literal "gold" .
-
-<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/painted> a mat:Technique ;
-    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/plaster> ;
-    rdfs:Literal "painted" .
-
-<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/relief> a mat:Technique ;
-    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/plaster> ;
-    rdfs:Literal "relief" .
-
-<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas> a mat:Material ;
-    rdfs:Literal "canvas" .
-
-<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Support/wood> a mat:Material,
-        mat:Original_Support ;
-    mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P003Material/wood> a mat:Material ;
     rdfs:Literal "wood" .
 
-<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/plaster> a mat:Material ;
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P006Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P007Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P018Material/canvas> a mat:Material ;
+    rdfs:Literal "canvas" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P023Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S001Material/wood> a mat:Material ;
+    rdfs:Literal "wood" .
+
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S002Material/plaster> a mat:Material ;
     rdfs:Literal "plaster" .
 
-<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/sculpture> a mat:Technique ;
-    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/plaster>,
-        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
-    rdfs:Literal "sculpture" .
-
-<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/oil> a mat:Technique ;
-    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas>,
-        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
-    rdfs:Literal "oil" .
-
-<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Technique/tempera> a mat:Technique ;
-    mat:isPerformedOn <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/canvas>,
-        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> ;
-    rdfs:Literal "tempera" .
-
-<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Material/wood> a mat:Material ;
-    rdfs:Literal "wood" .
+<http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/S025Material/plaster> a mat:Material ;
+    rdfs:Literal "plaster" .
 
 mat:Signature mat:isDated <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S004>,
         <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S010>,
@@ -480,7 +1086,40 @@ mat:Signature mat:isDated <http://www.semanticweb.org/bianc/ontologies/2023/1/ma
         <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S023>,
         <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/SignatureDatation/signatureDatation-S024> .
 
-mat:Current_Support mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Support/canvas>,
-        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Support/wood> ;
-    mat:transferredFrom <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/Support/wood> .
+mat:Current_Support mat:isMadeOf <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P001Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P002Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P003Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P004Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P005Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P006Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P007Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P008Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P009Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P010Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P011Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P012Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P013Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P014Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P015Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P016Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P017Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P018Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P019Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P020Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P021Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P022Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P023Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P024Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P025Support/wood>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P026Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P027Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P028Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P029Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P030Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P031Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P032Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P033Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P034Support/canvas>,
+        <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P035Support/canvas> ;
+    mat:transferredFrom <http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/P018Support/wood> .
 
