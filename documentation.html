@@ -38,7 +38,7 @@
 					  </div>
 				  </li>
 				<li class="nav-item">
-				  <a class="nav-link" target="_blank" href="https://bianca-lm.github.io/art-criticism-ontology/WidocoDocumentation/index-en.html">Specification</a>
+				  <a class="nav-link" target="_blank" href="http://150.146.207.114/lode/extract?owlapi=true&url=https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/OMETA.owl">Specification</a>
 				</li>
 			    <li class="nav-item">
 			      <a class="nav-link" href="about.html">About</a>
@@ -53,62 +53,43 @@
 		<div class="container">
 			<h1 class="fw-light">Documentation</h1>
             <h2>The conceptual model & E/R diagram</h2>
-			<p>From the chapters "I materiali" and "Le tecniche" it is possible to extract the first entities and relations that could formalize the concepts of materials and techniques in the artworks.</p>
-			<p>The first step was the creation of a conceptual model which tries to define the main elements and how they are related. Since materials and techniques are still at the level of denotative description, some elements as "Signature" which can have a different specific material or technique have been added to the ontology.</p>
+			<p>From the chapters <i>I materiali</i> and <i>Le tecniche</i> it is possible to extract the first entities and relations that could formalize the concepts of materials and techniques in the artworks.</p>
+			<p>The first step was the creation of a conceptual model which tries to define the main elements and how they are related. Since materials and techniques are still at the level of denotative description, they are related to all the elements, as "Signature" or "Frame", which sometimes are added through a different technique or material from the one largely used for the artwork.</p>
 			<figure>
 	    		<img src="images\TMmAP.png" alt="Conceptual model">
 	    	</figure>
-			<p>Those relations have been formalized in the following E/R diagram</p>
+			<p>Starting from the very first theorization, then we proceded by formalizing those relations in a E/R diagram.</p>
 			<figure>
 	    		<img src="images\EntityRelationship.png" alt="E/R diagram" id="ER">
 	    	</figure>
-			<!--
-			<h2>Reverse Engineering</h2>
-			<p>Since this ontology is domain-oriented, the best way to prove that the conceptual model fits the reality is by inspecting the actual data.</p>
-			<p>We performed a statystical analysis over existing dataset which contain description of artworks. In order to provide a coherent dataset, the description concerned only paintings and in particular the dataset is composed of: 
-				<ul>
-					<li>21381 description of paintings extracted from the SemArt dataset;</li>
-					<li>3 volumes of the catalogue "Italian Paintings: A Catalogue of the Collection of The Metropolitan Museum of Art"</li>
-				</ul>
-			</p>
-			<p>Through the topic modelling, performed by means of Mallet, we selected the five most diffused topics along the dataset ("paintings" and "painted" were removed as stopwords since they were too frequent), which are:
-				<table>
-					<tr>
-						<th>Topic 1 (9)</th>
-						<th>Topic 2 (11)</th>
-						<th>Topic 3 (17)</th>
-						<th>Topic 4 (7)</th>
-						<th>Topic 5 (4)</th>
-					</tr>
-					<tr>
-						<td>work light figures art artist style works composition colour  painter picture time colours century early  great period
-						</td>
-						<td>work collection composition subject version museum works artist picture dated signed gallery art series versions executed canvas </td>
-						<td>hand man figure left woman red head young face white portrait background blue holding hair gold holds wearing picture dark </td>
-						<td>left figures picture scene composition foreground space background side view centre perspective city church front sky wall light group landscape </td>
-						<td>christ virgin mary child john angels left cross figures holy christ's scene picture angel god jesus madonna side joseph baptist <td>
-					</tr>
-				</table>
-			</p>
-			<p>The second and the fourth topic seems particularly related to a description of materials and techniques, so since we have also the table with all the topics and their presence in the dataset we can do a second topic modelling only on the descriptions that statistically are more related to the topic 2</p>
-			-->
+			<p>The central realtions from which the ontology has been shaped is the one between technique and material which is defined through the concept that an <b>artwork</b> is realized <span class="underlined">by means of</span> a <b>technique</b> which is <span class="underlined">performed on</span> a <b>material</b>.</p>
 		</div>
 	</section>
 	<section id="Ontology">
 		<div class="container">
 			<h2>Ontology Design and Implementation</h2>
-			<p>The ontology was designed on <a href="https://protege.stanford.edu/">Protégé</a>, while the visualization was performed through <a href="https://github.com/dgarijo/Widoco">WIDOCO</a></p>
-			<p>The graph produced through Protégé shows the implemented classes of the ontology and how they are linked.</p>
+			<p>The ontology was designed on <a href="https://protege.stanford.edu/">Protégé</a>, an open-source ontology editor. 
+			Classes, object properties, data properties, named individuals, annotation properties, general axioms and namespace declarations are described in the documentation.</p>
 			<figure>
 				<img src="images\ProtegeClasses.jpg" alt="Protégé ontology grah">
+				<figcaption>The graph produced through Protégé shows the implemented classes of the ontology and how they are linked</figcaption>
 			</figure>
-			<a target="_blank" href="https://bianca-lm.github.io/art-criticism-ontology/WidocoDocumentation/index-en.html"><button>Access the Ontology Documentation</button></a>
+			<p>The documentation is accessible as an HTML page thanks to <a href="https://essepuntato.it/lode/">Live OWL Documentation Environment (LODE)</a>, which allows to automatically extract and visualize each element of an onotlogy from the OWL file.</p>
+			<a target="_blank" href="http://150.146.207.114/lode/extract?owlapi=true&url=https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/OMETA.owl"><button>Access the Ontology Documentation</button></a>
 		</div>
 	</section>
 	<section id="Results">
 		<div class="container">
-			<h2>Results</h2>
-			<p>Now we can translate the Competency Questions in SPARQL queries that can be performed using OM&TA ontology on our sparql endpoint.</p>
+			<h2>Knowlede Graph and results</h2>
+			<p>In order to test our ontology we provided two small dataset in csv format, in order to populate a knowledge graph: 
+				<ul>
+					<li><b>Paintings dataset</b>: 35 different artworks. The data have been extracted from the catalogue of the collection of the Metropolitan Museum of Art "Italian Paintings. Venetian school" by Federico Zeri with the assistance of Elizabeth E. Gardner</li>
+					<li><b>Sculptures dataset</b>: 26 different sculptures. The data have been extracted from the catalogue of the collection of the Metropolitan Museum of Art "American Sculpture" by Albert TenEyck Gardner.</li>
+				</ul>
+			</p>
+			<p>Now we can translate the Competency Questions in SPARQL queries that can be performed using OM&TA ontology on a sparql endpoint.</p>
+			<p>The data have been loaded on a graph database (Blazegraph) on which the queries have been performed to get the results.</p>
+			<p>It is possible to download the knowledge graph in Turtle at the following <a href="https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/knowledgeGraph.txt" download>link</a></p>
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="flip-card">
