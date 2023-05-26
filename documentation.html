@@ -118,16 +118,17 @@
 							<p>Which technique has been used in arwork X?</p>
 						  </div>
 						  <div class="flip-card-back">
-							<p>PREFIX mat: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat#&gt; </br>
-								PREFIX mat-r: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/&gt; </br>
+							<p>PREFIX mat: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat#&gt; <br/>
+								PREFIX mat-r: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/&gt; <hr>
 								
-								SELECT ?technique ?techniqueLabel WHERE {
-								   mat-r:P007 mat:hasTechnique ?technique.
-								   ?technique rdfs:Literal ?techniqueLabel
+								SELECT ?techniqueLabel WHERE { <br>
+								   mat-r:P007 mat:hasTechnique ?technique. <br/>
+								   ?technique rdfs:Literal ?techniqueLabel <br/>
 								}</p>
-							<button onclick="showResult(this)">Run the query</button>
+							<button id ="query-1" onclick="showResult(this)">Run the query</button>
 						  </div>
 						</div>
+					<div id="result-1" class="hide">oil, tempera</div>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -139,18 +140,20 @@
 							</div>
 							<div class="flip-card-back">
 								<p>
-									PREFIX mat: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat#&gt; </br>
-									PREFIX mat-r: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/&gt; </br>
+									PREFIX mat: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat#&gt; <br/>
+									PREFIX mat-r: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/&gt; <hr>
 									
 									
-									SELECT ?technique ?materialLabel WHERE { </br>
-									mat-r:P007 mat:hasTechnique ?technique. </br>
-									?technique mat:isPerformedOn ?material. </br>
-									?material rdfs:Literal ?materialLabel </br>
+									SELECT ?techniqueLabel ?materialLabel WHERE { <br/>
+									mat-r:P007 mat:hasTechnique ?technique. <br/>
+									?technique mat:isPerformedOn ?material; <br/>
+									rdfs:Literal ?techniqueLabel. <br/>
+									?material rdfs:Literal ?materialLabel <br/>
 									}</p>
-								<button onclick="showResult(this)">Run the query</button>
+								<button id="query-2" onclick="showResult(this)">Run the query</button>
 							</div>
 						</div>
+						<div id="result-2" class="hide">1 - techniqueLabel: oil; materialLabel: wood <br/>2 - techniqueLabel: tempera; materialLabel: wood.</div>
 					</div>
 				</div>
 			</div>
@@ -163,21 +166,22 @@
 								<p>Which are the most common materials on which is performed technique Z?</p>
 							</div>
 							<div class="flip-card-back">
-								<p>PREFIX mat: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat#&gt; </br>
+								<p>PREFIX mat: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat#&gt; <hr>
 
 
-									SELECT ?materialLabel (COUNT(?material) as ?materialCount) WHERE { </br>
-										?technique mat:isPerformedOn ?material </br>
-										FILTER(contains(str(?technique), "oil")) </br>
-										?material rdfs:Literal ?materialLabel </br>
+									SELECT ?materialLabel (COUNT(?material) as ?materialCount) WHERE { <br/>
+										?technique mat:isPerformedOn ?material <br/>
+										FILTER(contains(str(?technique), "oil")) <br/>
+										?material rdfs:Literal ?materialLabel <br/>
 									} </br>
 									
 									
-									GROUP BY ?materialLabel </br>
-									ORDER BY DESC(?materialCount)</p>
-								<button onclick="showResult(this)">Run the query</button>
+									GROUP BY ?materialLabel <br/>
+									ORDER BY DESC(?materialCount) </p>
+								<button id="query-3" onclick="showResult(this)">Run the query</button>
 							</div>
 						</div>
+						<div id="result-3" class="hide">1 - material: canvas; materialCount: 17 <br/>2 - material: wood; materialCount: 7 <br/>3 - material: paper; materialCount: 2</div>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -188,18 +192,20 @@
 								<p>Which are the most common materials in art?</p>
 							</div>
 							<div class="flip-card-back">
-								<p>PREFIX mat: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat#&gt; </br>
+								<p>PREFIX mat: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat#&gt; <hr>
 
-									SELECT ?materialLabel (COUNT(?material) as ?materialCount) WHERE { </br>
-										?technique mat:isPerformedOn ?material. </br>
-											?material rdfs:Literal ?materialLabel </br>
-																	} </br>
-									GROUP BY ?materialLabel </br>
-									ORDER BY DESC(?materialCount)</p>
-								<button onclick="showResult(this)">Run the query</button>
+									SELECT ?materialLabel (COUNT(?material) as ?materialCount) WHERE { <br/>
+										?technique mat:isPerformedOn ?material. <br/>
+											?material rdfs:Literal ?materialLabel <br/>
+																	} <br/>
+									GROUP BY ?materialLabel <br/>
+									ORDER BY DESC(?materialCount) <br/>
+									LIMIT 3</p>
+								<button id="query-4" onclick="showResult(this)">Run the query</button>
 							</div>
 						</div>
 					</div>
+					<div id="result-4" class="hide">1 - materiaLabel: wood; materialCount: 22 <br/>2 - materialLabel: canvas; materialCount: 18 <br/>3 - materialLabel: marble; materialCount: 15</div>
 				</div>
 			</div>
 			<div class="row">
@@ -211,21 +217,21 @@
 						<div class="flip-card-inner">
 							<div class="flip-card-front">
 							<h2>CQ5</h2>
-							<p>Which technique has been used only once?</p>
+							<p>Which artworks have changed support over time?</p>
 							</div>
 							<div class="flip-card-back">
-							<p>PREFIX mat: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat#&gt; </br>
+							<p>PREFIX mat: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat#&gt; <hr>
 
-								SELECT DISTINCT ?techniqueLabel (COUNT(?technique) as ?techniqueCount) WHERE { </br>
-									?technique a mat:Technique; </br>
-									rdfs:Literal ?techniqueLabel. </br>
-								} </br>
-								
-								GROUP BY ?techniqueLabel </br>
-								HAVING (?techniqueCount = 1)   </p>
-								<button onclick="showResult(this)">Run the query</button>
+								SELECT DISTINCT ?artworkLabel WHERE { <br/>
+									?artwork a mat:Artwork; <br/>
+											   mat:hasSupport ?currentSupport; <br/>
+											   rdfs:Literal ?artworkLabel. <br/>
+								  ?currentSupport mat:transferredFrom ?originalSupport. <br/>
+								} </p>
+								<button id="query-5" onclick="showResult(this)">Run the query</button>
 							</div>
 						</div>
+						<div id="result-5" class="hide">artworkLabel: Three Saints: Roch, Anthony Abbot, and Lucy</div>
 					</div>
 				</div>
 				<div class="col-lg-3">
