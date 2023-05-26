@@ -268,3 +268,7 @@ footer {
 #Ontology, #Results {
   padding-top: 5%;
 }
+
+.hide {
+  visibility: hidden;
+}
