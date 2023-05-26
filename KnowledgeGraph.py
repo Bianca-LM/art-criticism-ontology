@@ -232,17 +232,3 @@ for triple in knowledgeGraph.triples((None, None, None)):
 store.close()
 
 ttl = knowledgeGraph.serialize(destination='knowledgeGraph.txt', format='turtle')
-
-'''
-
-endpoint = "http://192.168.1.2:9999/blazegraph/"
-
-#https://github.com/comp-data/2021-2022/blob/main/docs/handson/05/05-Configuring_and_populating_a_graph_database.ipynb
-
-
-g = Graph()
-
-
-
-v = g.serialize(format="ttl")
-'''
