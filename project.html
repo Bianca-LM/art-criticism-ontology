@@ -38,7 +38,7 @@
 					  </div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" target="_blank" href="https://bianca-lm.github.io/art-criticism-ontology/WidocoDocumentation/index-en.html">Specification</a>
+					<a class="nav-link" target="_blank" href="http://150.146.207.114/lode/extract?owlapi=true&url=https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/OMETA.owl">Specification</a>
 				</li>
 			    <li class="nav-item">
 			      <a class="nav-link" href="about.html">About</a>
@@ -52,11 +52,16 @@
 	<section id="Project">
 		<div class="container">
             <h1>Project</h1>
+			<h2>Previous works</h2>
+			<p>Different ontologies have already tried to describe artworks in all their aspects, e.g. CIDOC-CRM. In particular <a href="http://wit.istc.cnr.it/arco">ArCo</a> Ontology has already a module for denotative description which describes materials and techniques performed on the artworks.
+			The OM&TA ontology does not overlap with the previous two since it is domain-specific and, on the counterpart, needs to be extended through other ontologies as ArCo in order to describe all the other aspects and definitions of the artwork.
+			As we will see in the documentation, what changes with the OM&TA ontology is the relation between artwork, technique and material. 
+			</p>
             <h2>Methodology</h2>
             <p>This ontology has been built following the guidelines for ontology requirements specification document (ORSD) proposed in the paper "How to Write and Use the Ontology Requirements Specification Document" by Suárez-Figueroa et al.</br>
             By following the template proposed by the authors, we have identified the requirements to develop this ontology as exposed in the following table.
             </p> 
-            <h2>Ontology requirements specification document (ORSD)</h2>
+            <h3>Ontology requirements specification document (ORSD)</h3>
             <ol>
                 <li><b>Purpose:</b> represent the relationship between materials and techniques in art;</li>
                 <li><b>Scope:</b> the ontology will define artworks at the level of denotative description taking under consideration all the elements that can be related to a material or technique.</li>
@@ -68,7 +73,7 @@
                         <li><b>Non-Functional Requirements:</b> the ontology must be compliant with international standards.</li>
                         <li><b>Functional Requirements:</b> Competency Questions (CQs) which in the end the user will be able to answer through the queries performed on a SPARQL endpoint.</br>
                             In this first draft the CQs will be written in natural language, since they are real questions between human beign, not yet formalized to be understandable by a machine.</b> 
-                            <table>
+                            <table id="CQ">
                                 <caption>Groups of Competency Questions</caption>
                                 <tr>
                                     <th>CQ1</th>
@@ -82,7 +87,7 @@
                                     <td>From which material is artwork Y made of?</td>
                                     <td>Which are the most common materials on which is performed technique Z?</td>
                                     <td>Which are the most common materials in art?</td>
-                                    <td>Which technique has been used only once?<td>
+                                    <td>Which artworks have changed support over time?<td>
                                 </tr>
                             </table>
                         </li>
@@ -91,12 +96,14 @@
                 <li><b>Pre-Glossary of Terms</b>
                     <ul>
                         <li><b>Terms from Competency Questions:</b> material, technique, artwork.</li>
-                        <!--<li><b>Terms from Answers:</b></li>
-                        <li><b>Objects:</b></li>-->
+                        <li><b>Terms from Answers:</b> oil painting, marble, canvas.</li>
+                        <!--<li><b>Objects:</b></li>-->
                     </ul>
                 </li>
 
             </ol>
+			<h2>Future developments</h2>
+			<p>The OM&TA ontologies at its status describes the very core relations between the main elements needed to represent techniques and materials in art. Future developments will include the use of the skos vocabularies in order to standardize and provide an overview on the techniques and material.</p>
 		</div>
 	</section>
 	<footer>
