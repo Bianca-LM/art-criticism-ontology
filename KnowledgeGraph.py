@@ -75,24 +75,27 @@ for idx, row in paintingsData.iterrows():
     if row["Artwork component"] != '':
         id = URIRef(baseUrl + row["ID"])
         knowledgeGraph.add((id, RDF.type, ArtworkComponent))
+        knowledgeGraph.add((id, RDFS.Literal, Literal(row["Artwork component"])))
     else: 
         id = URIRef(baseUrl + row["ID"])
         knowledgeGraph.add((id, RDF.type, Artwork))
+        knowledgeGraph.add((id, RDFS.Literal, Literal(row["Artwork"])))
     if row["Current support"] != '':
         currentSupport = row["Current support"].replace(" ", "-")
-        knowledgeGraph.add((id, hasSupport, CurrentSupport))
-        knowledgeGraph.add((CurrentSupport, isMadeOf, URIRef(baseUrl + row["ID"] + "Support/" + currentSupport)))
+        knowledgeGraph.add((id, hasSupport, URIRef(baseUrl + row["ID"] + "Support/" + currentSupport)))
         knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Support/" + currentSupport), RDF.type, CurrentSupport))
         knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Support/" + currentSupport), isMadeOf, URIRef(baseUrl + "Material/" + currentSupport)))
         knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Material/" + currentSupport), RDF.type, Material))
+        knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Material/" + currentSupport), RDFS.Literal, Literal(row["Current support"])))
         knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Support/" + currentSupport), RDFS.Literal, Literal(row["Current support"])))
         if row["Original support"] != '':
             originalSupport = row["Original support"].replace(" ", "-")
-            knowledgeGraph.add((CurrentSupport, transferredFrom, URIRef(baseUrl + row["ID"] + "Support/" + originalSupport)))
+            knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Support/" + currentSupport), transferredFrom, URIRef(baseUrl + row["ID"] + "Support/" + originalSupport)))
             knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Support/" + originalSupport), RDF.type, OriginalSupport))
             knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Support/" + originalSupport), isMadeOf, URIRef(baseUrl + "Material/" + originalSupport)))
             knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Material/" + originalSupport), RDF.type, Material))
             knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Material/" + originalSupport), RDFS.Literal, Literal(row["Original support"])))
+            knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Support/" + originalSupport), RDFS.Literal, Literal(row["Original support"])))
     if row["Decoration"] != '':
         knowledgeGraph.add((id, hasDecoration, URIRef(baseUrl + "Decoration/" + "decoration-" + row["ID"])))
         knowledgeGraph.add((URIRef(baseUrl + "Decoration/" +  "decoration-" + row["ID"]), RDF.type, Decoration))
@@ -142,24 +145,27 @@ for idx, row in sculpturesData.iterrows():
     if row["Artwork component"] != '':
         id = URIRef(baseUrl + row["ID"])
         knowledgeGraph.add((id, RDF.type, ArtworkComponent))
+        knowledgeGraph.add((id, RDFS.Literal, Literal(row["Artwork component"])))
     else: 
         id = URIRef(baseUrl + row["ID"])
         knowledgeGraph.add((id, RDF.type, Artwork))
+        knowledgeGraph.add((id, RDFS.Literal, Literal(row["Artwork"])))
     if row["Current support"] != '':
         currentSupport = row["Current support"].replace(" ", "-")
-        knowledgeGraph.add((id, hasSupport, CurrentSupport))
-        knowledgeGraph.add((CurrentSupport, isMadeOf, URIRef(baseUrl + row["ID"] + "Support/" + currentSupport)))
+        knowledgeGraph.add((id, hasSupport, URIRef(baseUrl + row["ID"] + "Support/" + currentSupport)))
         knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Support/" + currentSupport), RDF.type, CurrentSupport))
         knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Support/" + currentSupport), isMadeOf, URIRef(baseUrl + "Material/" + currentSupport)))
         knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Material/" + currentSupport), RDF.type, Material))
+        knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Material/" + currentSupport), RDFS.Literal, Literal(row["Current support"])))
         knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Support/" + currentSupport), RDFS.Literal, Literal(row["Current support"])))
         if row["Original support"] != '':
             originalSupport = row["Original support"].replace(" ", "-")
-            knowledgeGraph.add((CurrentSupport, transferredFrom, URIRef(baseUrl + row["ID"] + "Support/" + originalSupport)))
+            knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Support/" + currentSupport), transferredFrom, URIRef(baseUrl + row["ID"] + "Support/" + originalSupport)))
             knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Support/" + originalSupport), RDF.type, OriginalSupport))
             knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Support/" + originalSupport), isMadeOf, URIRef(baseUrl + "Material/" + originalSupport)))
             knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Material/" + originalSupport), RDF.type, Material))
             knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Material/" + originalSupport), RDFS.Literal, Literal(row["Original support"])))
+            knowledgeGraph.add((URIRef(baseUrl + row["ID"] + "Support/" + originalSupport), RDFS.Literal, Literal(row["Original support"])))
     if row["Decoration"] != '':
         knowledgeGraph.add((id, hasDecoration, URIRef(baseUrl + "Decoration/" + "decoration-" + row["ID"])))
         knowledgeGraph.add((URIRef(baseUrl + "Decoration/" +  "decoration-" + row["ID"]), RDF.type, Decoration))
