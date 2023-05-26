@@ -12,4 +12,4 @@ If you want to take a look directly at the ontolgy, see the [documentation](http
 In order to populate the knowledge graph some data have been extracted from the catalogues "Italian Paintings: A Catalogue of the Collection of The Metropolitan Museum of Art" and "American Sculptures" freely available from The MET Collection. 
 
 ### Disclaimer
-This ontology has been developed as the final project for the course "Knowledge Representation and Knowldege Extraction" of the MA "Digital Humanities and Digital Knowledge" of the University of Bologna. 
+This ontology has been developed as the final project for the course "Knowledge Representation and Extraction" of the MA "Digital Humanities and Digital Knowledge" of the University of Bologna. 
