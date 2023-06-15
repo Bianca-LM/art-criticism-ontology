@@ -302,3 +302,9 @@ footer {
 .underlined {
   text-decoration: underline;
 }
+
+iframe {
+    width: 80%;
+    height: 60vh;
+    margin: 5%;
+}}
