@@ -1,14 +1,21 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://github.com/Bianca-LM/art-criticism-ontology/mat#"
      xml:base="https://github.com/Bianca-LM/art-criticism-ontology/mat"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:mat="https://github.com/Bianca-LM/art-criticism-ontology/mat"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:opla="http://ontologydesignpatterns.org/opla/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:opla1="http://www.ontologydesignpatterns.org/opla/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:arco-dd="https://w3id.org/arco/ontology/denotative-description/1.2#"
+     xmlns:catalogue="https://w3id.org/arco/ontology/catalogue/">
     <owl:Ontology rdf:about="https://github.com/Bianca-LM/art-criticism-ontology/mat">
         <owl:versionIRI rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/1.0"/>
+        <owl:imports rdf:resource="https://w3id.org/arco/ontology/denotative-description/1.2"/>
         <rdfs:comment>OM&amp;TA (Ontology of Materials &amp; Techniques in Art) is an ontology which aims at representing the relationship between materials and techniques for the description of artworks in a semantic way.</rdfs:comment>
     </owl:Ontology>
     
@@ -284,6 +291,7 @@
     <!-- https://github.com/Bianca-LM/art-criticism-ontology/mat#Inscription -->
 
     <owl:Class rdf:about="https://github.com/Bianca-LM/art-criticism-ontology/mat#Inscription">
+        <owl:equivalentClass rdf:resource="https://w3id.org/arco/ontology/denotative-description/Inscription"/>
         <rdfs:subClassOf rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Artwork_Component"/>
         <rdfs:comment>Every kind of text added to the work of art.</rdfs:comment>
     </owl:Class>
@@ -293,6 +301,7 @@
     <!-- https://github.com/Bianca-LM/art-criticism-ontology/mat#Mark -->
 
     <owl:Class rdf:about="https://github.com/Bianca-LM/art-criticism-ontology/mat#Mark">
+        <owl:equivalentClass rdf:resource="https://w3id.org/arco/ontology/denotative-description/Brand"/>
         <rdfs:subClassOf rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Artwork_Component"/>
         <rdfs:comment>The sign of an external contribution out of the author. It can be the founder or the carter, mainly used with scultpures.</rdfs:comment>
     </owl:Class>
@@ -374,6 +383,18 @@
     <owl:Class rdf:about="https://github.com/Bianca-LM/art-criticism-ontology/mat#Technique">
         <rdfs:comment>&quot;The union of all the principles, rules and manners elaborated by the artists for the material processing over time, experimented in the workshops and artistic laboratories&quot; as defined by Sciolla.</rdfs:comment>
     </owl:Class>
+    
+
+
+    <!-- https://w3id.org/arco/ontology/denotative-description/Brand -->
+
+    <rdf:Description rdf:about="https://w3id.org/arco/ontology/denotative-description/Brand"/>
+    
+
+
+    <!-- https://w3id.org/arco/ontology/denotative-description/Inscription -->
+
+    <rdf:Description rdf:about="https://w3id.org/arco/ontology/denotative-description/Inscription"/>
 </rdf:RDF>
 
 
