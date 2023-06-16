@@ -1,6 +1,6 @@
 @prefix : <https://github.com/Bianca-LM/art-criticism-ontology/mat#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix mat: <https://github.com/Bianca-LM/art-criticism-ontology/mat> .
+@prefix mat: <https://github.com/Bianca-LM/art-criticism-ontology/mat#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -23,118 +23,118 @@
 #################################################################
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasDecoration
-:hasDecoration rdf:type owl:ObjectProperty ;
-               rdfs:domain :Artwork ;
-               rdfs:range :Decoration ;
-               rdfs:comment "The property connects the artwork to its decoration" .
+mat:hasDecoration rdf:type owl:ObjectProperty ;
+                  rdfs:domain mat:Artwork ;
+                  rdfs:range mat:Decoration ;
+                  rdfs:comment "The property connects the artwork to its decoration" .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasDecorativeTechnique
-:hasDecorativeTechnique rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf :hasTechnique ;
-                        rdfs:domain :Decoration ;
-                        rdfs:range :Technique ;
-                        rdfs:comment "The property connects the decoration that belongs to an artwork to the decorative technique used to realize it." .
+mat:hasDecorativeTechnique rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf mat:hasTechnique ;
+                           rdfs:domain mat:Decoration ;
+                           rdfs:range mat:Technique ;
+                           rdfs:comment "The property connects the decoration that belongs to an artwork to the decorative technique used to realize it." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasFrame
-:hasFrame rdf:type owl:ObjectProperty ;
-          rdfs:domain :Artwork ;
-          rdfs:range :Frame ;
-          rdfs:comment "The property connects the artwork to its frame" .
+mat:hasFrame rdf:type owl:ObjectProperty ;
+             rdfs:domain mat:Artwork ;
+             rdfs:range mat:Frame ;
+             rdfs:comment "The property connects the artwork to its frame" .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasInscription
-:hasInscription rdf:type owl:ObjectProperty ;
-                rdfs:domain :Artwork ;
-                rdfs:range :Inscription ;
-                rdfs:comment "The property connects the artwork to its inscription" .
+mat:hasInscription rdf:type owl:ObjectProperty ;
+                   rdfs:domain mat:Artwork ;
+                   rdfs:range mat:Inscription ;
+                   rdfs:comment "The property connects the artwork to its inscription" .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasOrnament
-:hasOrnament rdf:type owl:ObjectProperty ;
-             rdfs:domain :Artwork ;
-             rdfs:range :Ornament ;
-             rdfs:comment "The property connects the artwork to its ornament" .
+mat:hasOrnament rdf:type owl:ObjectProperty ;
+                rdfs:domain mat:Artwork ;
+                rdfs:range mat:Ornament ;
+                rdfs:comment "The property connects the artwork to its ornament" .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasOrnamentalTechnique
-:hasOrnamentalTechnique rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf :hasTechnique ;
-                        rdfs:domain :Ornament ;
-                        rdfs:range :Technique ;
-                        rdfs:comment "The property connects the ornament that belongs to an artwork to the ornamental technique that has been used to realize it." .
+mat:hasOrnamentalTechnique rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf mat:hasTechnique ;
+                           rdfs:domain mat:Ornament ;
+                           rdfs:range mat:Technique ;
+                           rdfs:comment "The property connects the ornament that belongs to an artwork to the ornamental technique that has been used to realize it." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasSupport
-:hasSupport rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty ;
-            rdfs:domain :Artwork ;
-            rdfs:range :Current_Support ;
-            rdfs:comment "The property connects the artwork to its current support" .
+mat:hasSupport rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain mat:Artwork ;
+               rdfs:range mat:Current_Support ;
+               rdfs:comment "The property connects the artwork to its current support" .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasTechnique
-:hasTechnique rdf:type owl:ObjectProperty ;
-              rdfs:domain :Artwork ;
-              rdfs:range :Technique ;
-              rdfs:comment "The property connects the artwork to the technique used to realize it" .
+mat:hasTechnique rdf:type owl:ObjectProperty ;
+                 rdfs:domain mat:Artwork ;
+                 rdfs:range mat:Technique ;
+                 rdfs:comment "The property connects the artwork to the technique used to realize it" .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isDated
-:isDated rdf:type owl:ObjectProperty ;
-         rdfs:domain :Signature ;
-         rdfs:range :Signature_Datation ;
-         rdfs:comment "The property connects the signature to its datation, if it is written on the artwork itself." .
+mat:isDated rdf:type owl:ObjectProperty ;
+            rdfs:domain mat:Signature ;
+            rdfs:range mat:Signature_Datation ;
+            rdfs:comment "The property connects the signature to its datation, if it is written on the artwork itself." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isMadeOf
-:isMadeOf rdf:type owl:ObjectProperty ;
-          rdfs:domain :Current_Support ,
-                      :Frame ,
-                      :Previous_Support ,
-                      :Support ;
-          rdfs:range :Material ;
-          rdfs:comment "The property connects the frame and the support to the material which they are made of." .
+mat:isMadeOf rdf:type owl:ObjectProperty ;
+             rdfs:domain mat:Current_Support ,
+                         mat:Frame ,
+                         mat:Previous_Support ,
+                         mat:Support ;
+             rdfs:range mat:Material ;
+             rdfs:comment "The property connects the frame and the support to the material which they are made of." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isMarked
-:isMarked rdf:type owl:ObjectProperty ;
-          rdfs:domain :Artwork ;
-          rdfs:range :Mark ,
-                     :Mark_of_Carter ,
-                     :Mark_of_Founder ;
-          rdfs:comment "The property connects the artwork to the mark that has been affixed on it." .
+mat:isMarked rdf:type owl:ObjectProperty ;
+             rdfs:domain mat:Artwork ;
+             rdfs:range mat:Mark ,
+                        mat:Mark_of_Carter ,
+                        mat:Mark_of_Founder ;
+             rdfs:comment "The property connects the artwork to the mark that has been affixed on it." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isMountedOn
-:isMountedOn rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf :hasSupport ;
-             rdfs:domain :Material ;
-             rdfs:range :Current_Support ,
-                        :Support ;
-             rdfs:comment "The property connects the material on which the artwork has been realised to the current support on which it is mounted" .
+mat:isMountedOn rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf mat:hasSupport ;
+                rdfs:domain mat:Material ;
+                rdfs:range mat:Current_Support ,
+                           mat:Support ;
+                rdfs:comment "The property connects the material on which the artwork has been realised to the current support on which it is mounted" .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isPerformedOn
-:isPerformedOn rdf:type owl:ObjectProperty ;
-               rdfs:domain :Technique ;
-               rdfs:range :Material ;
-               rdfs:comment "The property connects the technique to the material it is performed on." .
+mat:isPerformedOn rdf:type owl:ObjectProperty ;
+                  rdfs:domain mat:Technique ;
+                  rdfs:range mat:Material ;
+                  rdfs:comment "The property connects the technique to the material it is performed on." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isSigned
-:isSigned rdf:type owl:ObjectProperty ;
-          rdfs:domain :Artwork ;
-          rdfs:range :Signature ;
-          rdfs:comment "The property connects the artwork to the signature of the artist that made it." .
+mat:isSigned rdf:type owl:ObjectProperty ;
+             rdfs:domain mat:Artwork ;
+             rdfs:range mat:Signature ;
+             rdfs:comment "The property connects the artwork to the signature of the artist that made it." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#transferredFrom
-:transferredFrom rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Current_Support ;
-                 rdfs:range :Previous_Support ;
-                 rdfs:comment "The property connects the current support of an artwork to the previous support from which it has been transferred." .
+mat:transferredFrom rdf:type owl:ObjectProperty ;
+                    rdfs:domain mat:Current_Support ;
+                    rdfs:range mat:Previous_Support ;
+                    rdfs:comment "The property connects the current support of an artwork to the previous support from which it has been transferred." .
 
 
 #################################################################
@@ -142,24 +142,24 @@
 #################################################################
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#dateOfSignature
-:dateOfSignature rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :Signature_Datation ;
-                 rdfs:range xsd:dateTime ;
-                 rdfs:comment "The property represents the date of the signature datation" .
+mat:dateOfSignature rdf:type owl:DatatypeProperty ;
+                    rdfs:domain mat:Signature_Datation ;
+                    rdfs:range xsd:dateTime ;
+                    rdfs:comment "The property represents the date of the signature datation" .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasInscriptionContent
-:hasInscriptionContent rdf:type owl:DatatypeProperty ;
-                       rdfs:domain :Inscription ;
-                       rdfs:range rdfs:Literal ;
-                       rdfs:comment "This property represents the content of an inscription." .
+mat:hasInscriptionContent rdf:type owl:DatatypeProperty ;
+                          rdfs:domain mat:Inscription ;
+                          rdfs:range rdfs:Literal ;
+                          rdfs:comment "This property represents the content of an inscription." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasSignature
-:hasSignature rdf:type owl:DatatypeProperty ;
-              rdfs:domain :Signature ;
-              rdfs:range rdfs:Literal ;
-              rdfs:comment "This property represents the signature of the artist imposed on the artwork." .
+mat:hasSignature rdf:type owl:DatatypeProperty ;
+                 rdfs:domain mat:Signature ;
+                 rdfs:range rdfs:Literal ;
+                 rdfs:comment "This property represents the signature of the artist imposed on the artwork." .
 
 
 #################################################################
@@ -167,97 +167,97 @@
 #################################################################
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Artwork
-:Artwork rdf:type owl:Class ;
-         rdfs:comment "The entity which represents the work of art" .
+mat:Artwork rdf:type owl:Class ;
+            rdfs:comment "The entity which represents the work of art" .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Artwork_Component
-:Artwork_Component rdf:type owl:Class ;
-                   rdfs:comment "A subcomponent of an artwork which can have its own material and technique." .
+mat:Artwork_Component rdf:type owl:Class ;
+                      rdfs:comment "A subcomponent of an artwork which can have its own material and technique." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Current_Support
-:Current_Support rdf:type owl:Class ;
-                 rdfs:subClassOf :Support ;
-                 rdfs:comment "The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.)." .
+mat:Current_Support rdf:type owl:Class ;
+                    rdfs:subClassOf mat:Support ;
+                    rdfs:comment "The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.)." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Decoration
-:Decoration rdf:type owl:Class ;
-            rdfs:subClassOf :Artwork_Component ;
-            owl:disjointWith :Ornament ;
-            rdfs:comment "An additional element which is main purpose is not practical or aesthetic, but brings \"decorum\" to another element." .
+mat:Decoration rdf:type owl:Class ;
+               rdfs:subClassOf mat:Artwork_Component ;
+               owl:disjointWith mat:Ornament ;
+               rdfs:comment "An additional element which is main purpose is not practical or aesthetic, but brings \"decorum\" to another element." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Frame
-:Frame rdf:type owl:Class ;
-       rdfs:subClassOf :Artwork_Component ;
-       rdfs:comment "Some works of art comes with a frame, which has a material and can  have a decoration." .
+mat:Frame rdf:type owl:Class ;
+          rdfs:subClassOf mat:Artwork_Component ;
+          rdfs:comment "Some works of art comes with a frame, which has a material and can  have a decoration." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Inscription
-:Inscription rdf:type owl:Class ;
-             owl:equivalentClass <https://w3id.org/arco/ontology/denotative-description/Inscription> ;
-             rdfs:subClassOf :Artwork_Component ;
-             rdfs:comment "Every kind of text added to the work of art." .
+mat:Inscription rdf:type owl:Class ;
+                owl:equivalentClass <https://w3id.org/arco/ontology/denotative-description/Inscription> ;
+                rdfs:subClassOf mat:Artwork_Component ;
+                rdfs:comment "Every kind of text added to the work of art." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Mark
-:Mark rdf:type owl:Class ;
-      owl:equivalentClass <https://w3id.org/arco/ontology/denotative-description/Brand> ;
-      rdfs:subClassOf :Artwork_Component ;
-      rdfs:comment "The sign of an external contribution out of the author. It can be the founder or the carter, mainly used with scultpures." .
+mat:Mark rdf:type owl:Class ;
+         owl:equivalentClass <https://w3id.org/arco/ontology/denotative-description/Brand> ;
+         rdfs:subClassOf mat:Artwork_Component ;
+         rdfs:comment "The sign of an external contribution out of the author. It can be the founder or the carter, mainly used with scultpures." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Mark_of_Carter
-:Mark_of_Carter rdf:type owl:Class ;
-                rdfs:subClassOf :Mark ;
-                rdfs:comment "The mark of a workshop or factory for model plasters." .
+mat:Mark_of_Carter rdf:type owl:Class ;
+                   rdfs:subClassOf mat:Mark ;
+                   rdfs:comment "The mark of a workshop or factory for model plasters." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Mark_of_Founder
-:Mark_of_Founder rdf:type owl:Class ;
-                 rdfs:subClassOf :Mark ;
-                 rdfs:comment "The mark of a workshop or factory for casting metal." .
+mat:Mark_of_Founder rdf:type owl:Class ;
+                    rdfs:subClassOf mat:Mark ;
+                    rdfs:comment "The mark of a workshop or factory for casting metal." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Material
-:Material rdf:type owl:Class ;
-          rdfs:comment "It is the proper material on which the work of art has been made. It can be different from the support." .
+mat:Material rdf:type owl:Class ;
+             rdfs:comment "It is the proper material on which the work of art has been made. It can be different from the support." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Ornament
-:Ornament rdf:type owl:Class ;
-          rdfs:subClassOf :Artwork_Component ;
-          rdfs:comment "An additional element other from the main body of the artwork, which helps through repeated patterns, and natural elements at the visual organization of the artwork, in which prevails the aesthetic function." .
+mat:Ornament rdf:type owl:Class ;
+             rdfs:subClassOf mat:Artwork_Component ;
+             rdfs:comment "An additional element other from the main body of the artwork, which helps through repeated patterns, and natural elements at the visual organization of the artwork, in which prevails the aesthetic function." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Previous_Support
-:Previous_Support rdf:type owl:Class ;
-                  rdfs:subClassOf :Support ;
-                  rdfs:comment "The original support used by the artist." .
+mat:Previous_Support rdf:type owl:Class ;
+                     rdfs:subClassOf mat:Support ;
+                     rdfs:comment "The original support used by the artist." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Signature
-:Signature rdf:type owl:Class ;
-           rdfs:subClassOf :Artwork_Component ;
-           rdfs:comment "The signature of the author left on the artwork itself." .
+mat:Signature rdf:type owl:Class ;
+              rdfs:subClassOf mat:Artwork_Component ;
+              rdfs:comment "The signature of the author left on the artwork itself." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Signature_Datation
-:Signature_Datation rdf:type owl:Class ;
-                    rdfs:subClassOf :Artwork_Component ;
-                    rdfs:comment "The datation of the signature left by the author on the artwork itself." .
+mat:Signature_Datation rdf:type owl:Class ;
+                       rdfs:subClassOf mat:Artwork_Component ;
+                       rdfs:comment "The datation of the signature left by the author on the artwork itself." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Support
-:Support rdf:type owl:Class ;
-         rdfs:comment "The support on which the technique is performed, \"given from nature or elaborated by human beings\" (Sciolla)." .
+mat:Support rdf:type owl:Class ;
+            rdfs:comment "The support on which the technique is performed, \"given from nature or elaborated by human beings\" (Sciolla)." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Technique
-:Technique rdf:type owl:Class ;
-           rdfs:comment "\"The union of all the principles, rules and manners elaborated by the artists for the material processing over time, experimented in the workshops and artistic laboratories\" as defined by Sciolla." .
+mat:Technique rdf:type owl:Class ;
+              rdfs:comment "\"The union of all the principles, rules and manners elaborated by the artists for the material processing over time, experimented in the workshops and artistic laboratories\" as defined by Sciolla." .
 
 
 ###  https://w3id.org/arco/ontology/denotative-description/Brand
