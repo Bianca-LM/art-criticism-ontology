@@ -47,7 +47,10 @@ mat:hasFrame rdf:type owl:ObjectProperty ;
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasInscription
 mat:hasInscription rdf:type owl:ObjectProperty ;
                    rdfs:domain mat:Artwork ;
-                   rdfs:range mat:Inscription ;
+                   rdfs:range [ rdf:type owl:Class ;
+                                owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription>
+                                          )
+                              ] ;
                    rdfs:comment "The property connects the artwork to its inscription" .
 
 
@@ -71,7 +74,7 @@ mat:hasSupport rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf owl:topObjectProperty ;
                rdfs:domain mat:Artwork ;
                rdfs:range [ rdf:type owl:Class ;
-                            owl:oneOf ( <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Current_Support>
+                            owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support>
                                       )
                           ] ;
                rdfs:comment "The property connects the artwork to its current support" .
@@ -86,8 +89,14 @@ mat:hasTechnique rdf:type owl:ObjectProperty ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isDated
 mat:isDated rdf:type owl:ObjectProperty ;
-            rdfs:domain mat:Signature ;
-            rdfs:range mat:Signature_Datation ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature>
+                                    )
+                        ] ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation>
+                                   )
+                       ] ;
             rdfs:comment "The property connects the signature to its datation, if it is written on the artwork itself." .
 
 
@@ -113,7 +122,7 @@ mat:isMountedOn rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf mat:hasSupport ;
                 rdfs:domain mat:Material ;
                 rdfs:range [ rdf:type owl:Class ;
-                             owl:oneOf ( <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Current_Support>
+                             owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support>
                                        )
                            ] ;
                 rdfs:comment "The property connects the material on which the artwork has been realised to the current support on which it is mounted" .
@@ -129,25 +138,28 @@ mat:isPerformedOn rdf:type owl:ObjectProperty ;
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isSigned
 mat:isSigned rdf:type owl:ObjectProperty ;
              rdfs:domain mat:Artwork ;
-             rdfs:range mat:Signature ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature>
+                                    )
+                        ] ;
              rdfs:comment "The property connects the artwork to the signature of the artist that made it." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#transferredFrom
 mat:transferredFrom rdf:type owl:ObjectProperty ;
                     rdfs:domain [ owl:intersectionOf ( [ rdf:type owl:Class ;
-                                                         owl:oneOf ( <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Current_Support>
+                                                         owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support>
                                                                    )
                                                        ]
                                                        [ rdf:type owl:Class ;
-                                                         owl:oneOf ( <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support>
+                                                         owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support>
                                                                    )
                                                        ]
                                                      ) ;
                                   rdf:type owl:Class
                                 ] ;
                     rdfs:range [ rdf:type owl:Class ;
-                                 owl:oneOf ( <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support>
+                                 owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support>
                                            )
                                ] ;
                     rdfs:comment "The property connects the current support of an artwork to the previous support from which it has been transferred." .
@@ -159,21 +171,18 @@ mat:transferredFrom rdf:type owl:ObjectProperty ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#dateOfSignature
 mat:dateOfSignature rdf:type owl:DatatypeProperty ;
-                    rdfs:domain mat:Signature_Datation ;
                     rdfs:range xsd:dateTime ;
                     rdfs:comment "The property represents the date of the signature datation" .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasInscriptionContent
 mat:hasInscriptionContent rdf:type owl:DatatypeProperty ;
-                          rdfs:domain mat:Inscription ;
                           rdfs:range rdfs:Literal ;
                           rdfs:comment "This property represents the content of an inscription." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasSignature
 mat:hasSignature rdf:type owl:DatatypeProperty ;
-                 rdfs:domain mat:Signature ;
                  rdfs:range rdfs:Literal ;
                  rdfs:comment "This property represents the signature of the artist imposed on the artwork." .
 
@@ -203,13 +212,6 @@ mat:Decoration rdf:type owl:Class ;
 mat:Frame rdf:type owl:Class ;
           rdfs:subClassOf mat:Artwork_Component ;
           rdfs:comment "Some works of art comes with a frame, which has a material and can  have a decoration." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Inscription
-mat:Inscription rdf:type owl:Class ;
-                owl:equivalentClass <https://w3id.org/arco/ontology/denotative-description/Inscription> ;
-                rdfs:subClassOf mat:Artwork_Component ;
-                rdfs:comment "Every kind of text added to the work of art." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Mark
@@ -242,18 +244,6 @@ mat:Ornament rdf:type owl:Class ;
              rdfs:comment "An additional element other from the main body of the artwork, which helps through repeated patterns, and natural elements at the visual organization of the artwork, in which prevails the aesthetic function." .
 
 
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Signature
-mat:Signature rdf:type owl:Class ;
-              rdfs:subClassOf mat:Artwork_Component ;
-              rdfs:comment "The signature of the author left on the artwork itself." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Signature_Datation
-mat:Signature_Datation rdf:type owl:Class ;
-                       rdfs:subClassOf mat:Artwork_Component ;
-                       rdfs:comment "The datation of the signature left by the author on the artwork itself." .
-
-
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Support
 mat:Support rdf:type owl:Class ;
             rdfs:comment "The support on which the technique is performed, \"given from nature or elaborated by human beings\" (Sciolla)." .
@@ -266,38 +256,42 @@ mat:Technique rdf:type owl:Class ;
 
 ###  https://w3id.org/arco/ontology/denotative-description/Brand
 
-###  https://w3id.org/arco/ontology/denotative-description/Inscription
-
 #################################################################
 #    Individuals
 #################################################################
 
-###  http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Artwork_Material
-<http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Artwork_Material> rdf:type owl:NamedIndividual ,
-                                                                               mat:Material ;
-                                                                      rdfs:comment "Each instance represents a single material on which a specific technique has been performed to realize an artwork." .
+###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support
+<https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support> rdf:type owl:NamedIndividual ,
+                                                                                   mat:Support ;
+                                                                          mat:transferredFrom <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> ;
+                                                                          rdfs:comment "The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.)." .
 
 
-###  http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Artwork_Technique
-<http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Artwork_Technique> rdf:type owl:NamedIndividual ,
-                                                                                mat:Technique ;
-                                                                       mat:isPerformedOn <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Artwork_Material> ;
-                                                                       rdfs:comment "Each specific technique that has been used to realize a specific artwork." .
+###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription
+<https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription> rdf:type owl:NamedIndividual ,
+                                                                               mat:Artwork_Component ;
+                                                                      rdfs:comment "Every kind of text added to the work of art." .
 
 
-###  http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Current_Support
-<http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Current_Support> rdf:type owl:NamedIndividual ,
-                                                                              mat:Support ;
-                                                                     mat:transferredFrom <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support> ;
-                                                                     rdfs:comment "The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.)." .
+###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support
+<https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> rdf:type owl:NamedIndividual ,
+                                                                                    mat:Support ,
+                                                                                    <https://w3id.org/arco/ontology/denotative-description/Support> ;
+                                                                           mat:transferredFrom <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> ;
+                                                                           rdfs:comment "The original support used by the artist." .
 
 
-###  http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support
-<http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support> rdf:type owl:NamedIndividual ,
-                                                                               mat:Support ,
-                                                                               <https://w3id.org/arco/ontology/denotative-description/Support> ;
-                                                                      mat:transferredFrom <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support> ;
-                                                                      rdfs:comment "The original support used by the artist." .
+###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature
+<https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature> rdf:type owl:NamedIndividual ,
+                                                                             mat:Artwork_Component ;
+                                                                    mat:isDated <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation> ;
+                                                                    rdfs:comment "The signature of the author left on the artwork itself." .
+
+
+###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation
+<https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation> rdf:type owl:NamedIndividual ,
+                                                                                      mat:Artwork_Component ;
+                                                                             rdfs:comment "The datation of the signature left by the author on the artwork itself." .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
