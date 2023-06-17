@@ -147,16 +147,16 @@ mat:isSigned rdf:type owl:ObjectProperty ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#transferredFrom
 mat:transferredFrom rdf:type owl:ObjectProperty ;
-                    rdfs:domain [ owl:intersectionOf ( [ rdf:type owl:Class ;
-                                                         owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support>
-                                                                   )
-                                                       ]
-                                                       [ rdf:type owl:Class ;
-                                                         owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support>
-                                                                   )
-                                                       ]
-                                                     ) ;
-                                  rdf:type owl:Class
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( [ rdf:type owl:Class ;
+                                                  owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support>
+                                                            )
+                                                ]
+                                                [ rdf:type owl:Class ;
+                                                  owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support>
+                                                            )
+                                                ]
+                                              )
                                 ] ;
                     rdfs:range [ rdf:type owl:Class ;
                                  owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support>
@@ -255,6 +255,8 @@ mat:Technique rdf:type owl:Class ;
 
 
 ###  https://w3id.org/arco/ontology/denotative-description/Brand
+<https://w3id.org/arco/ontology/denotative-description/Brand> rdfs:subClassOf mat:Artwork_Component .
+
 
 #################################################################
 #    Individuals
@@ -266,6 +268,12 @@ mat:Technique rdf:type owl:Class ;
                                                                           mat:transferredFrom <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> ;
                                                                           rdfs:comment "The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.)." .
 
+[ rdf:type owl:NegativePropertyAssertion ;
+   owl:sourceIndividual <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support> ;
+   owl:assertionProperty mat:transferredFrom ;
+   owl:targetIndividual <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support>
+ ] .
+
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription
 <https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription> rdf:type owl:NamedIndividual ,
@@ -275,10 +283,15 @@ mat:Technique rdf:type owl:Class ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support
 <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> rdf:type owl:NamedIndividual ,
-                                                                                    mat:Support ,
-                                                                                    <https://w3id.org/arco/ontology/denotative-description/Support> ;
+                                                                                    mat:Support ;
                                                                            mat:transferredFrom <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> ;
                                                                            rdfs:comment "The original support used by the artist." .
+
+[ rdf:type owl:NegativePropertyAssertion ;
+   owl:sourceIndividual <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> ;
+   owl:assertionProperty mat:transferredFrom ;
+   owl:targetIndividual <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support>
+ ] .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature
