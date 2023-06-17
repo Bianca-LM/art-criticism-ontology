@@ -99,7 +99,13 @@
     <owl:ObjectProperty rdf:about="https://github.com/Bianca-LM/art-criticism-ontology/mat#hasSupport">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Artwork"/>
-        <rdfs:range rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Current_Support"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Current_Support"/>
+                </owl:oneOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:comment>The property connects the artwork to its current support</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -128,9 +134,7 @@
     <!-- https://github.com/Bianca-LM/art-criticism-ontology/mat#isMadeOf -->
 
     <owl:ObjectProperty rdf:about="https://github.com/Bianca-LM/art-criticism-ontology/mat#isMadeOf">
-        <rdfs:domain rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Current_Support"/>
         <rdfs:domain rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Frame"/>
-        <rdfs:domain rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Previous_Support"/>
         <rdfs:domain rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Support"/>
         <rdfs:range rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Material"/>
         <rdfs:comment>The property connects the frame and the support to the material which they are made of.</rdfs:comment>
@@ -155,8 +159,13 @@
     <owl:ObjectProperty rdf:about="https://github.com/Bianca-LM/art-criticism-ontology/mat#isMountedOn">
         <rdfs:subPropertyOf rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#hasSupport"/>
         <rdfs:domain rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Material"/>
-        <rdfs:range rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Current_Support"/>
-        <rdfs:range rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Support"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Current_Support"/>
+                </owl:oneOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:comment>The property connects the material on which the artwork has been realised to the current support on which it is mounted</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -185,8 +194,29 @@
     <!-- https://github.com/Bianca-LM/art-criticism-ontology/mat#transferredFrom -->
 
     <owl:ObjectProperty rdf:about="https://github.com/Bianca-LM/art-criticism-ontology/mat#transferredFrom">
-        <rdfs:domain rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Current_Support"/>
-        <rdfs:range rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Previous_Support"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Current_Support"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support"/>
+                </owl:oneOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:comment>The property connects the current support of an artwork to the previous support from which it has been transferred.</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -256,15 +286,6 @@
 
     <owl:Class rdf:about="https://github.com/Bianca-LM/art-criticism-ontology/mat#Artwork_Component">
         <rdfs:comment>A subcomponent of an artwork which can have its own material and technique.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://github.com/Bianca-LM/art-criticism-ontology/mat#Current_Support -->
-
-    <owl:Class rdf:about="https://github.com/Bianca-LM/art-criticism-ontology/mat#Current_Support">
-        <rdfs:subClassOf rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Support"/>
-        <rdfs:comment>The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.).</rdfs:comment>
     </owl:Class>
     
 
@@ -343,15 +364,6 @@
     
 
 
-    <!-- https://github.com/Bianca-LM/art-criticism-ontology/mat#Previous_Support -->
-
-    <owl:Class rdf:about="https://github.com/Bianca-LM/art-criticism-ontology/mat#Previous_Support">
-        <rdfs:subClassOf rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Support"/>
-        <rdfs:comment>The original support used by the artist.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- https://github.com/Bianca-LM/art-criticism-ontology/mat#Signature -->
 
     <owl:Class rdf:about="https://github.com/Bianca-LM/art-criticism-ontology/mat#Signature">
@@ -395,6 +407,57 @@
     <!-- https://w3id.org/arco/ontology/denotative-description/Inscription -->
 
     <rdf:Description rdf:about="https://w3id.org/arco/ontology/denotative-description/Inscription"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Artwork_Material -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Artwork_Material">
+        <rdf:type rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Material"/>
+        <rdfs:comment>Each instance represents a single material on which a specific technique has been performed to realize an artwork.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Artwork_Technique -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Artwork_Technique">
+        <rdf:type rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Technique"/>
+        <isPerformedOn rdf:resource="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Artwork_Material"/>
+        <rdfs:comment>Each specific technique that has been used to realize a specific artwork.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Current_Support -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Current_Support">
+        <rdf:type rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Support"/>
+        <transferredFrom rdf:resource="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support"/>
+        <rdfs:comment>The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.).</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support">
+        <rdf:type rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Support"/>
+        <rdf:type rdf:resource="https://w3id.org/arco/ontology/denotative-description/Support"/>
+        <transferredFrom rdf:resource="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support"/>
+        <rdfs:comment>The original support used by the artist.</rdfs:comment>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 

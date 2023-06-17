@@ -70,7 +70,10 @@ mat:hasOrnamentalTechnique rdf:type owl:ObjectProperty ;
 mat:hasSupport rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf owl:topObjectProperty ;
                rdfs:domain mat:Artwork ;
-               rdfs:range mat:Current_Support ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:oneOf ( <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Current_Support>
+                                      )
+                          ] ;
                rdfs:comment "The property connects the artwork to its current support" .
 
 
@@ -90,9 +93,7 @@ mat:isDated rdf:type owl:ObjectProperty ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isMadeOf
 mat:isMadeOf rdf:type owl:ObjectProperty ;
-             rdfs:domain mat:Current_Support ,
-                         mat:Frame ,
-                         mat:Previous_Support ,
+             rdfs:domain mat:Frame ,
                          mat:Support ;
              rdfs:range mat:Material ;
              rdfs:comment "The property connects the frame and the support to the material which they are made of." .
@@ -111,8 +112,10 @@ mat:isMarked rdf:type owl:ObjectProperty ;
 mat:isMountedOn rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf mat:hasSupport ;
                 rdfs:domain mat:Material ;
-                rdfs:range mat:Current_Support ,
-                           mat:Support ;
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:oneOf ( <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Current_Support>
+                                       )
+                           ] ;
                 rdfs:comment "The property connects the material on which the artwork has been realised to the current support on which it is mounted" .
 
 
@@ -132,8 +135,21 @@ mat:isSigned rdf:type owl:ObjectProperty ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#transferredFrom
 mat:transferredFrom rdf:type owl:ObjectProperty ;
-                    rdfs:domain mat:Current_Support ;
-                    rdfs:range mat:Previous_Support ;
+                    rdfs:domain [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                         owl:oneOf ( <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Current_Support>
+                                                                   )
+                                                       ]
+                                                       [ rdf:type owl:Class ;
+                                                         owl:oneOf ( <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support>
+                                                                   )
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+                    rdfs:range [ rdf:type owl:Class ;
+                                 owl:oneOf ( <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support>
+                                           )
+                               ] ;
                     rdfs:comment "The property connects the current support of an artwork to the previous support from which it has been transferred." .
 
 
@@ -174,12 +190,6 @@ mat:Artwork rdf:type owl:Class ;
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Artwork_Component
 mat:Artwork_Component rdf:type owl:Class ;
                       rdfs:comment "A subcomponent of an artwork which can have its own material and technique." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Current_Support
-mat:Current_Support rdf:type owl:Class ;
-                    rdfs:subClassOf mat:Support ;
-                    rdfs:comment "The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.)." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Decoration
@@ -232,12 +242,6 @@ mat:Ornament rdf:type owl:Class ;
              rdfs:comment "An additional element other from the main body of the artwork, which helps through repeated patterns, and natural elements at the visual organization of the artwork, in which prevails the aesthetic function." .
 
 
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Previous_Support
-mat:Previous_Support rdf:type owl:Class ;
-                     rdfs:subClassOf mat:Support ;
-                     rdfs:comment "The original support used by the artist." .
-
-
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Signature
 mat:Signature rdf:type owl:Class ;
               rdfs:subClassOf mat:Artwork_Component ;
@@ -263,5 +267,37 @@ mat:Technique rdf:type owl:Class ;
 ###  https://w3id.org/arco/ontology/denotative-description/Brand
 
 ###  https://w3id.org/arco/ontology/denotative-description/Inscription
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Artwork_Material
+<http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Artwork_Material> rdf:type owl:NamedIndividual ,
+                                                                               mat:Material ;
+                                                                      rdfs:comment "Each instance represents a single material on which a specific technique has been performed to realize an artwork." .
+
+
+###  http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Artwork_Technique
+<http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Artwork_Technique> rdf:type owl:NamedIndividual ,
+                                                                                mat:Technique ;
+                                                                       mat:isPerformedOn <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Artwork_Material> ;
+                                                                       rdfs:comment "Each specific technique that has been used to realize a specific artwork." .
+
+
+###  http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Current_Support
+<http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Current_Support> rdf:type owl:NamedIndividual ,
+                                                                              mat:Support ;
+                                                                     mat:transferredFrom <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support> ;
+                                                                     rdfs:comment "The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.)." .
+
+
+###  http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support
+<http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support> rdf:type owl:NamedIndividual ,
+                                                                               mat:Support ,
+                                                                               <https://w3id.org/arco/ontology/denotative-description/Support> ;
+                                                                      mat:transferredFrom <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Previous_Support> ;
+                                                                      rdfs:comment "The original support used by the artist." .
+
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
