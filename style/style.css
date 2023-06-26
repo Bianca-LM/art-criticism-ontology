@@ -133,11 +133,6 @@ blockquote {
   margin:revert;
 }
 
-img {
-  width: 90%;
-  text-align: center;
-}
-
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -169,10 +164,11 @@ h1 {
   text-align: center;
 }
 
-img {
+#Project img, #Ontology img, #Results img {
   width: 80%;
   margin: auto;
   display: block;
+  text-align: center;
 }
 
 #ER {
@@ -293,6 +289,11 @@ footer {
   border: 0.1em solid black;
 }
 
+#CQ th, #CQ td {
+  padding: 0.5em;
+  vertical-align: baseline;
+}
+
 #Project h1, #about h1 {
   margin: 0.5em;
   border-bottom: 0.1em solid black;
@@ -307,4 +308,8 @@ iframe {
     width: 80%;
     height: 60vh;
     margin: 5%;
+}
+
+#Modelling img {
+  width: 90%;
 }
