@@ -284,6 +284,15 @@ footer {
   font-weight: bold;
 }
 
+#Methodology a {
+  color: rgb(236, 65, 8);
+  text-decoration: underline;
+}
+
+#Methodology a:hover {
+  color: black;
+}
+
 #CQ {
   margin: 2%;
   border: 0.1em solid black;
