@@ -47,7 +47,10 @@ mat:hasFrame rdf:type owl:ObjectProperty ;
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasInscription
 mat:hasInscription rdf:type owl:ObjectProperty ;
                    rdfs:domain mat:Artwork ;
-                   rdfs:range <https://w3id.org/arco/ontology/denotative-description/Inscription> ;
+                   rdfs:range [ rdf:type owl:Class ;
+                                owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription>
+                                          )
+                              ] ;
                    rdfs:comment "The property connects the artwork to its inscription" .
 
 
