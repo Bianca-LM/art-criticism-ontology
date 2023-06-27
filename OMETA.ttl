@@ -191,6 +191,11 @@ mat:hasSignature rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
+###  http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/External_Physical_Datum
+<http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/External_Physical_Datum> rdf:type owl:Class ;
+                                                                             rdfs:comment "Every external physical datum of an artwork." .
+
+
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Artwork
 mat:Artwork rdf:type owl:Class ;
             rdfs:comment "The entity which represents the work of art" .
@@ -210,7 +215,7 @@ mat:Decoration rdf:type owl:Class ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Frame
 mat:Frame rdf:type owl:Class ;
-          rdfs:subClassOf mat:Artwork_Component ;
+          rdfs:subClassOf <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/External_Physical_Datum> ;
           rdfs:comment "Some works of art comes with a frame, which has a material and can  have a decoration." .
 
 
@@ -235,6 +240,7 @@ mat:Mark_of_Founder rdf:type owl:Class ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Material
 mat:Material rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/External_Physical_Datum> ;
              rdfs:comment "It is the proper material on which the work of art has been made. It can be different from the support." .
 
 
@@ -246,6 +252,7 @@ mat:Ornament rdf:type owl:Class ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Support
 mat:Support rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/External_Physical_Datum> ;
             rdfs:comment "The support on which the technique is performed, \"given from nature or elaborated by human beings\" (Sciolla)." .
 
 
