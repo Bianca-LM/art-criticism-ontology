@@ -67,13 +67,7 @@
 
     <owl:ObjectProperty rdf:about="https://github.com/Bianca-LM/art-criticism-ontology/mat#hasInscription">
         <rdfs:domain rdf:resource="https://github.com/Bianca-LM/art-criticism-ontology/mat#Artwork"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription"/>
-                </owl:oneOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="https://w3id.org/arco/ontology/denotative-description/Inscription"/>
         <rdfs:comment>The property connects the artwork to its inscription</rdfs:comment>
     </owl:ObjectProperty>
     
