@@ -269,16 +269,16 @@ footer {
   visibility: hidden;
 }
 
-#Project ol {
+#Methodology ol {
     list-style: none;
     counter-reset: item;
 }
 
-#Project li {
+#Methodology ol li {
   counter-increment: item;
 }
 
-#Project li:before {
+#Methodology ol li:before {
   content: counter(item)".";
   margin-right: 0.4em;
   font-weight: bold;
@@ -294,7 +294,7 @@ footer {
   vertical-align: baseline;
 }
 
-#Project h1, #about h1 {
+#Project h1, #about h1, #Methodology h1 {
   margin: 0.5em;
   border-bottom: 0.1em solid black;
   padding: 0.2em;
@@ -312,4 +312,9 @@ iframe {
 
 #Modelling img {
   width: 90%;
+}
+
+.highlight {
+  background-color: yellowgreen;
+  font-weight: bold;
 }
