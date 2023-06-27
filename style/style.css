@@ -323,6 +323,12 @@ iframe {
   width: 90%;
 }
 
+#Modelling figure img {
+  width: 60%; 
+  padding: 5%;
+  margin: auto;
+}
+
 .highlight {
   background-color: yellowgreen;
   font-weight: bold;
