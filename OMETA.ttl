@@ -36,7 +36,7 @@ mat:hasDecoration rdf:type owl:ObjectProperty ;
 mat:hasDecorativeTechnique rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf mat:hasTechnique ;
                            rdfs:domain mat:Decoration ;
-                           rdfs:range <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Decorative_Technique> ;
+                           rdfs:range <https://github.com/Bianca-LM/art-criticism-ontology/mat/Decorative_Technique> ;
                            rdfs:comment "The property connects the decoration that belongs to an artwork to the decorative technique used to realize it." .
 
 
@@ -68,7 +68,7 @@ mat:hasOrnament rdf:type owl:ObjectProperty ;
 mat:hasOrnamentalTechnique rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf mat:hasTechnique ;
                            rdfs:domain mat:Ornament ;
-                           rdfs:range <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Ornamental_Technique> ;
+                           rdfs:range <https://github.com/Bianca-LM/art-criticism-ontology/mat/Ornamental_Technique> ;
                            rdfs:comment "The property connects the ornament that belongs to an artwork to the ornamental technique that has been used to realize it." .
 
 
@@ -206,23 +206,6 @@ mat:hasSignature rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
-###  http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Decorative_Technique
-<http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Decorative_Technique> rdf:type owl:Class ;
-                                                                          rdfs:subClassOf mat:Technique ;
-                                                                          rdfs:comment "A technique that traditionally is used  for the creation of decorative elements." .
-
-
-###  http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/External_Physical_Datum
-<http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/External_Physical_Datum> rdf:type owl:Class ;
-                                                                             rdfs:comment "Every external physical datum of an artwork." .
-
-
-###  http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Ornamental_Technique
-<http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Ornamental_Technique> rdf:type owl:Class ;
-                                                                          rdfs:subClassOf mat:Technique ;
-                                                                          rdfs:comment "A technique that traditionally is used for the creation of ornaments." .
-
-
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Artwork
 mat:Artwork rdf:type owl:Class ;
             rdfs:comment "The entity which represents the work of art" .
@@ -242,7 +225,7 @@ mat:Decoration rdf:type owl:Class ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Frame
 mat:Frame rdf:type owl:Class ;
-          rdfs:subClassOf <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/External_Physical_Datum> ;
+          rdfs:subClassOf <https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum> ;
           rdfs:comment "Some works of art comes with a frame, which has a material and can  have a decoration." .
 
 
@@ -267,7 +250,7 @@ mat:Mark_of_Founder rdf:type owl:Class ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Material
 mat:Material rdf:type owl:Class ;
-             rdfs:subClassOf <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/External_Physical_Datum> ;
+             rdfs:subClassOf <https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum> ;
              rdfs:comment "It is the proper material on which the work of art has been made. It can be different from the support." .
 
 
@@ -279,13 +262,30 @@ mat:Ornament rdf:type owl:Class ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Support
 mat:Support rdf:type owl:Class ;
-            rdfs:subClassOf <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/External_Physical_Datum> ;
+            rdfs:subClassOf <https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum> ;
             rdfs:comment "The support on which the technique is performed, \"given from nature or elaborated by human beings\" (Sciolla)." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Technique
 mat:Technique rdf:type owl:Class ;
               rdfs:comment "\"The union of all the principles, rules and manners elaborated by the artists for the material processing over time, experimented in the workshops and artistic laboratories\" as defined by Sciolla." .
+
+
+###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Decorative_Technique
+<https://github.com/Bianca-LM/art-criticism-ontology/mat/Decorative_Technique> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf mat:Technique ;
+                                                                               rdfs:comment "A technique that traditionally is used  for the creation of decorative elements." .
+
+
+###  https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum
+<https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum> rdf:type owl:Class ;
+                                                                                  rdfs:comment "Every external physical datum of an artwork." .
+
+
+###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Ornamental_Technique
+<https://github.com/Bianca-LM/art-criticism-ontology/mat/Ornamental_Technique> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf mat:Technique ;
+                                                                               rdfs:comment "A technique that traditionally is used for the creation of ornaments." .
 
 
 ###  https://w3id.org/arco/ontology/denotative-description/Brand
