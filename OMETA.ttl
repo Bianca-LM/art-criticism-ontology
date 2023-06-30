@@ -16,6 +16,9 @@
 <https://github.com/Bianca-LM/art-criticism-ontology/mat> rdf:type owl:Ontology ;
                                                            owl:versionIRI <https://github.com/Bianca-LM/art-criticism-ontology/1.0> ;
                                                            owl:imports <https://w3id.org/arco/ontology/denotative-description/1.2> ;
+                                                           dc:creator "Bianca La Manna" ;
+                                                           dc:title "OM&TA (Ontology of Material & Techniques in Art)" ;
+                                                           terms:license "CC BY 4.0" ;
                                                            rdfs:comment "OM&TA (Ontology of Materials & Techniques in Art) is an ontology which aims at representing the relationship between materials and techniques for the description of artworks in a semantic way." .
 
 #################################################################
@@ -33,7 +36,7 @@ mat:hasDecoration rdf:type owl:ObjectProperty ;
 mat:hasDecorativeTechnique rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf mat:hasTechnique ;
                            rdfs:domain mat:Decoration ;
-                           rdfs:range mat:Technique ;
+                           rdfs:range <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Decorative_Technique> ;
                            rdfs:comment "The property connects the decoration that belongs to an artwork to the decorative technique used to realize it." .
 
 
@@ -65,7 +68,7 @@ mat:hasOrnament rdf:type owl:ObjectProperty ;
 mat:hasOrnamentalTechnique rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf mat:hasTechnique ;
                            rdfs:domain mat:Ornament ;
-                           rdfs:range mat:Technique ;
+                           rdfs:range <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Ornamental_Technique> ;
                            rdfs:comment "The property connects the ornament that belongs to an artwork to the ornamental technique that has been used to realize it." .
 
 
@@ -171,18 +174,30 @@ mat:transferredFrom rdf:type owl:ObjectProperty ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#dateOfSignature
 mat:dateOfSignature rdf:type owl:DatatypeProperty ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation>
+                                            )
+                                ] ;
                     rdfs:range xsd:dateTime ;
                     rdfs:comment "The property represents the date of the signature datation" .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasInscriptionContent
 mat:hasInscriptionContent rdf:type owl:DatatypeProperty ;
+                          rdfs:domain [ rdf:type owl:Class ;
+                                        owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription>
+                                                  )
+                                      ] ;
                           rdfs:range rdfs:Literal ;
                           rdfs:comment "This property represents the content of an inscription." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasSignature
 mat:hasSignature rdf:type owl:DatatypeProperty ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature>
+                                         )
+                             ] ;
                  rdfs:range rdfs:Literal ;
                  rdfs:comment "This property represents the signature of the artist imposed on the artwork." .
 
@@ -191,9 +206,21 @@ mat:hasSignature rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
+###  http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Decorative_Technique
+<http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Decorative_Technique> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf mat:Technique ;
+                                                                          rdfs:comment "A technique that traditionally is used  for the creation of decorative elements." .
+
+
 ###  http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/External_Physical_Datum
 <http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/External_Physical_Datum> rdf:type owl:Class ;
                                                                              rdfs:comment "Every external physical datum of an artwork." .
+
+
+###  http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Ornamental_Technique
+<http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/Ornamental_Technique> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf mat:Technique ;
+                                                                          rdfs:comment "A technique that traditionally is used for the creation of ornaments." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Artwork
@@ -285,6 +312,7 @@ mat:Technique rdf:type owl:Class ;
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription
 <https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription> rdf:type owl:NamedIndividual ,
                                                                                mat:Artwork_Component ;
+                                                                      mat:hasInscriptionContent ""^^rdfs:Literal ;
                                                                       rdfs:comment "Every kind of text added to the work of art." .
 
 
@@ -305,12 +333,14 @@ mat:Technique rdf:type owl:Class ;
 <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature> rdf:type owl:NamedIndividual ,
                                                                              mat:Artwork_Component ;
                                                                     mat:isDated <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation> ;
+                                                                    mat:hasSignature ""^^rdfs:Literal ;
                                                                     rdfs:comment "The signature of the author left on the artwork itself." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation
 <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation> rdf:type owl:NamedIndividual ,
                                                                                       mat:Artwork_Component ;
+                                                                             mat:dateOfSignature ""^^xsd:dateTime ;
                                                                              rdfs:comment "The datation of the signature left by the author on the artwork itself." .
 
 
