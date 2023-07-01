@@ -65,34 +65,42 @@
 						<img src="images/Modelling2.png" alt="Decription of a Landscape by Francesco Guardi"/>
 					</div>
 				</div>
-				This brought to the definition of the first classes and relationships which are the core of the ontology.
+				This brought to the definition of the first classes and relationships which are the core of the ontology.<br>
+				The central realtions from which the ontology has been shaped is the one between technique and material which is defined through the concept that an <b>artwork</b> is realized <span class="underlined">by means of</span> a <b>technique</b> which is <span class="underlined">performed on</span> a <b>material</b>.
 				<figure>
 					<img src="images/BasicModel.jpg" alt="Core classes and relationships"/>
 				</figure>
 				</p>
 			</div>
-            <h2>The conceptual model & E/R diagram</h2>
+            <h2>The conceptual model</h2>
 			<p>From the chapters <i>I materiali</i> and <i>Le tecniche</i> it is possible to extract the first entities and relations that could formalize the concepts of materials and techniques in the artworks.</p>
 			<p>The first step was the creation of a conceptual model which tries to define the main elements and how they are related. Since materials and techniques are still at the level of denotative description, they are related to all the elements, as "Signature" or "Frame", which sometimes are added through a different technique or material from the one largely used for the artwork.</p>
 			<figure>
 	    		<img src="images\TMmAP.jpg" alt="Conceptual model">
 	    	</figure>
-			<p>Starting from the very first theorization, then we proceded by formalizing those relations in a E/R diagram.</p>
-			<figure>
-	    		<img src="images\OntologyFramework.jpg" alt="E/R diagram" id="ER">
-	    	</figure>
-			<p>The central realtions from which the ontology has been shaped is the one between technique and material which is defined through the concept that an <b>artwork</b> is realized <span class="underlined">by means of</span> a <b>technique</b> which is <span class="underlined">performed on</span> a <b>material</b>.</p>
-		</div>
+			</div>
 	</section>
 	<section id="Ontology">
 		<div class="container">
 			<h2>Ontology Design and Implementation</h2>
+			<p>Starting from the very first theorization, then we proceded by the implementation of the actual ontology.</p>
+			<figure>
+	    		<img src="images\OntologyFramework.jpg" alt="E/R diagram" id="ER">
+	    	</figure>
+			<hr>
 			<p>The ontology was designed on <a href="https://protege.stanford.edu/">Protégé</a>, an open-source ontology editor. 
 			Classes, object properties, data properties, named individuals, annotation properties, general axioms and namespace declarations are described in the documentation.</p>
 			<figure>
 				<img src="images\ProtegeGraph.jpg" alt="Protégé ontology grah">
 				<figcaption>The graph produced through Protégé shows the implemented classes of the ontology and how they are linked</figcaption>
 			</figure>
+			<div class="row">
+				<div class="col-3"></div>
+				<div class="col-3"><a target="_blank" href="https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/OMETA.owl" download><button>Download the onology in RDF/XML Syntax</button></a></div>
+				<div class="col-3"><a target="_blank" href="https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/OMETA.ttl"><button>Download the ontology in Turtle Syntax</button></a></div>
+				<div class="col-3"></div>
+			</div>
+			<hr>
 			<p>The documentation is accessible as an HTML page thanks to <a href="https://essepuntato.it/lode/">Live OWL Documentation Environment (LODE)</a>, which allows to automatically extract and visualize each element of an onotlogy from the OWL file.</p>
 			<a target="_blank" href="http://150.146.207.114/lode/extract?owlapi=true&url=https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/OMETA.owl"><button>Access the Ontology Documentation</button></a>
 			<iframe src="https://service.tib.eu/webvowl/#iri=https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/OMETA.owl" title="WebVOWL visualization"></iframe>
