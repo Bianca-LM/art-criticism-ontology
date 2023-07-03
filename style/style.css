@@ -55,6 +55,15 @@ nav a:hover {
   display: block;
 }
 
+.link {
+  color: rgb(236, 65, 8);
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: black;
+}
+
 #firstSection, #about, #Project {
   padding-top: 5%;
 }
@@ -282,15 +291,6 @@ footer {
   content: counter(item)".";
   margin-right: 0.4em;
   font-weight: bold;
-}
-
-#Methodology a {
-  color: rgb(236, 65, 8);
-  text-decoration: underline;
-}
-
-#Methodology a:hover {
-  color: black;
 }
 
 #CQ {
