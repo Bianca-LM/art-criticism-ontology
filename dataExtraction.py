@@ -6,16 +6,21 @@ import re
 import json
 from deep_translator import GoogleTranslator
 
+
 def vocabulary(jsonPath): 
-    data = []
+    data = set()
+    enData = set()
     with open(jsonPath, "r", encoding="utf-8") as jsonFile: 
         vocabulary = json.load(jsonFile)
     for i in vocabulary["results"]["bindings"]:
-        data.append(i["label"]["value"])
-        data.append(i["label2"]["value"])
-    translatedMaterials = GoogleTranslator(source='auto', target='it').translate_batch(data)
-    print(translatedMaterials)
-    return translatedMaterials
+        data.add(i["label"]["value"])
+        print(data)
+    for i in data: 
+        enData.add(GoogleTranslator(source='it', target='en').translate(i))
+        #elif GoogleTranslator(source='auto', target='en').translate(i["label2"]["value"]) not in data:
+            #data.append(GoogleTranslator(source='auto', target='en').translate(i["label2"]["value"]))
+    #translatedMaterials = GoogleTranslator(source='auto', target='it').translate_batch(data)
+    return list(enData)
 
 def textProcessing(directory):
 
@@ -23,7 +28,13 @@ def textProcessing(directory):
 
     
     materials = vocabulary("data/jsonMaterials.json")
+    materials.remove("tin") #tin and lands create ambiguation (since painting)
+    materials.remove("blue") #no clue why it is on the list, thanks to Google translator
+    materials.append("metal sheet") #for "latta"
     techniques = vocabulary("data/jsonTechniques.json")
+    techniques.remove("lands")
+    techniques.extend(["oil", "tempera"])
+    techniques.append("earth") #for "terre"
 
     for filename in os.listdir(directory):
         file = os.path.join(directory, filename)
@@ -60,8 +71,9 @@ def textProcessing(directory):
                 csv[workshopOfAuthor] = {} 
                 author = workshopOfAuthor
             elif re.match(r"\n*.+\n\d+", paragraph):
-                artworkDescription = nlp(paragraph)
+                #= nlp(paragraph)
                 title = re.search("\n*.+\n", paragraph).group()
+                #paragraph = paragraph.replace("\n", " ") 
                 if '\n' in title: 
                     title = re.sub(r'\n', '', title)
                 if 'P'+str("{:03d}".format(idx)) not in csv:
@@ -69,8 +81,24 @@ def textProcessing(directory):
                 else: 
                     csv[author]["P"+str("{:03d}".format(idx))].update({title: []})
 
-                words = set([word for word in materials if word in paragraph])
-                csv[author]["P"+str("{:03d}".format(idx))]["material"] = list(words)
+                #usedMaterials = set([word for word in materials if r" "+word in paragraph])
+                #we take the last word found since the last sentence is the one containing technical information
+                #for other books, just make sure that the variable paragraph coincides with the sentence containing technical information
+                usedMaterials = []
+                for material in materials: 
+                    findMaterial = re.findall(material+r'[\s\n.,;]', paragraph, flags=re.IGNORECASE)
+                    usedMaterials.extend(findMaterial)
+                csv[author]["P"+str("{:03d}".format(idx))]["material"] = list(set(usedMaterials))
+                #csv[author]["P"+str("{:03d}".format(idx))]["material"] = list(usedMaterials)
+                
+                #the word must be preceded by a space or a new line in order to avoid errors (as "tin" in "painting")
+                usedTechniques = []
+                for technique in techniques: 
+                    findTechniques = re.findall(technique+r'[\s\n.,;]', paragraph, flags=re.IGNORECASE)
+                    usedTechniques.extend(findTechniques)
+                csv[author]["P"+str("{:03d}".format(idx))]["technique"] = list(set(usedTechniques))
+                #usedTechniques = set([word for word in techniques if r" "+word in paragraph])
+                #csv[author]["P"+str("{:03d}".format(idx))]["techniques"] = list(usedTechniques)
                 idx+=1
                 
                 #csv[author]["artwork"] = title
