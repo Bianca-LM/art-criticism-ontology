@@ -86,7 +86,7 @@ def textProcessing(directory):
                 #for other books, just make sure that the variable paragraph coincides with the sentence containing technical information
                 usedMaterials = []
                 for material in materials: 
-                    findMaterial = re.findall(material+r'[\s\n.,;]', paragraph, flags=re.IGNORECASE)
+                    findMaterial = re.findall(r'(?<![a-zA-Z])'+material+r'(?![a-zA-Z])', paragraph, flags=re.IGNORECASE)
                     usedMaterials.extend(findMaterial)
                 csv[author]["P"+str("{:03d}".format(idx))]["material"] = list(set(usedMaterials))
                 #csv[author]["P"+str("{:03d}".format(idx))]["material"] = list(usedMaterials)
@@ -94,7 +94,7 @@ def textProcessing(directory):
                 #the word must be preceded by a space or a new line in order to avoid errors (as "tin" in "painting")
                 usedTechniques = []
                 for technique in techniques: 
-                    findTechniques = re.findall(technique+r'[\s\n.,;]', paragraph, flags=re.IGNORECASE)
+                    findTechniques = re.findall(r'(?<![a-zA-Z])'+technique+r'(?![a-zA-Z])', paragraph, flags=re.IGNORECASE)
                     usedTechniques.extend(findTechniques)
                 csv[author]["P"+str("{:03d}".format(idx))]["technique"] = list(set(usedTechniques))
                 #usedTechniques = set([word for word in techniques if r" "+word in paragraph])
