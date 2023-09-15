@@ -25,6 +25,12 @@
 #    Object Properties
 #################################################################
 
+###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasAuthor
+mat:hasAuthor rdf:type owl:ObjectProperty ;
+              rdfs:domain mat:Artwork ;
+              rdfs:range mat:Author .
+
+
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasDecoration
 mat:hasDecoration rdf:type owl:ObjectProperty ;
                   rdfs:domain mat:Artwork ;
@@ -88,6 +94,12 @@ mat:hasTechnique rdf:type owl:ObjectProperty ;
                  rdfs:domain mat:Artwork ;
                  rdfs:range mat:Technique ;
                  rdfs:comment "The property connects the artwork to the technique used to realize it" .
+
+
+###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasTitle
+mat:hasTitle rdf:type owl:ObjectProperty ;
+             rdfs:domain mat:Artwork ;
+             rdfs:range mat:Title .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isDated
@@ -216,6 +228,11 @@ mat:Artwork_Component rdf:type owl:Class ;
                       rdfs:comment "A subcomponent of an artwork which can have its own material and technique." .
 
 
+###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Author
+mat:Author rdf:type owl:Class ;
+           rdfs:comment "The artists who made the artwork" .
+
+
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Decoration
 mat:Decoration rdf:type owl:Class ;
                rdfs:subClassOf mat:Artwork_Component ;
@@ -269,6 +286,11 @@ mat:Support rdf:type owl:Class ;
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Technique
 mat:Technique rdf:type owl:Class ;
               rdfs:comment "\"The union of all the principles, rules and manners elaborated by the artists for the material processing over time, experimented in the workshops and artistic laboratories\" as defined by Sciolla." .
+
+
+###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Title
+mat:Title rdf:type owl:Class ;
+          rdfs:comment "The title given by the author to the artwork" .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Decorative_Technique
