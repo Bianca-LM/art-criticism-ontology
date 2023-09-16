@@ -1,4 +1,3 @@
-@prefix : <https://github.com/Bianca-LM/art-criticism-ontology/mat#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix mat: <https://github.com/Bianca-LM/art-criticism-ontology/mat#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -190,7 +189,7 @@ mat:dateOfSignature rdf:type owl:DatatypeProperty ;
                                   owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation>
                                             )
                                 ] ;
-                    rdfs:range xsd:dateTime ;
+                    rdfs:range rdfs:Literal ;
                     rdfs:comment "The property represents the date of the signature datation" .
 
 
