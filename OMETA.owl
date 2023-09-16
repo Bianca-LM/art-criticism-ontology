@@ -1,369 +1,689 @@
-@prefix : <https://github.com/Bianca-LM/art-criticism-ontology/mat#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix mat: <https://github.com/Bianca-LM/art-criticism-ontology/mat#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix opla: <http://ontologydesignpatterns.org/opla/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix opla1: <http://www.ontologydesignpatterns.org/opla/> .
-@prefix terms: <http://purl.org/dc/terms/> .
-@prefix arco-dd: <https://w3id.org/arco/ontology/denotative-description/1.2#> .
-@prefix catalogue: <https://w3id.org/arco/ontology/catalogue/> .
-@base <https://github.com/Bianca-LM/art-criticism-ontology/mat> .
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://github.com/Bianca-LM/art-criticism-ontology/mat"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://github.com/Bianca-LM/art-criticism-ontology/mat"
+     versionIRI="https://github.com/Bianca-LM/art-criticism-ontology/1.0">
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="mat" IRI="https://github.com/Bianca-LM/art-criticism-ontology/mat#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="opla" IRI="http://ontologydesignpatterns.org/opla/"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="opla1" IRI="http://www.ontologydesignpatterns.org/opla/"/>
+    <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="arco-dd" IRI="https://w3id.org/arco/ontology/denotative-description/1.2#"/>
+    <Prefix name="catalogue" IRI="https://w3id.org/arco/ontology/catalogue/"/>
+    <Import>https://w3id.org/arco/ontology/denotative-description/1.2</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <Literal>Bianca La Manna</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <Literal>OM&amp;TA (Ontology of Material &amp; Techniques in Art)</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:license"/>
+        <Literal>CC BY 4.0</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>OM&amp;TA (Ontology of Materials &amp; Techniques in Art) is an ontology which aims at representing the relationship between materials and techniques for the description of artworks in a semantic way.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Artwork"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Artwork_Component"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Author"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Decoration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Frame"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mark"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mark_of_Carter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mark_of_Founder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Material"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ornament"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Support"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Technique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Title"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Decorative_Technique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/External_Physical_Datum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Ornamental_Technique"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAuthor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDecoration"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDecorativeTechnique"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFrame"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInscription"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOrnament"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOrnamentalTechnique"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSupport"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTechnique"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTitle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isDated"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMadeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMarked"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMountedOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPerformedOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSigned"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#transferredFrom"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#dateOfSignature"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasInscriptionContent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSignature"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Current_Support"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Inscription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Previous_Support"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Signature"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Signature_Datation"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Mark"/>
+        <Class IRI="https://w3id.org/arco/ontology/denotative-description/Brand"/>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Decoration"/>
+        <Class IRI="#Artwork_Component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Frame"/>
+        <Class IRI="/External_Physical_Datum"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mark"/>
+        <Class IRI="#Artwork_Component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mark_of_Carter"/>
+        <Class IRI="#Mark"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mark_of_Founder"/>
+        <Class IRI="#Mark"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Material"/>
+        <Class IRI="/External_Physical_Datum"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ornament"/>
+        <Class IRI="#Artwork_Component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Support"/>
+        <Class IRI="/External_Physical_Datum"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Decorative_Technique"/>
+        <Class IRI="#Technique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Ornamental_Technique"/>
+        <Class IRI="#Technique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/arco/ontology/denotative-description/Brand"/>
+        <Class IRI="#Artwork_Component"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Decoration"/>
+        <Class IRI="#Ornament"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Support"/>
+        <NamedIndividual IRI="/Current_Support"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Artwork_Component"/>
+        <NamedIndividual IRI="/Inscription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Support"/>
+        <NamedIndividual IRI="/Previous_Support"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Artwork_Component"/>
+        <NamedIndividual IRI="/Signature"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Artwork_Component"/>
+        <NamedIndividual IRI="/Signature_Datation"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#transferredFrom"/>
+        <NamedIndividual IRI="/Current_Support"/>
+        <NamedIndividual IRI="/Previous_Support"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#transferredFrom"/>
+        <NamedIndividual IRI="/Previous_Support"/>
+        <NamedIndividual IRI="/Previous_Support"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isDated"/>
+        <NamedIndividual IRI="/Signature"/>
+        <NamedIndividual IRI="/Signature_Datation"/>
+    </ObjectPropertyAssertion>
+    <NegativeObjectPropertyAssertion>
+        <ObjectProperty IRI="#transferredFrom"/>
+        <NamedIndividual IRI="/Current_Support"/>
+        <NamedIndividual IRI="/Current_Support"/>
+    </NegativeObjectPropertyAssertion>
+    <NegativeObjectPropertyAssertion>
+        <ObjectProperty IRI="#transferredFrom"/>
+        <NamedIndividual IRI="/Previous_Support"/>
+        <NamedIndividual IRI="/Current_Support"/>
+    </NegativeObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasInscriptionContent"/>
+        <NamedIndividual IRI="/Inscription"/>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal"></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasSignature"/>
+        <NamedIndividual IRI="/Signature"/>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal"></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#dateOfSignature"/>
+        <NamedIndividual IRI="/Signature_Datation"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime"></Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDecorativeTechnique"/>
+        <ObjectProperty IRI="#hasTechnique"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOrnamentalTechnique"/>
+        <ObjectProperty IRI="#hasTechnique"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSupport"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isMountedOn"/>
+        <ObjectProperty IRI="#hasSupport"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAuthor"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDecoration"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDecorativeTechnique"/>
+        <Class IRI="#Decoration"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFrame"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasInscription"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOrnament"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOrnamentalTechnique"/>
+        <Class IRI="#Ornament"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSupport"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTechnique"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTitle"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isDated"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="/Signature"/>
+        </ObjectOneOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMadeOf"/>
+        <Class IRI="#Frame"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMadeOf"/>
+        <Class IRI="#Support"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMarked"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMountedOn"/>
+        <Class IRI="#Material"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPerformedOn"/>
+        <Class IRI="#Technique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSigned"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#transferredFrom"/>
+        <ObjectUnionOf>
+            <ObjectOneOf>
+                <NamedIndividual IRI="/Current_Support"/>
+            </ObjectOneOf>
+            <ObjectOneOf>
+                <NamedIndividual IRI="/Previous_Support"/>
+            </ObjectOneOf>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAuthor"/>
+        <Class IRI="#Author"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDecoration"/>
+        <Class IRI="#Decoration"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDecorativeTechnique"/>
+        <Class IRI="/Decorative_Technique"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFrame"/>
+        <Class IRI="#Frame"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasInscription"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="/Inscription"/>
+        </ObjectOneOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOrnament"/>
+        <Class IRI="#Ornament"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOrnamentalTechnique"/>
+        <Class IRI="/Ornamental_Technique"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSupport"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="/Current_Support"/>
+        </ObjectOneOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTechnique"/>
+        <Class IRI="#Technique"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTitle"/>
+        <Class IRI="#Title"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isDated"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="/Signature_Datation"/>
+        </ObjectOneOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMadeOf"/>
+        <Class IRI="#Material"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMarked"/>
+        <Class IRI="#Mark"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMarked"/>
+        <Class IRI="#Mark_of_Carter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMarked"/>
+        <Class IRI="#Mark_of_Founder"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMountedOn"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="/Current_Support"/>
+        </ObjectOneOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPerformedOn"/>
+        <Class IRI="#Material"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isSigned"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="/Signature"/>
+        </ObjectOneOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#transferredFrom"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="/Previous_Support"/>
+        </ObjectOneOf>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#dateOfSignature"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="/Signature_Datation"/>
+        </ObjectOneOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasInscriptionContent"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="/Inscription"/>
+        </ObjectOneOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSignature"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="/Signature"/>
+        </ObjectOneOf>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#dateOfSignature"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasInscriptionContent"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSignature"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Artwork</IRI>
+        <Literal>The entity which represents the work of art</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Artwork_Component</IRI>
+        <Literal>A subcomponent of an artwork which can have its own material and technique.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Author</IRI>
+        <Literal>The artists who made the artwork</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Decoration</IRI>
+        <Literal>An additional element which is main purpose is not practical or aesthetic, but brings &quot;decorum&quot; to another element.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Frame</IRI>
+        <Literal>Some works of art comes with a frame, which has a material and can  have a decoration.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Mark</IRI>
+        <Literal>The sign of an external contribution out of the author. It can be the founder or the carter, mainly used with scultpures.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Mark_of_Carter</IRI>
+        <Literal>The mark of a workshop or factory for model plasters.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Mark_of_Founder</IRI>
+        <Literal>The mark of a workshop or factory for casting metal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Material</IRI>
+        <Literal>It is the proper material on which the work of art has been made. It can be different from the support.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ornament</IRI>
+        <Literal>An additional element other from the main body of the artwork, which helps through repeated patterns, and natural elements at the visual organization of the artwork, in which prevails the aesthetic function.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Support</IRI>
+        <Literal>The support on which the technique is performed, &quot;given from nature or elaborated by human beings&quot; (Sciolla).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Technique</IRI>
+        <Literal>&quot;The union of all the principles, rules and manners elaborated by the artists for the material processing over time, experimented in the workshops and artistic laboratories&quot; as defined by Sciolla.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Title</IRI>
+        <Literal>The title given by the author to the artwork</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#dateOfSignature</IRI>
+        <Literal>The property represents the date of the signature datation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDecoration</IRI>
+        <Literal>The property connects the artwork to its decoration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDecorativeTechnique</IRI>
+        <Literal>The property connects the decoration that belongs to an artwork to the decorative technique used to realize it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasFrame</IRI>
+        <Literal>The property connects the artwork to its frame</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasInscription</IRI>
+        <Literal>The property connects the artwork to its inscription</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasInscriptionContent</IRI>
+        <Literal>This property represents the content of an inscription.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasOrnament</IRI>
+        <Literal>The property connects the artwork to its ornament</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasOrnamentalTechnique</IRI>
+        <Literal>The property connects the ornament that belongs to an artwork to the ornamental technique that has been used to realize it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSignature</IRI>
+        <Literal>This property represents the signature of the artist imposed on the artwork.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSupport</IRI>
+        <Literal>The property connects the artwork to its current support</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTechnique</IRI>
+        <Literal>The property connects the artwork to the technique used to realize it</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isDated</IRI>
+        <Literal>The property connects the signature to its datation, if it is written on the artwork itself.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isMadeOf</IRI>
+        <Literal>The property connects the frame and the support to the material which they are made of.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isMarked</IRI>
+        <Literal>The property connects the artwork to the mark that has been affixed on it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isMountedOn</IRI>
+        <Literal>The property connects the material on which the artwork has been realised to the current support on which it is mounted</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPerformedOn</IRI>
+        <Literal>The property connects the technique to the material it is performed on.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isSigned</IRI>
+        <Literal>The property connects the artwork to the signature of the artist that made it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#transferredFrom</IRI>
+        <Literal>The property connects the current support of an artwork to the previous support from which it has been transferred.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Current_Support</IRI>
+        <Literal>The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Decorative_Technique</IRI>
+        <Literal>A technique that traditionally is used  for the creation of decorative elements.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/External_Physical_Datum</IRI>
+        <Literal>Every external physical datum of an artwork.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Inscription</IRI>
+        <Literal>Every kind of text added to the work of art.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Ornamental_Technique</IRI>
+        <Literal>A technique that traditionally is used for the creation of ornaments.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Previous_Support</IRI>
+        <Literal>The original support used by the artist.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Signature</IRI>
+        <Literal>The signature of the author left on the artwork itself.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Signature_Datation</IRI>
+        <Literal>The datation of the signature left by the author on the artwork itself.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
-<https://github.com/Bianca-LM/art-criticism-ontology/mat> rdf:type owl:Ontology ;
-                                                           owl:versionIRI <https://github.com/Bianca-LM/art-criticism-ontology/1.0> ;
-                                                           owl:imports <https://w3id.org/arco/ontology/denotative-description/1.2> ;
-                                                           dc:creator "Bianca La Manna" ;
-                                                           dc:title "OM&TA (Ontology of Material & Techniques in Art)" ;
-                                                           terms:license "CC BY 4.0" ;
-                                                           rdfs:comment "OM&TA (Ontology of Materials & Techniques in Art) is an ontology which aims at representing the relationship between materials and techniques for the description of artworks in a semantic way." .
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasAuthor
-mat:hasAuthor rdf:type owl:ObjectProperty ;
-              rdfs:domain mat:Artwork ;
-              rdfs:range mat:Author .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasDecoration
-mat:hasDecoration rdf:type owl:ObjectProperty ;
-                  rdfs:domain mat:Artwork ;
-                  rdfs:range mat:Decoration ;
-                  rdfs:comment "The property connects the artwork to its decoration" .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasDecorativeTechnique
-mat:hasDecorativeTechnique rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf mat:hasTechnique ;
-                           rdfs:domain mat:Decoration ;
-                           rdfs:range <https://github.com/Bianca-LM/art-criticism-ontology/mat/Decorative_Technique> ;
-                           rdfs:comment "The property connects the decoration that belongs to an artwork to the decorative technique used to realize it." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasFrame
-mat:hasFrame rdf:type owl:ObjectProperty ;
-             rdfs:domain mat:Artwork ;
-             rdfs:range mat:Frame ;
-             rdfs:comment "The property connects the artwork to its frame" .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasInscription
-mat:hasInscription rdf:type owl:ObjectProperty ;
-                   rdfs:domain mat:Artwork ;
-                   rdfs:range [ rdf:type owl:Class ;
-                                owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription>
-                                          )
-                              ] ;
-                   rdfs:comment "The property connects the artwork to its inscription" .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasOrnament
-mat:hasOrnament rdf:type owl:ObjectProperty ;
-                rdfs:domain mat:Artwork ;
-                rdfs:range mat:Ornament ;
-                rdfs:comment "The property connects the artwork to its ornament" .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasOrnamentalTechnique
-mat:hasOrnamentalTechnique rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf mat:hasTechnique ;
-                           rdfs:domain mat:Ornament ;
-                           rdfs:range <https://github.com/Bianca-LM/art-criticism-ontology/mat/Ornamental_Technique> ;
-                           rdfs:comment "The property connects the ornament that belongs to an artwork to the ornamental technique that has been used to realize it." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasSupport
-mat:hasSupport rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf owl:topObjectProperty ;
-               rdfs:domain mat:Artwork ;
-               rdfs:range [ rdf:type owl:Class ;
-                            owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support>
-                                      )
-                          ] ;
-               rdfs:comment "The property connects the artwork to its current support" .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasTechnique
-mat:hasTechnique rdf:type owl:ObjectProperty ;
-                 rdfs:domain mat:Artwork ;
-                 rdfs:range mat:Technique ;
-                 rdfs:comment "The property connects the artwork to the technique used to realize it" .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasTitle
-mat:hasTitle rdf:type owl:ObjectProperty ;
-             rdfs:domain mat:Artwork ;
-             rdfs:range mat:Title .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isDated
-mat:isDated rdf:type owl:ObjectProperty ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature>
-                                    )
-                        ] ;
-            rdfs:range [ rdf:type owl:Class ;
-                         owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation>
-                                   )
-                       ] ;
-            rdfs:comment "The property connects the signature to its datation, if it is written on the artwork itself." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isMadeOf
-mat:isMadeOf rdf:type owl:ObjectProperty ;
-             rdfs:domain mat:Frame ,
-                         mat:Support ;
-             rdfs:range mat:Material ;
-             rdfs:comment "The property connects the frame and the support to the material which they are made of." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isMarked
-mat:isMarked rdf:type owl:ObjectProperty ;
-             rdfs:domain mat:Artwork ;
-             rdfs:range mat:Mark ,
-                        mat:Mark_of_Carter ,
-                        mat:Mark_of_Founder ;
-             rdfs:comment "The property connects the artwork to the mark that has been affixed on it." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isMountedOn
-mat:isMountedOn rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf mat:hasSupport ;
-                rdfs:domain mat:Material ;
-                rdfs:range [ rdf:type owl:Class ;
-                             owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support>
-                                       )
-                           ] ;
-                rdfs:comment "The property connects the material on which the artwork has been realised to the current support on which it is mounted" .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isPerformedOn
-mat:isPerformedOn rdf:type owl:ObjectProperty ;
-                  rdfs:domain mat:Technique ;
-                  rdfs:range mat:Material ;
-                  rdfs:comment "The property connects the technique to the material it is performed on." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isSigned
-mat:isSigned rdf:type owl:ObjectProperty ;
-             rdfs:domain mat:Artwork ;
-             rdfs:range [ rdf:type owl:Class ;
-                          owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature>
-                                    )
-                        ] ;
-             rdfs:comment "The property connects the artwork to the signature of the artist that made it." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#transferredFrom
-mat:transferredFrom rdf:type owl:ObjectProperty ;
-                    rdfs:domain [ rdf:type owl:Class ;
-                                  owl:unionOf ( [ rdf:type owl:Class ;
-                                                  owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support>
-                                                            )
-                                                ]
-                                                [ rdf:type owl:Class ;
-                                                  owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support>
-                                                            )
-                                                ]
-                                              )
-                                ] ;
-                    rdfs:range [ rdf:type owl:Class ;
-                                 owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support>
-                                           )
-                               ] ;
-                    rdfs:comment "The property connects the current support of an artwork to the previous support from which it has been transferred." .
-
-
-#################################################################
-#    Data properties
-#################################################################
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#dateOfSignature
-mat:dateOfSignature rdf:type owl:DatatypeProperty ;
-                    rdfs:domain [ rdf:type owl:Class ;
-                                  owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation>
-                                            )
-                                ] ;
-                    rdfs:range xsd:dateTime ;
-                    rdfs:comment "The property represents the date of the signature datation" .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasInscriptionContent
-mat:hasInscriptionContent rdf:type owl:DatatypeProperty ;
-                          rdfs:domain [ rdf:type owl:Class ;
-                                        owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription>
-                                                  )
-                                      ] ;
-                          rdfs:range rdfs:Literal ;
-                          rdfs:comment "This property represents the content of an inscription." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasSignature
-mat:hasSignature rdf:type owl:DatatypeProperty ;
-                 rdfs:domain [ rdf:type owl:Class ;
-                               owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature>
-                                         )
-                             ] ;
-                 rdfs:range rdfs:Literal ;
-                 rdfs:comment "This property represents the signature of the artist imposed on the artwork." .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Artwork
-mat:Artwork rdf:type owl:Class ;
-            rdfs:comment "The entity which represents the work of art" .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Artwork_Component
-mat:Artwork_Component rdf:type owl:Class ;
-                      rdfs:comment "A subcomponent of an artwork which can have its own material and technique." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Author
-mat:Author rdf:type owl:Class ;
-           rdfs:comment "The artists who made the artwork" .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Decoration
-mat:Decoration rdf:type owl:Class ;
-               rdfs:subClassOf mat:Artwork_Component ;
-               owl:disjointWith mat:Ornament ;
-               rdfs:comment "An additional element which is main purpose is not practical or aesthetic, but brings \"decorum\" to another element." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Frame
-mat:Frame rdf:type owl:Class ;
-          rdfs:subClassOf <https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum> ;
-          rdfs:comment "Some works of art comes with a frame, which has a material and can  have a decoration." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Mark
-mat:Mark rdf:type owl:Class ;
-         owl:equivalentClass <https://w3id.org/arco/ontology/denotative-description/Brand> ;
-         rdfs:subClassOf mat:Artwork_Component ;
-         rdfs:comment "The sign of an external contribution out of the author. It can be the founder or the carter, mainly used with scultpures." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Mark_of_Carter
-mat:Mark_of_Carter rdf:type owl:Class ;
-                   rdfs:subClassOf mat:Mark ;
-                   rdfs:comment "The mark of a workshop or factory for model plasters." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Mark_of_Founder
-mat:Mark_of_Founder rdf:type owl:Class ;
-                    rdfs:subClassOf mat:Mark ;
-                    rdfs:comment "The mark of a workshop or factory for casting metal." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Material
-mat:Material rdf:type owl:Class ;
-             rdfs:subClassOf <https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum> ;
-             rdfs:comment "It is the proper material on which the work of art has been made. It can be different from the support." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Ornament
-mat:Ornament rdf:type owl:Class ;
-             rdfs:subClassOf mat:Artwork_Component ;
-             rdfs:comment "An additional element other from the main body of the artwork, which helps through repeated patterns, and natural elements at the visual organization of the artwork, in which prevails the aesthetic function." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Support
-mat:Support rdf:type owl:Class ;
-            rdfs:subClassOf <https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum> ;
-            rdfs:comment "The support on which the technique is performed, \"given from nature or elaborated by human beings\" (Sciolla)." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Technique
-mat:Technique rdf:type owl:Class ;
-              rdfs:comment "\"The union of all the principles, rules and manners elaborated by the artists for the material processing over time, experimented in the workshops and artistic laboratories\" as defined by Sciolla." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Title
-mat:Title rdf:type owl:Class ;
-          rdfs:comment "The title given by the author to the artwork" .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Decorative_Technique
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Decorative_Technique> rdf:type owl:Class ;
-                                                                               rdfs:subClassOf mat:Technique ;
-                                                                               rdfs:comment "A technique that traditionally is used  for the creation of decorative elements." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum> rdf:type owl:Class ;
-                                                                                  rdfs:comment "Every external physical datum of an artwork." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Ornamental_Technique
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Ornamental_Technique> rdf:type owl:Class ;
-                                                                               rdfs:subClassOf mat:Technique ;
-                                                                               rdfs:comment "A technique that traditionally is used for the creation of ornaments." .
-
-
-###  https://w3id.org/arco/ontology/denotative-description/Brand
-<https://w3id.org/arco/ontology/denotative-description/Brand> rdfs:subClassOf mat:Artwork_Component .
-
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support> rdf:type owl:NamedIndividual ,
-                                                                                   mat:Support ;
-                                                                          mat:transferredFrom <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> ;
-                                                                          rdfs:comment "The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.)." .
-
-[ rdf:type owl:NegativePropertyAssertion ;
-   owl:sourceIndividual <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support> ;
-   owl:assertionProperty mat:transferredFrom ;
-   owl:targetIndividual <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support>
- ] .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription> rdf:type owl:NamedIndividual ,
-                                                                               mat:Artwork_Component ;
-                                                                      mat:hasInscriptionContent ""^^rdfs:Literal ;
-                                                                      rdfs:comment "Every kind of text added to the work of art." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> rdf:type owl:NamedIndividual ,
-                                                                                    mat:Support ;
-                                                                           mat:transferredFrom <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> ;
-                                                                           rdfs:comment "The original support used by the artist." .
-
-[ rdf:type owl:NegativePropertyAssertion ;
-   owl:sourceIndividual <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> ;
-   owl:assertionProperty mat:transferredFrom ;
-   owl:targetIndividual <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support>
- ] .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature> rdf:type owl:NamedIndividual ,
-                                                                             mat:Artwork_Component ;
-                                                                    mat:isDated <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation> ;
-                                                                    mat:hasSignature ""^^rdfs:Literal ;
-                                                                    rdfs:comment "The signature of the author left on the artwork itself." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation> rdf:type owl:NamedIndividual ,
-                                                                                      mat:Artwork_Component ;
-                                                                             mat:dateOfSignature ""^^xsd:dateTime ;
-                                                                             rdfs:comment "The datation of the signature left by the author on the artwork itself." .
-
-
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
