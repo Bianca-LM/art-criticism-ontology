@@ -246,16 +246,6 @@
         <NamedIndividual IRI="/Signature"/>
         <NamedIndividual IRI="/Signature_Datation"/>
     </ObjectPropertyAssertion>
-    <NegativeObjectPropertyAssertion>
-        <ObjectProperty IRI="#transferredFrom"/>
-        <NamedIndividual IRI="/Current_Support"/>
-        <NamedIndividual IRI="/Current_Support"/>
-    </NegativeObjectPropertyAssertion>
-    <NegativeObjectPropertyAssertion>
-        <ObjectProperty IRI="#transferredFrom"/>
-        <NamedIndividual IRI="/Previous_Support"/>
-        <NamedIndividual IRI="/Current_Support"/>
-    </NegativeObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#hasInscriptionContent"/>
         <NamedIndividual IRI="/Inscription"/>
