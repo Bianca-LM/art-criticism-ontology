@@ -1,3 +1,4 @@
+@prefix : <https://github.com/Bianca-LM/art-criticism-ontology/mat#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix mat: <https://github.com/Bianca-LM/art-criticism-ontology/mat#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -361,7 +362,7 @@ mat:Title rdf:type owl:Class ;
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation
 <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation> rdf:type owl:NamedIndividual ,
                                                                                       mat:Artwork_Component ;
-                                                                             mat:dateOfSignature ""^^xsd:dateTime ;
+                                                                             mat:dateOfSignature "" ;
                                                                              rdfs:comment "The datation of the signature left by the author on the artwork itself." .
 
 
