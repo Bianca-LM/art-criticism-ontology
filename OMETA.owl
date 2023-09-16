@@ -269,7 +269,7 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#dateOfSignature"/>
         <NamedIndividual IRI="/Signature_Datation"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime"></Literal>
+        <Literal></Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasDecorativeTechnique"/>
