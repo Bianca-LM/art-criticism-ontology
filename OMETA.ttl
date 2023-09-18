@@ -335,7 +335,6 @@ mat:Title rdf:type owl:Class ;
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support
 <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> rdf:type owl:NamedIndividual ,
                                                                                     mat:Support ;
-                                                                           mat:transferredFrom <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> ;
                                                                            rdfs:comment "The original support used by the artist." .
 
 
@@ -350,7 +349,6 @@ mat:Title rdf:type owl:Class ;
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation
 <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation> rdf:type owl:NamedIndividual ,
                                                                                       mat:Artwork_Component ;
-                                                                             mat:dateOfSignature "" ;
                                                                              rdfs:comment "The datation of the signature left by the author on the artwork itself." .
 
 
