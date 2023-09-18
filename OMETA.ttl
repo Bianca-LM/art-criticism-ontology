@@ -312,8 +312,7 @@ mat:Title rdf:type owl:Class ;
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription> rdf:type owl:NamedIndividual ,
-                                                                               mat:Artwork_Component ;
+<https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription> rdf:type owl:NamedIndividual ;
                                                                       mat:hasInscriptionContent ""^^rdfs:Literal ;
                                                                       rdfs:comment "Every kind of text added to the work of art." .
 
@@ -325,16 +324,14 @@ mat:Title rdf:type owl:Class ;
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature> rdf:type owl:NamedIndividual ,
-                                                                             mat:Artwork_Component ;
+<https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature> rdf:type owl:NamedIndividual ;
                                                                     mat:isDated <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation> ;
                                                                     mat:hasSignature ""^^rdfs:Literal ;
                                                                     rdfs:comment "The signature of the author left on the artwork itself." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation> rdf:type owl:NamedIndividual ,
-                                                                                      mat:Artwork_Component ;
+<https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation> rdf:type owl:NamedIndividual ;
                                                                              rdfs:comment "The datation of the signature left by the author on the artwork itself." .
 
 
