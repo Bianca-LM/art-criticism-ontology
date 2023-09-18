@@ -68,6 +68,9 @@
         <Class IRI="#Ornament"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Signature"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Support"/>
     </Declaration>
     <Declaration>
@@ -155,9 +158,6 @@
         <NamedIndividual IRI="/Previous_Support"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="/Signature"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="/Signature_Datation"/>
     </Declaration>
     <EquivalentClasses>
@@ -193,6 +193,10 @@
         <Class IRI="#Artwork_Component"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Signature"/>
+        <Class IRI="#Artwork_Component"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Support"/>
         <Class IRI="/External_Physical_Datum"/>
     </SubClassOf>
@@ -222,19 +226,9 @@
         <NamedIndividual IRI="/Previous_Support"/>
         <NamedIndividual IRI="/Previous_Support"/>
     </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isDated"/>
-        <NamedIndividual IRI="/Signature"/>
-        <NamedIndividual IRI="/Signature_Datation"/>
-    </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#hasInscriptionContent"/>
         <NamedIndividual IRI="/Inscription"/>
-        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal"></Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasSignature"/>
-        <NamedIndividual IRI="/Signature"/>
         <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal"></Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
@@ -295,9 +289,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isDated"/>
-        <ObjectOneOf>
-            <NamedIndividual IRI="/Signature"/>
-        </ObjectOneOf>
+        <Class IRI="#Signature"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isMadeOf"/>
@@ -405,9 +397,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isSigned"/>
-        <ObjectOneOf>
-            <NamedIndividual IRI="/Signature"/>
-        </ObjectOneOf>
+        <Class IRI="#Signature"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#transferredFrom"/>
@@ -423,12 +413,6 @@
         <DataProperty IRI="#hasInscriptionContent"/>
         <ObjectOneOf>
             <NamedIndividual IRI="/Inscription"/>
-        </ObjectOneOf>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasSignature"/>
-        <ObjectOneOf>
-            <NamedIndividual IRI="/Signature"/>
         </ObjectOneOf>
     </DataPropertyDomain>
     <DataPropertyRange>
@@ -492,6 +476,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Ornament</IRI>
         <Literal>An additional element other from the main body of the artwork, which helps through repeated patterns, and natural elements at the visual organization of the artwork, in which prevails the aesthetic function.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Signature</IRI>
+        <Literal>The signature lived by the author on the artwork</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -627,11 +616,6 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/Previous_Support</IRI>
         <Literal>The original support used by the artist.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>/Signature</IRI>
-        <Literal>The signature of the author left on the artwork itself.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
