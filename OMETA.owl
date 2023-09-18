@@ -212,18 +212,6 @@
         <Class IRI="#Decoration"/>
         <Class IRI="#Ornament"/>
     </DisjointClasses>
-    <ClassAssertion>
-        <Class IRI="#Artwork_Component"/>
-        <NamedIndividual IRI="/Inscription"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Artwork_Component"/>
-        <NamedIndividual IRI="/Signature"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Artwork_Component"/>
-        <NamedIndividual IRI="/Signature_Datation"/>
-    </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#transferredFrom"/>
         <NamedIndividual IRI="/Current_Support"/>
