@@ -213,16 +213,8 @@
         <Class IRI="#Ornament"/>
     </DisjointClasses>
     <ClassAssertion>
-        <Class IRI="#Support"/>
-        <NamedIndividual IRI="/Current_Support"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="#Artwork_Component"/>
         <NamedIndividual IRI="/Inscription"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Support"/>
-        <NamedIndividual IRI="/Previous_Support"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Artwork_Component"/>
@@ -235,6 +227,11 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#transferredFrom"/>
         <NamedIndividual IRI="/Current_Support"/>
+        <NamedIndividual IRI="/Previous_Support"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#transferredFrom"/>
+        <NamedIndividual IRI="/Previous_Support"/>
         <NamedIndividual IRI="/Previous_Support"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -340,14 +337,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#transferredFrom"/>
-        <ObjectUnionOf>
-            <ObjectOneOf>
-                <NamedIndividual IRI="/Current_Support"/>
-            </ObjectOneOf>
-            <ObjectOneOf>
-                <NamedIndividual IRI="/Previous_Support"/>
-            </ObjectOneOf>
-        </ObjectUnionOf>
+        <Class IRI="#Support"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAuthor"/>
@@ -433,9 +423,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#transferredFrom"/>
-        <ObjectOneOf>
-            <NamedIndividual IRI="/Previous_Support"/>
-        </ObjectOneOf>
+        <Class IRI="#Support"/>
     </ObjectPropertyRange>
     <DataPropertyDomain>
         <DataProperty IRI="#dateOfSignature"/>
