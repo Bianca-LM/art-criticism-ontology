@@ -56,10 +56,7 @@ mat:hasFrame rdf:type owl:ObjectProperty ;
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasInscription
 mat:hasInscription rdf:type owl:ObjectProperty ;
                    rdfs:domain mat:Artwork ;
-                   rdfs:range [ rdf:type owl:Class ;
-                                owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription>
-                                          )
-                              ] ;
+                   rdfs:range mat:Inscription ;
                    rdfs:comment "The property connects the artwork to its inscription" .
 
 
@@ -133,10 +130,7 @@ mat:isMarked rdf:type owl:ObjectProperty ;
 mat:isMountedOn rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf mat:hasSupport ;
                 rdfs:domain mat:Material ;
-                rdfs:range [ rdf:type owl:Class ;
-                             owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support>
-                                       )
-                           ] ;
+                rdfs:range mat:Support ;
                 rdfs:comment "The property connects the material on which the artwork has been realised to the current support on which it is mounted" .
 
 
@@ -177,10 +171,6 @@ mat:dateOfSignature rdf:type owl:DatatypeProperty ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasInscriptionContent
 mat:hasInscriptionContent rdf:type owl:DatatypeProperty ;
-                          rdfs:domain [ rdf:type owl:Class ;
-                                        owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription>
-                                                  )
-                                      ] ;
                           rdfs:range rdfs:Literal ;
                           rdfs:comment "This property represents the content of an inscription." .
 
@@ -221,6 +211,12 @@ mat:Decoration rdf:type owl:Class ;
 mat:Frame rdf:type owl:Class ;
           rdfs:subClassOf <https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum> ;
           rdfs:comment "Some works of art comes with a frame, which has a material and can  have a decoration." .
+
+
+###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Inscription
+mat:Inscription rdf:type owl:Class ;
+                rdfs:subClassOf mat:Artwork_Component ;
+                rdfs:comment "Any kind of text added to the artwork, which is not a signature, a date or a mark." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Mark
@@ -305,12 +301,6 @@ mat:Title rdf:type owl:Class ;
 <https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support> rdf:type owl:NamedIndividual ;
                                                                           mat:transferredFrom <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> ;
                                                                           rdfs:comment "The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.)." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Inscription> rdf:type owl:NamedIndividual ;
-                                                                      mat:hasInscriptionContent ""^^rdfs:Literal ;
-                                                                      rdfs:comment "Every kind of text added to the work of art." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support
