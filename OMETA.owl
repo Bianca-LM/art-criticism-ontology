@@ -53,6 +53,9 @@
         <Class IRI="#Frame"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Inscription"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Mark"/>
     </Declaration>
     <Declaration>
@@ -152,9 +155,6 @@
         <NamedIndividual IRI="/Current_Support"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="/Inscription"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="/Previous_Support"/>
     </Declaration>
     <Declaration>
@@ -171,6 +171,10 @@
     <SubClassOf>
         <Class IRI="#Frame"/>
         <Class IRI="/External_Physical_Datum"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Inscription"/>
+        <Class IRI="#Artwork_Component"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Mark"/>
@@ -226,11 +230,6 @@
         <NamedIndividual IRI="/Previous_Support"/>
         <NamedIndividual IRI="/Previous_Support"/>
     </ObjectPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasInscriptionContent"/>
-        <NamedIndividual IRI="/Inscription"/>
-        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal"></Literal>
-    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasDecorativeTechnique"/>
         <ObjectProperty IRI="#hasTechnique"/>
@@ -337,9 +336,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasInscription"/>
-        <ObjectOneOf>
-            <NamedIndividual IRI="/Inscription"/>
-        </ObjectOneOf>
+        <Class IRI="#Inscription"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasOrnament"/>
@@ -387,9 +384,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isMountedOn"/>
-        <ObjectOneOf>
-            <NamedIndividual IRI="/Current_Support"/>
-        </ObjectOneOf>
+        <Class IRI="#Support"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isPerformedOn"/>
@@ -407,12 +402,6 @@
         <DataProperty IRI="#dateOfSignature"/>
         <ObjectOneOf>
             <NamedIndividual IRI="/Signature_Datation"/>
-        </ObjectOneOf>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasInscriptionContent"/>
-        <ObjectOneOf>
-            <NamedIndividual IRI="/Inscription"/>
         </ObjectOneOf>
     </DataPropertyDomain>
     <DataPropertyRange>
@@ -451,6 +440,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Frame</IRI>
         <Literal>Some works of art comes with a frame, which has a material and can  have a decoration.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Inscription</IRI>
+        <Literal>Any kind of text added to the artwork, which is not a signature, a date or a mark.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -601,11 +595,6 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/External_Physical_Datum</IRI>
         <Literal>Every external physical datum of an artwork.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>/Inscription</IRI>
-        <Literal>Every kind of text added to the work of art.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
