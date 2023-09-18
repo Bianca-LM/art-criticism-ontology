@@ -7,6 +7,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://github.com/Bianca-LM/art-criticism-ontology/mat"
      versionIRI="https://github.com/Bianca-LM/art-criticism-ontology/1.0">
+    <Prefix name="" IRI="https://github.com/Bianca-LM/art-criticism-ontology/mat#"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="mat" IRI="https://github.com/Bianca-LM/art-criticism-ontology/mat#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
@@ -237,11 +238,6 @@
         <NamedIndividual IRI="/Previous_Support"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#transferredFrom"/>
-        <NamedIndividual IRI="/Previous_Support"/>
-        <NamedIndividual IRI="/Previous_Support"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isDated"/>
         <NamedIndividual IRI="/Signature"/>
         <NamedIndividual IRI="/Signature_Datation"/>
@@ -255,11 +251,6 @@
         <DataProperty IRI="#hasSignature"/>
         <NamedIndividual IRI="/Signature"/>
         <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal"></Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#dateOfSignature"/>
-        <NamedIndividual IRI="/Signature_Datation"/>
-        <Literal></Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasDecorativeTechnique"/>
