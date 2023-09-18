@@ -104,10 +104,7 @@ mat:hasTitle rdf:type owl:ObjectProperty ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isDated
 mat:isDated rdf:type owl:ObjectProperty ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature>
-                                    )
-                        ] ;
+            rdfs:domain mat:Signature ;
             rdfs:range [ rdf:type owl:Class ;
                          owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation>
                                    )
@@ -153,10 +150,7 @@ mat:isPerformedOn rdf:type owl:ObjectProperty ;
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isSigned
 mat:isSigned rdf:type owl:ObjectProperty ;
              rdfs:domain mat:Artwork ;
-             rdfs:range [ rdf:type owl:Class ;
-                          owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature>
-                                    )
-                        ] ;
+             rdfs:range mat:Signature ;
              rdfs:comment "The property connects the artwork to the signature of the artist that made it." .
 
 
@@ -193,10 +187,6 @@ mat:hasInscriptionContent rdf:type owl:DatatypeProperty ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#hasSignature
 mat:hasSignature rdf:type owl:DatatypeProperty ;
-                 rdfs:domain [ rdf:type owl:Class ;
-                               owl:oneOf ( <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature>
-                                         )
-                             ] ;
                  rdfs:range rdfs:Literal ;
                  rdfs:comment "This property represents the signature of the artist imposed on the artwork." .
 
@@ -264,6 +254,12 @@ mat:Ornament rdf:type owl:Class ;
              rdfs:comment "An additional element other from the main body of the artwork, which helps through repeated patterns, and natural elements at the visual organization of the artwork, in which prevails the aesthetic function." .
 
 
+###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Signature
+mat:Signature rdf:type owl:Class ;
+              rdfs:subClassOf mat:Artwork_Component ;
+              rdfs:comment "The signature lived by the author on the artwork" .
+
+
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#Support
 mat:Support rdf:type owl:Class ;
             rdfs:subClassOf <https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum> ;
@@ -321,13 +317,6 @@ mat:Title rdf:type owl:Class ;
 <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> rdf:type owl:NamedIndividual ;
                                                                            mat:transferredFrom <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> ;
                                                                            rdfs:comment "The original support used by the artist." .
-
-
-###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature> rdf:type owl:NamedIndividual ;
-                                                                    mat:isDated <https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation> ;
-                                                                    mat:hasSignature ""^^rdfs:Literal ;
-                                                                    rdfs:comment "The signature of the author left on the artwork itself." .
 
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat/Signature_Datation
