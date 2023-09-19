@@ -31,7 +31,6 @@
 					<div class="dropdown">
 						<a class="nav-link dropbtn" href="documentation.html">Documentation</a>
 						<div class="dropdown-content">
-						  <a href="documentation.html#Project">Conceptual Model</a>
 						  <a href="documentation.html#Ontology">Ontology Design</a>
 						  <a href="documentation.html#Results">Results</a>
 						</div>
@@ -59,15 +58,15 @@
 			As we will see in the documentation, what changes with the OM&TA ontology is the relation between artwork, technique and material. 
 			</p>
 			-->
-            <h2>Methodology</h2>
+
+
+            <h2>Methodology: Ontology requirements specification document (ORSD)</h2>
             <p>The main functionalities of the ontology have been defined following the guidelines for ontology requirements specification document (ORSD) proposed in the paper "How to Write and Use the Ontology Requirements Specification Document" by Suárez-Figueroa et al.</p>
 			<p>The data taken under consideration have been extracted from some of the artworks described in the following catalogues of the MET museums:
 				<ul>	
 					<li><a class="link" href="https://www.metmuseum.org/art/metpublications/Italian_Paintings_A_Catalogue_of_the_Collection_of_The_Metropolitan_Museum_of_Art_Vol_2_Venetian_School">"Italian paintings. Vol. 2, Venetian School"</a> by Federico Zeri;</li>
-					<li><a class="link" href="https://www.metmuseum.org/art/metpublications/American_Sculpture_A_Catalogue_of_the_Collection_of_The_Metropolitan_Museum_of_Art">"American Sculpture"</a> by Albert T. Gardner;</li>
 				</ul> 
 			</p>
-            <h3>Ontology requirements specification document (ORSD)</h3>
 			<p>By following the template proposed by the authors, we have identified the basic requirements to develop this ontology as exposed in the following table.</p>
             <ol>
                 <li><b>Purpose:</b> represent the relationship between materials and techniques in art;</li>
@@ -79,31 +78,78 @@
                     <ul>
                         <li><b>Non-Functional Requirements:</b> the ontology must be compliant with international standards.</li>
                         <li><b>Functional Requirements:</b> Competency Questions (CQs) which in the end the user will be able to answer through the queries performed on a SPARQL endpoint.</br>
-                            In this first draft the CQs will be written in natural language, since they are real questions between human beign, not yet formalized to be understandable by a machine.</b> 
-                            <table id="CQ">
-                                <caption>Groups of Competency Questions</caption>
-                                <tr>
-                                    <th>CQ1</th>
-                                    <th>CQ2</th>
-                                    <th>CQ3</th>
-                                    <th>CQ4</th>
-                                    <th>CQ5</th>
-                                </tr>
-                                <tr>
-                                    <td>Which <b>technique</b> has been used in the <b>artwork</b> "The Madonna and Child" by the workshop of Giovanni Bellini?</td>
-                                    <td>From which <b>material</b> is artwork "The Madonna and Child" by the workshop of Giovanni Bellini made of?</td>
-                                    <td>Which are the most common materials on which <b>is performed</b> technique "oil"?</td>
-                                    <td>Which are the most common materials in art?</td>
-                                    <td>Which artworks have changed <b>support</b> over time?</td>
-                                </tr>
-								<tr>
-                                    <td>Tempera and oil</td>
-                                    <td>Wood</td>
-                                    <td>Canvas (17 artworks); wood (7 artworks); paper (2 artworks)</td>
-                                    <td>Wood and canvas</td>
-                                    <td>"Three Saints: Roch, Anthony Abbot, and Lucy" by Giovanni Battista Cima.</td>
-                                </tr>
-                            </table>
+                            In this first draft the CQs will be written in natural language, since they are real questions between human beign, not yet formalized to be understandable by a machine. The expected answers are given according to the data contained in the Zeri catalogue (see above)</b> 
+							<div class="row">
+								<div class="col-lg-4">
+									<div class="flip-card">
+										<div class="flip-card-inner">
+										  <div class="flip-card-front">
+											<h2>CQ1</h2>
+											<p>Which <b>technique</b> has been used in the <b>artwork</b> "The Madonna and Child" by the workshop of Giovanni Bellini?</p>
+										  </div>
+										  <div class="flip-card-back">
+											<p><b>Expected answer:</b> Temper and oil</p>
+										  </div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="flip-card">
+										<div class="flip-card-inner">
+											<div class="flip-card-front">
+												<h2>CQ2</h2>
+												<p>From which <b>material</b> is artwork "The Madonna and Child" by the workshop of Giovanni Bellini made of?</p>
+											</div>
+											<div class="flip-card-back">
+												<p><b>Expected answer:</b> Wood</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="flip-card">
+										<div class="flip-card-inner">
+											<div class="flip-card-front">
+												<h2>CQ3</h2>
+												<p>Which are the most common materials on which <b>is performed</b> technique "oil"?</p>
+											</div>
+											<div class="flip-card-back">
+												<p><b>Expected answer:</b> wood and canvas</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-2"></div>
+								<div class="col-lg-4">
+									<div class="flip-card">
+										<div class="flip-card-inner">
+											<div class="flip-card-front">
+												<h2>CQ4</h2>
+												<p>Which are the most common materials in art?</p>
+											</div>
+											<div class="flip-card-back">
+												<p><b>Expected answer:</b> Canvas (17 artworks); wood (7 artworks); paper (2 artworks)</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="flip-card">
+										<div class="flip-card-inner">
+											<div class="flip-card-front">
+											<h2>CQ5</h2>
+											<p>Which artworks have changed <b>support</b> during their life?</p>
+											</div>
+											<div class="flip-card-back">
+											<p><b>Expected answer:</b> "Three Saints: Roch, Anthony Abbot, and Lucy" by Giovanni Battista Cima.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-2"></div>
+							</div>
                         </li>
                     </ul>
                 </li>
@@ -111,12 +157,40 @@
                     <ul>
                         <li><b>Terms from Competency Questions:</b> material, technique, artwork.</li>
                         <li><b>Terms from Answers:</b> oil painting, marble, canvas.</li>
-                        <!--<li><b>Objects:</b></li>-->
                     </ul>
                 </li>
-
             </ol>
 		</div>
+	</section>
+	<section id="Project">
+		<div class="container">
+			<div id="Modelling">
+				<h2>Modelling</h2>
+				<p>Starting from the definition of material and technique given by Sciolla, we started modelling our ontology starting from the descriptions of the paintings available in the volumes "Italian Paintings: A Catalogue of the Collection of The Metropolitan Museum of Art" by Federico Zeri. <br>
+				All the descriptionsin the catalogues have more or less the same structure from which the main entities for the description of materials and techniques can be extracted. 
+				First we started by analysing how materials and techniques where expressed and which were their relationships. As it can be seen from the two examples, immediately it turns out that the material and the support can coincide or they can be different, i.e. a material mounted on a support.
+				<div class="row">
+					<div class="col-lg-6 col-md-12">
+						<img src="images/Modelling1.png" alt="Description of 'Three Saints: Roch, Anthony Abbot, and Lucy' by Giovanni Battista Cima"/>
+					</div>
+					<div class="col-lg-6 col-md-12">
+						<img src="images/Modelling2.png" alt="Decription of a Landscape by Francesco Guardi"/>
+					</div>
+				</div>
+				This brought to the definition of the first classes and relationships which are the core of the ontology.<br>
+				The central realtions from which the ontology has been shaped is the one between technique and material which is defined through the concept that an <b>artwork</b> is realized <span class="underlined">by means of</span> a <b>technique</b> which is <span class="underlined">performed on</span> a <b>material</b>.
+				<figure>
+					<img src="images/BasicModel.jpg" alt="Core classes and relationships"/>
+				</figure>
+				</p>
+			</div>
+            <h2>The conceptual model</h2>
+			<p>From the chapters <i>I materiali</i> and <i>Le tecniche</i> it is possible to extract the first entities and relations that could formalize the concepts of materials and techniques in the artworks.</p>
+			<p>The first step was the creation of a conceptual model which tries to define the main elements and how they are related. Since materials and techniques are still at the level of denotative description, they are related to all the elements, as "Signature" or "Frame", which sometimes are added through a different technique or material from the one largely used for the artwork.</p>
+			<figure>
+	    		<img src="images\TMmAP.jpg" alt="Conceptual model">
+	    	</figure>
+			</div>
 	</section>
 	<footer>
 		<p>A project for the course "Knowledge Representation and Extraction"</p>
