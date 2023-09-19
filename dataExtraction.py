@@ -33,7 +33,6 @@ def vocabulary(jsonQueryResults):
     enData = set()
     for i in jsonQueryResults["results"]["bindings"]:
         data.add(i["label"]["value"])
-        print(data)
     for i in data: 
         enData.add(GoogleTranslator(source='it', target='en').translate(i))
     translatedData = correctTranslation(list(enData))
@@ -57,7 +56,6 @@ def dataExtraction(directory, materials, techniques):
         for paragraph in re.split(r'\n?\n\n\n', text):
             txt.append(paragraph)
             txt.append("PARAGRAPH END")
-            #print("AAAAAAAA", paragraph)
             if re.match(r'\n*[a-zA-Z ]+\n(?!\d)', paragraph): 
                 processedParagraph = nlp(paragraph)
                 if processedParagraph.ents[0].label_ == "PERSON" and processedParagraph.ents[0].text != False:
@@ -105,7 +103,7 @@ def dataExtraction(directory, materials, techniques):
         material.append(value["material"])
         technique.append(value["technique"])
 
-    dataFrame = DataFrame({"identifier": Series(identifier, dtype=str), "author": Series(author, dtype=str), "title":Series(title, dtype=str), "material": Series(material, dtype=str), "technique":Series(technique, dtype=str)})
+    dataFrame = DataFrame({"identifier": Series(identifier, dtype=str), "author": Series(author, dtype=str), "title":Series(title, dtype=str), "material": Series(material), "technique":Series(technique)})
 
     dataFrame.to_csv("data/data.csv")
 
