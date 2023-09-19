@@ -64,15 +64,21 @@ nav a:hover {
   color: black;
 }
 
-#firstSection, #about, #Project {
+#firstSection, #Methodology, #about, #Ontology {
   padding-top: 5%;
 }
 
 @media screen and (max-width:992px) {
-  #firstSection, #about, #Project {
+  #firstSection, #about, #Methodology, #Ontology {
     margin-top: 5%;
   }
 }
+
+#firstSection h1{
+  text-align: center;
+  border-bottom: 0.1em solid black;
+  padding: 0.2em;
+  }
 
 #firstSection li::marker, .bold {
   font-weight: bold;
@@ -165,7 +171,7 @@ blockquote {
 }
 
 #cards i {
-  font-size: 20vh;
+  font-size: 10vh;
   padding: 5%;
 }
 
@@ -173,7 +179,7 @@ h1 {
   text-align: center;
 }
 
-#Project img, #Ontology img, #Results img {
+#about img, #Ontology img, #Results img, #Methodology img {
   width: 80%;
   margin: auto;
   display: block;
@@ -303,7 +309,7 @@ footer {
   vertical-align: baseline;
 }
 
-#Project h1, #about h1, #Methodology h1 {
+#about h1, #Methodology h1, #Ontology h1 {
   margin: 0.5em;
   border-bottom: 0.1em solid black;
   padding: 0.2em;
