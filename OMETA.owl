@@ -74,6 +74,9 @@
         <Class IRI="#Signature"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Signature_Datation"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Support"/>
     </Declaration>
     <Declaration>
@@ -157,9 +160,6 @@
     <Declaration>
         <NamedIndividual IRI="/Previous_Support"/>
     </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="/Signature_Datation"/>
-    </Declaration>
     <EquivalentClasses>
         <Class IRI="#Mark"/>
         <Class IRI="https://w3id.org/arco/ontology/denotative-description/Brand"/>
@@ -201,6 +201,10 @@
         <Class IRI="#Artwork_Component"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Signature_Datation"/>
+        <Class IRI="#Signature"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Support"/>
         <Class IRI="/External_Physical_Datum"/>
     </SubClassOf>
@@ -220,6 +224,14 @@
         <Class IRI="#Decoration"/>
         <Class IRI="#Ornament"/>
     </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Support"/>
+        <NamedIndividual IRI="/Current_Support"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Support"/>
+        <NamedIndividual IRI="/Previous_Support"/>
+    </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#transferredFrom"/>
         <NamedIndividual IRI="/Current_Support"/>
@@ -348,9 +360,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSupport"/>
-        <ObjectOneOf>
-            <NamedIndividual IRI="/Current_Support"/>
-        </ObjectOneOf>
+        <Class IRI="#Support"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTechnique"/>
@@ -362,9 +372,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isDated"/>
-        <ObjectOneOf>
-            <NamedIndividual IRI="/Signature_Datation"/>
-        </ObjectOneOf>
+        <Class IRI="#Signature_Datation"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isMadeOf"/>
@@ -398,12 +406,6 @@
         <ObjectProperty IRI="#transferredFrom"/>
         <Class IRI="#Support"/>
     </ObjectPropertyRange>
-    <DataPropertyDomain>
-        <DataProperty IRI="#dateOfSignature"/>
-        <ObjectOneOf>
-            <NamedIndividual IRI="/Signature_Datation"/>
-        </ObjectOneOf>
-    </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#dateOfSignature"/>
         <Datatype abbreviatedIRI="rdfs:Literal"/>
@@ -475,6 +477,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Signature</IRI>
         <Literal>The signature lived by the author on the artwork</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Signature_Datation</IRI>
+        <Literal>The date of  the signature, lived by the authors themselves on the artwork.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -605,11 +612,6 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/Previous_Support</IRI>
         <Literal>The original support used by the artist.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>/Signature_Datation</IRI>
-        <Literal>The datation of the signature left by the author on the artwork itself.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
