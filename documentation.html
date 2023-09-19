@@ -31,7 +31,6 @@
 					<div class="dropdown">
 						<a class="nav-link dropbtn" href="#">Documentation</a>
 						<div class="dropdown-content">
-						  <a href="#Project">Conceptual Model</a>
 						  <a href="#Ontology">Ontology Design</a>
 						  <a href="#Results">Results</a>
 						</div>
@@ -49,40 +48,17 @@
 	</nav>
 
 	<!-- Page Content -->
-	<section id="Project">
+	
+	<section id="Ontology">
 		<div class="container">
-			<h1 class="fw-light">Documentation</h1>
-			<div id="Modelling">
-				<h2>Modelling</h2>
-				<p>Starting from the definition of material and technique given by Sciolla, we started modelling our ontology starting from the descriptions of the paintings available in the volumes "Italian Paintings: A Catalogue of the Collection of The Metropolitan Museum of Art" by Federico Zeri. <br>
-				All the descriptionsin the catalogues have more or less the same structure from which the main entities for the description of materials and techniques can be extracted. 
-				First we started by analysing how materials and techniques where expressed and which were their relationships. As it can be seen from the two examples, immediately it turns out that the material and the support can coincide or they can be different, i.e. a material mounted on a support.
-				<div class="row">
-					<div class="col-lg-6 col-md-12">
-						<img src="images/Modelling1.png" alt="Description of 'Three Saints: Roch, Anthony Abbot, and Lucy' by Giovanni Battista Cima"/>
-					</div>
-					<div class="col-lg-6 col-md-12">
-						<img src="images/Modelling2.png" alt="Decription of a Landscape by Francesco Guardi"/>
-					</div>
-				</div>
-				This brought to the definition of the first classes and relationships which are the core of the ontology.<br>
-				The central realtions from which the ontology has been shaped is the one between technique and material which is defined through the concept that an <b>artwork</b> is realized <span class="underlined">by means of</span> a <b>technique</b> which is <span class="underlined">performed on</span> a <b>material</b>.
-				<figure>
-					<img src="images/BasicModel.jpg" alt="Core classes and relationships"/>
-				</figure>
-				</p>
-			</div>
-            <h2>The conceptual model</h2>
+			<h1>Ontology Design and Implementation</h1>
+			<h2>The conceptual model</h2>
 			<p>From the chapters <i>I materiali</i> and <i>Le tecniche</i> it is possible to extract the first entities and relations that could formalize the concepts of materials and techniques in the artworks.</p>
-			<p>The first step was the creation of a conceptual model which tries to define the main elements and how they are related. Since materials and techniques are still at the level of denotative description, they are related to all the elements, as "Signature" or "Frame", which sometimes are added through a different technique or material from the one largely used for the artwork.</p>
+			<p>The first step was the creation of a <b>conceptual model</b> which tries to define the main elements and how they are related. Since materials and techniques are still at the level of denotative description, they are related to all the elements, as "Signature" or "Frame", which sometimes are added through a different technique or material from the one largely used for the artwork.</p>
 			<figure>
 	    		<img src="images\TMmAP.jpg" alt="Conceptual model">
 	    	</figure>
-			</div>
-	</section>
-	<section id="Ontology">
-		<div class="container">
-			<h2>Ontology Design and Implementation</h2>
+			<h2>The Ontology</h2>
 			<p>Starting from the very first theorization, then we proceded by the implementation of the actual ontology.</p>
 			<figure>
 	    		<img src="images\OntologyFramework.jpg" alt="E/R diagram" id="ER">
@@ -106,18 +82,37 @@
 			<iframe src="https://service.tib.eu/webvowl/#iri=https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/OMETA.owl" title="WebVOWL visualization"></iframe>
 		</div>
 	</section>
+	<section id="Data">
+		<div class="container">
+			<h2>Data Extraction and Dataset</h2>
+			<p>Starting from <a class="link" href="https://www.metmuseum.org/art/metpublications/Italian_Paintings_A_Catalogue_of_the_Collection_of_The_Metropolitan_Museum_of_Art_Vol_2_Venetian_School">Zeri's catalogue</a> of paintins, an automatic extraction was performed on the text in order to define the main elements: title, author, material and technique.</p>
+			<p>The steps to extract the data can be summed as follows:
+				<ol>
+					<li>Cleaning and text preparation: provide a clean text, in a machine-readable format</li>
+					<li>Paragraphs and section: automatic division of the text into titles and paragraphs. In this way it will be easier to define where to search information. In this case, the division has been performed through Regular Expression (RE) but other methods can be used according to the internal organization of the text (for example, nlp tools as spacy provide a paragraph division).</li>
+					<li>Definition of titles and authors: after the identification of titles, through Names Entity Recognition it was possible to extract names of authors, while name of artworks where extracted through RE.</li>
+					<li>Extraction of materials and techniques: in order to perform an automatic extraction we used as reference the two skos vocabularies: 
+						<ul>
+							<li><a class="link" href="https://dati.beniculturali.it/lodview/vocabularies/opere_e_oggetti_d_arte_materia/def/.html">Thesaurus per la definizione della materia per le opere e gli oggetti d'arte</a></li>
+							<li><a class="link" href="https://dati.beniculturali.it/lodview/vocabularies/opere_e_oggetti_d_arte_tecnica/def/.html">Thesaurus per la definizione della tecnica per le opere e gli oggetti d'arte</a></li>
+						</ul>
+					Since both of them where in italian, it was necessary to translate them in English. This operation was automated too through the python library <a class="link" href="https://pypi.org/project/deep-translator/">deep translator</a>
+					</li>
+				</ol>
+				<a target="_blank" href="https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/dataExtraction.py"><button>Final Python code available here</button></a>
+			</p>
+			<p>In order to test as much classes as possible from the ontology, for 35 artworks additional information (as signature, inscription, support etc.) where manually extracted from the reference text and added to the dataset.
+			</p>
+		</div>
+	</section>
 	<section id="Results">
 		<div class="container">
 			<h2>Knowlede Graph and results</h2>
-			<p>In order to test our ontology we provided two small dataset in csv format, in order to populate a knowledge graph: 
-				<ul>
-					<li><a class="link" href="https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/data/Dataset_paintings.csv" download>Paintings dataset</a>: 35 different artworks. The data have been extracted from the catalogue of the collection of the Metropolitan Museum of Art "Italian Paintings. Venetian school" by Federico Zeri with the assistance of Elizabeth E. Gardner</li>
-					<li><a class="link" href="https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/data/Dataset_sculptures.csv" download>Sculptures dataset</a>: 26 different sculptures. The data have been extracted from the catalogue of the collection of the Metropolitan Museum of Art "American Sculpture" by Albert TenEyck Gardner.</li>
-				</ul>
+			<p>The intersection of the automatic and the manually extracted data has been used in order to populate the knowledge graph (python code available <a class="link" href="https://github.com/Bianca-LM/art-criticism-ontology/blob/main/KnowledgeGraph.py">here</a>)
+			<a target="_blank" href="https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/knowledgeGraph.txt" download><button>Download the Knowledge Graph</button></a>
 			</p>
 			<p>Now we can translate the Competency Questions in SPARQL queries that can be performed using OM&TA ontology on a sparql endpoint.</p>
 			<p>The data have been loaded on a graph database (Blazegraph) on which the queries have been performed to get the results.</p>
-			<p>It is possible to download the knowledge graph in Turtle at the following <a class="link" href="https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/knowledgeGraph.txt" download>link</a></p>
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="flip-card">
