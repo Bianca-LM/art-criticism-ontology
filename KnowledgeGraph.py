@@ -98,7 +98,6 @@ ttl = knowledgeGraph.serialize(destination='knowledgeGraph.txt', format='turtle'
 #load into blazegraph
 for triple in knowledgeGraph.triples((None, None, None)):
     try:
-        #print(triple)
         store.add(triple)
     except: 
         print(triple)
