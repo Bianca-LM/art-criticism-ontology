@@ -61,13 +61,13 @@
 			<h2>The Ontology</h2>
 			<p>Starting from the very first theorization, then we proceded by the implementation of the actual ontology.</p>
 			<figure>
-	    		<img src="images\OntologyFramework.jpg" alt="E/R diagram" id="ER">
+	    		<img src="images\Graffoo.png" alt="E/R diagram" id="ER">
 	    	</figure>
 			<hr>
 			<p>The ontology was designed on <a class="link" href="https://protege.stanford.edu/">Protégé</a>, an open-source ontology editor. 
 			Classes, object properties, data properties, named individuals, annotation properties, general axioms and namespace declarations are described in the documentation.</p>
 			<figure>
-				<img src="images\ProtegeGraph.jpg" alt="Protégé ontology grah">
+				<img src="images\ProtegeGraph.png" alt="Protégé ontology grah">
 				<figcaption>The graph produced through Protégé shows the implemented classes of the ontology and how they are linked</figcaption>
 			</figure>
 			<div class="row">
@@ -98,6 +98,13 @@
 						</ul>
 					Since both of them where in italian, it was necessary to translate them in English. This operation was automated too through the python library <a class="link" href="https://pypi.org/project/deep-translator/">deep translator</a>
 					</li>
+					<li>Cleaning and perfectioning: after the automatic extraction, some operations where needed in order to have reliable results: 
+						<ul>
+							<li>Due to the automatic translation, some words weren't translated propertly: for example, "blue" was inserted to the list as a translation for some blue stones. This cleaning step is an exception, since it would not be necessary by using the original Italian vocabulary on Italian texts, or by providing an English version of that one.</li>
+							<li>Since the vocabulary does not provide an organization of materials according to the kind of art, some "outsider" materials ended up in the final list. For example, "marble" is not a material appropriate for paintings, but some paintings represents "marble objects". An easy solution and a possible further development of this ontology would be to group materials from the vocabulary under their proper art category, like 'Painting_Material' and 'Sculpture_Material'.<br/>
+							This is true also for "stucco" which has been correctly detected in the text, but should go under the "Decorative_Techniques" and not the main one.</li>
+						</ul>
+					</li>
 				</ol>
 				<a target="_blank" href="https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/dataExtraction.py"><button>Final Python code available here</button></a>
 			</p>
@@ -119,16 +126,22 @@
 						<div class="flip-card-inner">
 						  <div class="flip-card-front">
 							<h2>CQ1</h2>
-							<p>Which technique has been used in arwork X?</p>
+							<p>Which <b>technique</b> has been used in the <b>artwork</b> "The Madonna and Child" by the workshop of Giovanni Bellini?</p>
 						  </div>
 						  <div class="flip-card-back">
-							<p>PREFIX mat: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat#&gt; <br/>
-								PREFIX mat-r: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/&gt; <hr>
+							<p>PREFIX mat: &lt;https://github.com/Bianca-LM/art-criticism-ontology/mat#&gt; <hr>
 								
-								SELECT ?techniqueLabel WHERE { <br>
-								   mat-r:P007 mat:hasTechnique ?technique. <br/>
-								   ?technique rdfs:Literal ?techniqueLabel <br/>
-								}</p>
+								SELECT ?techniqueLabel WHERE {<br/>
+									?s mat:hasTitle ?title.<br/>
+								  FILTER regex (?title, "The Madonna and Child").<br/>
+									
+									?s mat:hasAuthor ?author.<br/>
+									?author rdfs:Literal ?authorLabel<br/>
+								   FILTER regex(?authorLabel, "Workshop of Giovanni Bellini").<br/>
+									?s mat:hasTechnique ?technique.<br/>
+								  ?technique rdfs:Literal ?techniqueLabel<br/>
+								  }<br/>
+								  </p>
 							<button id ="query-1" onclick="showResult(this)">Run the query</button>
 						  </div>
 						</div>
@@ -140,24 +153,26 @@
 						<div class="flip-card-inner">
 							<div class="flip-card-front">
 								<h2>CQ2</h2>
-								<p>From which material is artwork Y made of?</p>
+								<p>From which <b>material</b> is artwork "The Madonna and Child" by the workshop of Giovanni Bellini made of?</p>
 							</div>
 							<div class="flip-card-back">
 								<p>
-									PREFIX mat: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat#&gt; <br/>
-									PREFIX mat-r: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat/resource/&gt; <hr>
-									
-									
-									SELECT ?techniqueLabel ?materialLabel WHERE { <br/>
-									mat-r:P007 mat:hasTechnique ?technique. <br/>
-									?technique mat:isPerformedOn ?material; <br/>
-									rdfs:Literal ?techniqueLabel. <br/>
-									?material rdfs:Literal ?materialLabel <br/>
-									}</p>
+									PREFIX mat: &lt;https://github.com/Bianca-LM/art-criticism-ontology/mat#&gt;<hr>
+											
+									SELECT DISTINCT ?materialLabel WHERE { <br/>
+										?s mat:hasTitle ?title.<br/>
+										FILTER regex (?title, "The Madonna and Child").<br/>
+										?s mat:hasAuthor ?author.<br/>
+										?author rdfs:Literal ?authorLabel<br/>
+										FILTER regex(?authorLabel, "Workshop of Giovanni Bellini").<br/>
+										 ?s mat:hasTechnique ?technique.<br/>
+										?technique mat:isPerformedOn ?material.<br/>
+										?material rdfs:Literal ?materialLabel<br/>
+										}</p>
 								<button id="query-2" onclick="showResult(this)">Run the query</button>
 							</div>
 						</div>
-						<div id="result-2" class="hide">1 - techniqueLabel: oil; materialLabel: wood <br/>2 - techniqueLabel: tempera; materialLabel: wood.</div>
+						<div id="result-2" class="hide">wood</div>
 					</div>
 				</div>
 			</div>
@@ -167,16 +182,17 @@
 						<div class="flip-card-inner">
 							<div class="flip-card-front">
 								<h2>CQ3</h2>
-								<p>Which are the most common materials on which is performed technique Z?</p>
+								<p>Which are the most common materials on which <b>is performed</b> technique "oil"?</p>
 							</div>
 							<div class="flip-card-back">
-								<p>PREFIX mat: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat#&gt; <hr>
+								<p>PREFIX mat: &lt;https://github.com/Bianca-LM/art-criticism-ontology/mat#&gt; <hr>
 
 
 									SELECT ?materialLabel (COUNT(?material) as ?materialCount) WHERE { <br/>
-										?technique mat:isPerformedOn ?material <br/>
-										FILTER(contains(str(?technique), "oil")) <br/>
-										?material rdfs:Literal ?materialLabel <br/>
+										?technique mat:isPerformedOn ?material;<br/>
+										rdfs:Literal ?techniqueLabel.<br/>
+										FILTER regex(?techniqueLabel, "oil", "i")<br/>
+										?material rdfs:Literal ?materialLabel.<br/>
 									} </br>
 									
 									
@@ -185,7 +201,7 @@
 								<button id="query-3" onclick="showResult(this)">Run the query</button>
 							</div>
 						</div>
-						<div id="result-3" class="hide">1 - material: canvas; materialCount: 17 <br/>2 - material: wood; materialCount: 7 <br/>3 - material: paper; materialCount: 2</div>
+						<div id="result-3" class="hide">1- canvas: 64; 2- wood: 11; paper:2; copper:1.</div>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -196,7 +212,7 @@
 								<p>Which are the most common materials in art?</p>
 							</div>
 							<div class="flip-card-back">
-								<p>PREFIX mat: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat#&gt; <hr>
+								<p>PREFIX mat: &lt;https://github.com/Bianca-LM/art-criticism-ontology/mat#&gt; <hr>
 
 									SELECT ?materialLabel (COUNT(?material) as ?materialCount) WHERE { <br/>
 										?technique mat:isPerformedOn ?material. <br/>
@@ -209,7 +225,7 @@
 							</div>
 						</div>
 					</div>
-					<div id="result-4" class="hide">1 - materiaLabel: wood; materialCount: 22 <br/>2 - materialLabel: canvas; materialCount: 18 <br/>3 - materialLabel: marble; materialCount: 15</div>
+					<div id="result-4" class="hide">1- canvas: 142; 2- wood: 54; 3- gold: 19</div>
 				</div>
 			</div>
 			<div class="row">
@@ -221,21 +237,23 @@
 						<div class="flip-card-inner">
 							<div class="flip-card-front">
 							<h2>CQ5</h2>
-							<p>Which artworks have changed support over time?</p>
+							<p>Which artworks have changed <b>support</b> during their life?</p>
 							</div>
 							<div class="flip-card-back">
-							<p>PREFIX mat: &lt;http://www.semanticweb.org/bianc/ontologies/2023/1/mat#&gt; <hr>
+							<p>PREFIX mat: &lt;https://github.com/Bianca-LM/art-criticism-ontology/mat#&gt; <hr>
 
-								SELECT DISTINCT ?artworkLabel WHERE { <br/>
-									?artwork a mat:Artwork; <br/>
-											   mat:hasSupport ?currentSupport; <br/>
-											   rdfs:Literal ?artworkLabel. <br/>
-								  ?currentSupport mat:transferredFrom ?originalSupport. <br/>
-								} </p>
+								SELECT DISTINCT ?title ?authorName WHERE { <br/>
+									?artwork a mat:Artwork;<br/>
+									mat:hasSupport ?currentSupport;<br/>
+									mat:hasTitle ?title;<br/>
+									mat:hasAuthor ?author.<br/>
+									?author rdfs:Literal ?authorName.<br/>
+									?currentSupport mat:transferredFrom ?originalSupport.<br/>
+									} </p>
 								<button id="query-5" onclick="showResult(this)">Run the query</button>
 							</div>
 						</div>
-						<div id="result-5" class="hide">artworkLabel: Three Saints: Roch, Anthony Abbot, and Lucy</div>
+						<div id="result-5" class="hide">title: Three Saints: Roch, Anthony Abbot, and Lucy; author:Giovan Battista Cima</div>
 					</div>
 				</div>
 				<div class="col-lg-3">
