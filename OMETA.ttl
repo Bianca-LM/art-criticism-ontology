@@ -130,7 +130,9 @@ mat:isMountedOn rdf:type owl:ObjectProperty ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isPerformedOn
 mat:isPerformedOn rdf:type owl:ObjectProperty ;
-                  rdfs:domain mat:Technique ;
+                  rdfs:domain mat:Technique ,
+                              <https://github.com/Bianca-LM/art-criticism-ontology/mat/Decorative_Technique> ,
+                              <https://github.com/Bianca-LM/art-criticism-ontology/mat/Ornamental_Technique> ;
                   rdfs:range mat:Material ;
                   rdfs:comment "The property connects the technique to the material it is performed on." .
 
