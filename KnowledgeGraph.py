@@ -5,6 +5,8 @@ from ast import literal_eval
 
 from rdflib.plugins.stores.sparqlstore import SPARQLUpdateStore
 
+
+#take the automatic- and manually- extracted data and merge them in one table
 with open("data/data.csv", "r", encoding="utf-8") as f:
     extractedData = read_csv(f,keep_default_na=False, converters={"material": literal_eval, "technique": literal_eval})
 
@@ -15,13 +17,14 @@ data = merge(extractedData, otherData, left_on="identifier", right_on="ID", how=
 data = data.drop(columns=["Author", "Artwork", "Artwork component", "Material", "Technique", "ID"]).fillna('')
 
 
-#java -server -Xmx1g -jar blazegraph.jar
+#open blazegraph connection java -server -Xmx1g -jar blazegraph.jar
 endpoint = "http://192.168.56.1:9999/blazegraph/sparql"
 
 baseUrl = Namespace("https://github.com/Bianca-LM/art-criticism-ontology/mat/resource/")
 
 directory = 'data'
 
+#create an empty knowledge graph
 knowledgeGraph = Graph()
 
 knowledgeGraph.parse('OMETA.ttl', format='ttl')
@@ -39,14 +42,16 @@ for idx, row in data.iterrows():
     knowledgeGraph.add((author, RDFS.Literal, Literal(row["author"])))
     knowledgeGraph.add((id, mat.hasTitle, Literal(row["title"])))
     for technique in row["technique"]: 
-        technique = URIRef(baseUrl + row["identifier"] + "-" + technique)
-        knowledgeGraph.add((id, mat.hasTechnique, technique)) 
-        knowledgeGraph.add((technique, RDF.type, mat.Technique)) 
+        techniqueURI = URIRef(baseUrl + row["identifier"] + "-" + technique)
+        knowledgeGraph.add((id, mat.hasTechnique, techniqueURI)) 
+        knowledgeGraph.add((techniqueURI, RDF.type, mat.Technique)) 
+        knowledgeGraph.add((techniqueURI, RDFS.Literal, Literal(technique))) 
         for material in row["material"]: 
-            material = URIRef(baseUrl + row["identifier"] + "-" + material)
+            materialURI = URIRef(baseUrl + row["identifier"] + "-" + material)
             #there it should be added a owl same as with the skos vocabulary
-            knowledgeGraph.add((technique, mat.isPerformedOn, material))
-            knowledgeGraph.add((material, RDF.type, mat.Material))
+            knowledgeGraph.add((techniqueURI, mat.isPerformedOn, materialURI))
+            knowledgeGraph.add((materialURI, RDF.type, mat.Material))
+            knowledgeGraph.add((materialURI, RDFS.Literal, Literal(material))) 
 
     if row["Current support"] != '':
         currentSupport = URIRef(baseUrl + row["identifier"] + "-CurrentSupport-" + row["Current support"].replace(" ", "-"))
@@ -85,9 +90,12 @@ store = SPARQLUpdateStore()
 
 store.open((endpoint, endpoint))
 
+
+#Turtle serialization
 ttl = knowledgeGraph.serialize(destination='knowledgeGraph.txt', format='turtle')
 
 
+#load into blazegraph
 for triple in knowledgeGraph.triples((None, None, None)):
     try:
         #print(triple)
