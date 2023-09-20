@@ -323,6 +323,14 @@
         <Class IRI="#Technique"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPerformedOn"/>
+        <Class IRI="/Decorative_Technique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPerformedOn"/>
+        <Class IRI="/Ornamental_Technique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isSigned"/>
         <Class IRI="#Artwork"/>
     </ObjectPropertyDomain>
