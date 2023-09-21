@@ -215,8 +215,14 @@ button:hover {
 footer {
   text-align: center;
   background-color:#516162;
-  padding-bottom: 1.5em;
+  padding: 1.5em;
   margin-top: 0.5em;
+  color: rgb(198, 198, 198);
+}
+
+footer a {
+  color:rgb(198, 198, 198);
+  text-decoration: underline;
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
