@@ -53,17 +53,13 @@
 				<div class="container">
 					<h1>Project</h1>
 					<!-- DA METTERE COME COMPARISON BETWEEN ONTOLOGIES NELLA DOCUMENTAZIONE 
-						<h2>Previous works</h2>
-					<p>Different ontologies have already tried to describe artworks in all their aspects, e.g. CIDOC-CRM. In particular <a href="http://wit.istc.cnr.it/arco">ArCo</a> Ontology has already a module for denotative description which describes materials and techniques performed on the artworks.
-					The OM&TA ontology does not overlap with the previous two since it is domain-specific and, on the counterpart, needs to be extended through other ontologies as ArCo in order to describe all the other aspects and definitions of the artwork.
-					As we will see in the documentation, what changes with the OM&TA ontology is the relation between artwork, technique and material. 
-					</p>
+
 					-->
 		
 		
 					<h2>Methodology: Ontology requirements specification document (ORSD)</h2>
-					<p>The main functionalities of the ontology have been defined following the guidelines for ontology requirements specification document (ORSD) proposed in the paper "How to Write and Use the Ontology Requirements Specification Document" by Suárez-Figueroa et al.</p>
-					<p>The data taken under consideration have been extracted from some of the artworks described in the following catalogues of the MET museums:
+					<p>The main functionalities of the ontology have been defined following the guidelines for <b>Ontology Requirements Specification Document (ORSD)</b> proposed in the paper "How to Write and Use the Ontology Requirements Specification Document" by Suárez-Figueroa et al.</p>
+					<p>The data used since the beginning in order to provide reliable examples and terminologies taken from concrete description of artworks have been extracted from the following <b>catalogue of the MET museums</b>:
 						<ul>	
 							<li><a class="link" href="https://www.metmuseum.org/art/metpublications/Italian_Paintings_A_Catalogue_of_the_Collection_of_The_Metropolitan_Museum_of_Art_Vol_2_Venetian_School">"Italian paintings. Vol. 2, Venetian School"</a> by Federico Zeri;</li>
 						</ul> 
@@ -79,7 +75,7 @@
 							<ul>
 								<li><b>Non-Functional Requirements:</b> the ontology must be compliant with international standards.</li>
 								<li><b>Functional Requirements:</b> Competency Questions (CQs) which in the end the user will be able to answer through the queries performed on a SPARQL endpoint.</br>
-									In this first draft the CQs will be written in natural language, since they are real questions between human beign, not yet formalized to be understandable by a machine. The expected answers are given according to the data contained in the Zeri catalogue (see above)</b> 
+									In this first draft the <b>CQs have been written in natural language</b>, since they are real questions between human beign, not yet formalized to be understandable by a machine. The expected answers are given according to the data contained in the Zeri catalogue (see above)</b> 
 									<div class="row">
 										<div class="col-lg-4">
 											<div class="flip-card">
@@ -157,14 +153,14 @@
 						<li><b>Pre-Glossary of Terms</b>
 							<ul>
 								<li><b>Terms from Competency Questions:</b> material, technique, artwork.</li>
-								<li><b>Terms from Answers:</b> oil painting, marble, canvas.</li>
+								<li><b>Terms from Answers:</b> oil painting, canvas, wood.</li>
 							</ul>
 						</li>
 					</ol>
 						<h2>Modelling</h2>
-						<p>Starting from the definition of material and technique given by Sciolla, we started modelling our ontology starting from the descriptions of the paintings available in the volumes "Italian Paintings: A Catalogue of the Collection of The Metropolitan Museum of Art" by Federico Zeri. <br>
-						All the descriptionsin the catalogues have more or less the same structure from which the main entities for the description of materials and techniques can be extracted. 
-						First we started by analysing how materials and techniques where expressed and which were their relationships. As it can be seen from the two examples, immediately it turns out that the material and the support can coincide or they can be different, i.e. a material mounted on a support.
+						All the descriptions in the catalogues of the MET Museum have a well defined structure, with a terminology that can be used to make a first draft of the classes and properties of our ontology.<br>
+						First, we started by analysing how materials and techniques were expressed in the text and which were their relationships. In the two examples, it is possible to see visually this formalization and its first transposition from <b>real instances to general classes and properties</b>.<br> 
+						As it can be seen, an important element that immediately comes out is that <b>the material and the support are not the same entity</b>, they can be different, i.e. the material on which the artwork is done can be mounted on a different support.
 						<div class="row">
 							<div class="col-lg-6 col-md-12">
 								<img src="images/Modelling1.png" alt="Description of 'Three Saints: Roch, Anthony Abbot, and Lucy' by Giovanni Battista Cima"/>
@@ -173,11 +169,17 @@
 								<img src="images/Modelling2.png" alt="Decription of a Landscape by Francesco Guardi"/>
 							</div>
 						</div>
-						This brought to the definition of the first classes and relationships which are the core of the ontology.<br>
-						The central realtions from which the ontology has been shaped is the one between technique and material which is defined through the concept that an <b>artwork</b> is realized <span class="underlined">by means of</span> a <b>technique</b> which is <span class="underlined">performed on</span> a <b>material</b>.
+						From this we move to the definition of the first classes and relationships which are the core of the ontology.<br>
+						The central realtion from which the ontology has been shaped is the one between technique and material which is defined through the concept that an <b>artwork</b> is realized <span class="underlined">by means of</span> a <b>technique</b> which is <span class="underlined">performed on</span> a <b>material</b>.
 						<figure>
 							<img src="images/BasicModel.jpg" alt="Core classes and relationships"/>
 						</figure>
+						</p>
+						<h2>Previous works</h2>
+						<p>Before moving to the proper design of the OM&TA ontology, it must be underlined that various ontologies have already tried to describe artworks in all their aspects, e.g. CIDOC-CRM. In particular, <a class="link" href="http://wit.istc.cnr.it/arco">ArCo</a> Ontology has already a module for <b>denotative description</b> which describes materials and techniques performed on the artworks.<br/>
+						The OM&TA ontology does not overlap with the previous two since it is domain-specific and, on the counterpart, needs to be extended through other ontologies as ArCo in order to describe all the other aspects and definitions of the artwork.
+						As stated till know what changes with the OM&TA ontology is the relation between artwork, technique and material.<br/>
+						In the design of the OM&TA ontology classes will been integrated from the ArCo Ontology if needed equivalences will be pointed out. 
 						</p>
 					</div>
 		</section>
@@ -185,13 +187,21 @@
 				<div class="container">
 					<h1>Ontology Design and Implementation</h1>
 			<h2>The conceptual model</h2>
-			<p>From the chapters <i>I materiali</i> and <i>Le tecniche</i> it is possible to extract the first entities and relations that could formalize the concepts of materials and techniques in the artworks.</p>
+			<p>Having defined the very core classes, we move on by creating all the entities and the relationships needed to provide a proper representation of the external data of an artwork.</p>
 			<p>The first step was the creation of a <b>conceptual model</b> which tries to define the main elements and how they are related. Since materials and techniques are still at the level of denotative description, they are related to all the elements, as "Signature" or "Frame", which sometimes are added through a different technique or material from the one largely used for the artwork.</p>
 			<figure>
 	    		<img src="images\TMmAP.jpg" alt="Conceptual model">
 	    	</figure>
 			<h2>The Ontology</h2>
 			<p>Starting from the very first theorization, then we proceded by the implementation of the actual ontology.</p>
+			<p>The elements described in the conceptual model, can now be organized into three main super-classes: 
+				<ul>
+					<li><b>Artwork_Component:</b> it defines the elements that are somehow part of the artwork, but are not the artwork itself, as the marks, inscriptions etc.;</li>
+					<li><b>External_Physical_Datum:</b> information about elements shaped by the man but still external to the artwork (see again <a class="link" href="index.html#firstSection">Sciolla's definition of materila)</a></li>
+					<li><b>Technique:</b> each artwork usually is not made from a single technique and some techniques have precise classifications, e.g. ornamental or decorative.</li>
+			</ul>
+			For completeness, two fundamental classes to define an artwork have been added: <b>Title</b> and <b>Author</b>.</p>
+			<p>In the image below it is possible to see a complete graphical representation of the final ontology, developed <a class="link" href="https://essepuntato.it/graffoo/">with the Graphical Framework for OWL Ontologies (Graffoo)</a></p>
 			<figure>
 	    		<img src="images\Graffoo.png" alt="E/R diagram" id="ER">
 	    	</figure>
@@ -218,33 +228,33 @@
 		<div class="container">
 			<h1>Data Extraction and Dataset</h1>
 			<h2>Automatic Extraction of Materials and Techniques</h2>
-			<p>Starting from <a class="link" href="https://www.metmuseum.org/art/metpublications/Italian_Paintings_A_Catalogue_of_the_Collection_of_The_Metropolitan_Museum_of_Art_Vol_2_Venetian_School">Zeri's catalogue</a> of paintins, an automatic extraction was performed on the text in order to define the main elements: title, author, material and technique.</p>
+			<p>Starting from <a class="link" href="https://www.metmuseum.org/art/metpublications/Italian_Paintings_A_Catalogue_of_the_Collection_of_The_Metropolitan_Museum_of_Art_Vol_2_Venetian_School">Zeri's catalogue</a> of paintins, a <b>semi-automatic extraction</b> was performed on the text in order to define the main elements: <b>Title</b>, <b>Author</b>, <b>Material</b> and <b>Technique</b>.</p>
 			<p>The steps to extract the data can be summed as follows:
 				<ol>
-					<li>Cleaning and text preparation: provide a clean text, in a machine-readable format</li>
-					<li>Paragraphs and section: automatic division of the text into titles and paragraphs. In this way it will be easier to define where to search information. In this case, the division has been performed through Regular Expression (RE) but other methods can be used according to the internal organization of the text (for example, nlp tools as spacy provide a paragraph division).</li>
-					<li>Definition of titles and authors: after the identification of titles, through Names Entity Recognition it was possible to extract names of authors, while name of artworks where extracted through RE.</li>
-					<li>Extraction of materials and techniques: in order to perform an automatic extraction we used as reference the two skos vocabularies: 
+					<li><b>Text preparation:</b> provide a clean text, in a machine-readable format</li>
+					<li><b>Division into titles and paragraphs:</b> breaking down the text into pieces makes easier to search more precise information. In this case, the division has been performed through <b>Regular Expressions (REs)</b>, but other methods can be used according to the internal organization of the text (for example, nlp tools as the python library <a class="link" href="https://spacy.io/">Spacy</a> provide an automatic paragraph division).</li>
+					<li><b>Identification of artwork titles and authors</b>: after the identification of titles, through Named Entity Recognition performed by <a class="link" href="https://spacy.io/">Spacy</a>, it was possible to extract names of authors, while name of artworks where extracted through REs.</li>
+					<li><b>Extraction of materials and techniques</b>: in order to perform an automatic extraction we used as reference the two <b>skos vocabularies</b>: 
 						<ul>
 							<li><a class="link" href="https://dati.beniculturali.it/lodview/vocabularies/opere_e_oggetti_d_arte_materia/def/.html">Thesaurus per la definizione della materia per le opere e gli oggetti d'arte</a></li>
 							<li><a class="link" href="https://dati.beniculturali.it/lodview/vocabularies/opere_e_oggetti_d_arte_tecnica/def/.html">Thesaurus per la definizione della tecnica per le opere e gli oggetti d'arte</a></li>
 						</ul>
 					Since both of them where in italian, it was necessary to translate them in English. This operation was automated too through the python library <a class="link" href="https://pypi.org/project/deep-translator/">deep translator</a>
 					</li>
-					<li>Cleaning and perfectioning: after the automatic extraction, some operations where needed in order to have reliable results: 
+					<li><b>Cleaning and perfectioning</b>: after the automatic extraction, some operations where needed in order to have reliable results: 
 						<ul>
-							<li>Due to the automatic translation, some words weren't translated propertly: for example, "blue" was inserted to the list as a translation for some blue stones. This cleaning step is an exception, since it would not be necessary by using the original Italian vocabulary on Italian texts, or by providing an English version of that one.</li>
-							<li>Since the vocabulary does not provide an organization of materials according to the kind of art, some "outsider" materials ended up in the final list. For example, "marble" is not a material appropriate for paintings, but some paintings represents "marble objects". An easy solution and a possible further development of this ontology would be to group materials from the vocabulary under their proper art category, like 'Painting_Material' and 'Sculpture_Material'.<br/>
+							<li><b>Automatic translation's errors:</b> some words weren't translated propertly, e.g., "blue" was inserted to the list as a translation for some blue stones. This cleaning step is an exception, since it <b>would not be necessary by using the original skos Italian vocabulary</b> on Italian texts, or by providing an English version of that one.</li>
+							<li>Since the vocabulary does not provide an organization of materials according to the kind of art, some <b>"outsider" materials</b> ended up in the final list. For example, "marble" is not a material appropriate for paintings, but some paintings represents "marble objects". An easy solution and a possible further development of this ontology would be to <b>group materials from the vocabulary under their proper art</b> category, like 'Painting_Material' and 'Sculpture_Material'.<br/>
 							This is true also for "stucco" which has been correctly detected in the text, but should go under the "Decorative_Techniques" and not the main one.</li>
 						</ul>
 					</li>
 				</ol>
 				<a target="_blank" href="https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/dataExtraction.py"><button>Final Python code available here</button></a>
 			</p>
-			<p>In order to test as much classes as possible from the ontology, for 35 artworks additional information (as signature, inscription, support etc.) where manually extracted from the reference text and added to the dataset.
-			</p>
 			<h2>Dataset and Knowlede Graph</h2>
-			<p>The intersection of the automatic and the manually extracted data has been used in order to populate the knowledge graph (python code available <a class="link" href="https://github.com/Bianca-LM/art-criticism-ontology/blob/main/KnowledgeGraph.py">here</a>)
+			<p>In order to test as much classes as possible from the ontology, for <b>35 artworks</b> additional information (as signature, inscription, support etc.) where <b>manually extracted</b> from the reference text and added to the dataset.
+			</p>
+			<p>The intersection of the automatic and the manually extracted data has been used in order to populate the <b>knowledge graph</b> (python code available <a class="link" href="https://github.com/Bianca-LM/art-criticism-ontology/blob/main/KnowledgeGraph.py">here</a>)
 			<a target="_blank" href="https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/knowledgeGraph.txt" download><button>Download the Knowledge Graph</button></a>
 			</p>
 		</div>
@@ -252,8 +262,10 @@
 	<section id="Results">
 		<div class="container">
 			<h1>Results</h1>
-			<p>Now we can translate the Competency Questions in SPARQL queries that can be performed using OM&TA ontology on a sparql endpoint.</p>
-			<p>The data have been loaded on a graph database (Blazegraph) on which the queries have been performed to get the results.</p>
+			<p>Now we can translate the Competency Questions in <b>SPARQL queries</b> that can be performed using OM&TA ontology on a SPARQL endpoint.</p>
+			<p>The data have been loaded on a local graph database <a class="link" href="https://blazegraph.com/">(Blazegraph)</a> on which the queries have been performed to get the results and test the ontology.<br>
+			The code used to populate the Knowledge Graph and load it into Blazegraph is accessible below</p>
+			<a target="_blank" href="https://raw.githubusercontent.com/Bianca-LM/art-criticism-ontology/main/KnowledgeGraph.py"><button>Kknowledge Graph's Python Code</button></a>
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="flip-card">
@@ -394,12 +406,15 @@
 
 				</div>
 			</div>
+			<h2>Future developments</h2>
+			<p>The OM&TA ontologies at its status describes the very core relations between the main elements needed to represent techniques and materials in art. Future developments will include the <b>definition of subclasses for the materials and techniques in the art</b> and the inclusion of the unique URIs of the single materials and techniques as defined by the two SKOS vocabularies.</p>
+	
 		</div>
 	</section>
 	<footer>
-		<p>A project for the course "Knowledge Representation and Extraction"</p>
-		<p>MA "Digital Humanities and Digital Knowledge", University of Bologna</p>
-		<p>Powered by Bootstrap</p>
+		<p>A project for the course "Knowledge Representation and Extraction"<br/>MA "Digital Humanities and Digital Knowledge", University of Bologna</p>
+		<p>Powered by <a href="https://getbootstrap.com/">Bootstrap</a> | <a href="https://github.com/Bianca-LM/art-criticism-ontology">Github repository</a></p>
+		<p><p>&#169; Copyright: OM&TA | 2023</p>
 	</footer>
 	</body>
 </html>
