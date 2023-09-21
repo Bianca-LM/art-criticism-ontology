@@ -64,12 +64,13 @@ nav a:hover {
   color: black;
 }
 
-#firstSection, #Methodology, #about, #Ontology {
+#firstSection, #Modelling, #about, #Ontology, #Dataset, #Results {
   padding-top: 5%;
+  padding-bottom:5%;
 }
 
 @media screen and (max-width:992px) {
-  #firstSection, #about, #Methodology, #Ontology {
+  #firstSection, #about, #Modelling, #Ontology, #Dataset, #Results {
     margin-top: 5%;
   }
 }
@@ -179,9 +180,10 @@ h1 {
   text-align: center;
 }
 
-#about img, #Ontology img, #Results img, #Methodology img {
+#about img, #Ontology img, #Results img, #Modelling img, #Dataset img {
   width: 80%;
   margin: auto;
+  padding: 5%;
   display: block;
   text-align: center;
 }
@@ -284,16 +286,16 @@ footer {
   visibility: hidden;
 }
 
-#Methodology ol {
+#Modelling ol {
     list-style: none;
     counter-reset: item;
 }
 
-#Methodology ol li {
+#Modelling ol li {
   counter-increment: item;
 }
 
-#Methodology ol li:before {
+#Modelling ol li:before {
   content: counter(item)".";
   margin-right: 0.4em;
   font-weight: bold;
@@ -309,7 +311,11 @@ footer {
   vertical-align: baseline;
 }
 
-#about h1, #Methodology h1, #Ontology h1 {
+#Modelling, #Dataset {
+  background-color: #b9d1d194;
+}
+
+#about h1, #Modelling h1, #Ontology h1, #Dataset h1, #Results h1 {
   margin: 0.5em;
   border-bottom: 0.1em solid black;
   padding: 0.2em;
