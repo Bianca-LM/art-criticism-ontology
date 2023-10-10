@@ -160,9 +160,12 @@ mat:isMadeOf rdf:type owl:ObjectProperty ;
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isMarked
 mat:isMarked rdf:type owl:ObjectProperty ;
              rdfs:domain mat:Artwork ;
-             rdfs:range mat:Mark ,
-                        mat:Mark_of_Carter ,
-                        mat:Mark_of_Founder ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :Mark
+                                     :Mark_of_Carter
+                                     :Mark_of_Founder
+                                   )
+                     ] ;
              rdfs:comment "The property connects the artwork to the mark that has been affixed on it." ;
              rdfs:label "is marked"@en .
 
@@ -178,9 +181,12 @@ mat:isMountedOn rdf:type owl:ObjectProperty ;
 
 ###  https://github.com/Bianca-LM/art-criticism-ontology/mat#isPerformedOn
 mat:isPerformedOn rdf:type owl:ObjectProperty ;
-                  rdfs:domain mat:Decorative_Technique ,
-                              mat:Ornamental_Technique ,
-                              mat:Technique ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Decorative_Technique
+                                           :Ornamental_Technique
+                                           :Technique
+                                         )
+                           ] ;
                   rdfs:range mat:Material ;
                   rdfs:comment "The property connects the technique to the material it is performed on." ;
                   rdfs:label "is performed on"@en .
