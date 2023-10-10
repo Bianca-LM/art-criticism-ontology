@@ -275,7 +275,7 @@
 							<p>Which <b>technique</b> has been used in the <b>artwork</b> "The Madonna and Child" by the workshop of Giovanni Bellini?</p>
 						  </div>
 						  <div class="flip-card-back">
-							<p>PREFIX mat: &lt;https://github.com/Bianca-LM/art-criticism-ontology/mat#&gt; <hr>
+							<p>PREFIX mat: &lt;https://github.com/Bianca-LM/art-criticism-ontology/mat&gt; <hr>
 								
 								SELECT ?techniqueLabel WHERE {<br/>
 									?s mat:hasTitle ?title.<br/>
@@ -303,7 +303,7 @@
 							</div>
 							<div class="flip-card-back">
 								<p>
-									PREFIX mat: &lt;https://github.com/Bianca-LM/art-criticism-ontology/mat#&gt;<hr>
+									PREFIX mat: &lt;https://github.com/Bianca-LM/art-criticism-ontology/mat&gt;<hr>
 											
 									SELECT DISTINCT ?materialLabel WHERE { <br/>
 										?s mat:hasTitle ?title.<br/>
@@ -331,7 +331,7 @@
 								<p>Which are the most common materials on which <b>is performed</b> technique "oil"?</p>
 							</div>
 							<div class="flip-card-back">
-								<p>PREFIX mat: &lt;https://github.com/Bianca-LM/art-criticism-ontology/mat#&gt; <hr>
+								<p>PREFIX mat: &lt;https://github.com/Bianca-LM/art-criticism-ontology/mat&gt; <hr>
 
 
 									SELECT ?materialLabel (COUNT(?material) as ?materialCount) WHERE { <br/>
@@ -358,7 +358,7 @@
 								<p>Which are the most common materials in art?</p>
 							</div>
 							<div class="flip-card-back">
-								<p>PREFIX mat: &lt;https://github.com/Bianca-LM/art-criticism-ontology/mat#&gt; <hr>
+								<p>PREFIX mat: &lt;https://github.com/Bianca-LM/art-criticism-ontology/mat&gt; <hr>
 
 									SELECT ?materialLabel (COUNT(?material) as ?materialCount) WHERE { <br/>
 										?technique mat:isPerformedOn ?material. <br/>
@@ -386,11 +386,11 @@
 							<p>Which artworks have changed <b>support</b> during their life?</p>
 							</div>
 							<div class="flip-card-back">
-							<p>PREFIX mat: &lt;https://github.com/Bianca-LM/art-criticism-ontology/mat#&gt; <hr>
+							<p>PREFIX mat: &lt;https://github.com/Bianca-LM/art-criticism-ontology/mat&gt; <hr>
 
 								SELECT DISTINCT ?title ?authorName WHERE { <br/>
 									?artwork a mat:Artwork;<br/>
-									mat:hasSupport ?currentSupport;<br/>
+									mat:hasCurrentSupport ?currentSupport;<br/>
 									mat:hasTitle ?title;<br/>
 									mat:hasAuthor ?author.<br/>
 									?author rdfs:Literal ?authorName.<br/>
