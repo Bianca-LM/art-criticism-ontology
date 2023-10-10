@@ -345,15 +345,11 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPerformedOn"/>
-        <Class IRI="#Decorative_Technique"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPerformedOn"/>
-        <Class IRI="#Ornamental_Technique"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPerformedOn"/>
-        <Class IRI="#Technique"/>
+        <ObjectUnionOf>
+            <Class IRI="#Decorative_Technique"/>
+            <Class IRI="#Ornamental_Technique"/>
+            <Class IRI="#Technique"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPreviousSupportOf"/>
@@ -433,11 +429,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isMarked"/>
-        <Class IRI="#Mark_of_Carter"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isMarked"/>
-        <Class IRI="#Mark_of_Founder"/>
+        <ObjectUnionOf>
+            <Class IRI="#Mark"/>
+            <Class IRI="#Mark_of_Carter"/>
+            <Class IRI="#Mark_of_Founder"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isMountedOn"/>
