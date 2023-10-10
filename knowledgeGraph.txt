@@ -1,376 +1,10 @@
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix mat: <https://github.com/Bianca-LM/art-criticism-ontology/mat#> .
+@prefix mat: <https://github.com/Bianca-LM/art-criticism-ontology/mat> .
 @prefix mat-r: <https://github.com/Bianca-LM/art-criticism-ontology/mat/resource/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix terms: <http://purl.org/dc/terms/> .
 
-<https://github.com/Bianca-LM/art-criticism-ontology/mat> a owl:Ontology ;
-    dc:creator "Bianca La Manna" ;
-    dc:title "OM&TA (Ontology of Material & Techniques in Art)" ;
-    terms:license "CC BY 4.0" ;
-    rdfs:comment "OM&TA (Ontology of Materials & Techniques in Art) is an ontology which aims at representing the relationship between materials and techniques for the description of artworks in a semantic way." ;
-    owl:imports <https://w3id.org/arco/ontology/denotative-description/1.2> ;
-    owl:versionIRI <https://github.com/Bianca-LM/art-criticism-ontology/1.0> .
-
-mat:dateOfSignature a owl:DatatypeProperty ;
-    rdfs:comment "The property represents the date of the signature datation" ;
-    rdfs:range rdfs:Literal .
-
-mat:hasAuthor a owl:ObjectProperty ;
-    rdfs:domain mat:Artwork ;
-    rdfs:range mat:Author .
-
-mat:hasDecoration a owl:ObjectProperty ;
-    rdfs:comment "The property connects the artwork to its decoration" ;
-    rdfs:domain mat:Artwork ;
-    rdfs:range mat:Decoration .
-
-mat:hasDecorativeTechnique a owl:ObjectProperty ;
-    rdfs:comment "The property connects the decoration that belongs to an artwork to the decorative technique used to realize it." ;
-    rdfs:domain mat:Decoration ;
-    rdfs:range <https://github.com/Bianca-LM/art-criticism-ontology/mat/Decorative_Technique> ;
-    rdfs:subPropertyOf mat:hasTechnique .
-
-mat:hasFrame a owl:ObjectProperty ;
-    rdfs:comment "The property connects the artwork to its frame" ;
-    rdfs:domain mat:Artwork ;
-    rdfs:range mat:Frame .
-
-mat:hasInscription a owl:ObjectProperty ;
-    rdfs:comment "The property connects the artwork to its inscription" ;
-    rdfs:domain mat:Artwork ;
-    rdfs:range mat:Inscription .
-
-mat:hasInscriptionContent a owl:DatatypeProperty ;
-    rdfs:comment "This property represents the content of an inscription." ;
-    rdfs:range rdfs:Literal .
-
-mat:hasOrnament a owl:ObjectProperty ;
-    rdfs:comment "The property connects the artwork to its ornament" ;
-    rdfs:domain mat:Artwork ;
-    rdfs:range mat:Ornament .
-
-mat:hasOrnamentalTechnique a owl:ObjectProperty ;
-    rdfs:comment "The property connects the ornament that belongs to an artwork to the ornamental technique that has been used to realize it." ;
-    rdfs:domain mat:Ornament ;
-    rdfs:range <https://github.com/Bianca-LM/art-criticism-ontology/mat/Ornamental_Technique> ;
-    rdfs:subPropertyOf mat:hasTechnique .
-
-mat:hasSignature a owl:DatatypeProperty ;
-    rdfs:comment "This property represents the signature of the artist imposed on the artwork." ;
-    rdfs:range rdfs:Literal .
-
-mat:hasTitle a owl:ObjectProperty ;
-    rdfs:domain mat:Artwork ;
-    rdfs:range mat:Title .
-
-mat:isDated a owl:ObjectProperty ;
-    rdfs:comment "The property connects the signature to its datation, if it is written on the artwork itself." ;
-    rdfs:domain mat:Signature ;
-    rdfs:range mat:Signature_Datation .
-
-mat:isMadeOf a owl:ObjectProperty ;
-    rdfs:comment "The property connects the frame and the support to the material which they are made of." ;
-    rdfs:domain mat:Frame,
-        mat:Support ;
-    rdfs:range mat:Material .
-
-mat:isMarked a owl:ObjectProperty ;
-    rdfs:comment "The property connects the artwork to the mark that has been affixed on it." ;
-    rdfs:domain mat:Artwork ;
-    rdfs:range mat:Mark,
-        mat:Mark_of_Carter,
-        mat:Mark_of_Founder .
-
-mat:isMountedOn a owl:ObjectProperty ;
-    rdfs:comment "The property connects the material on which the artwork has been realised to the current support on which it is mounted" ;
-    rdfs:domain mat:Material ;
-    rdfs:range mat:Support ;
-    rdfs:subPropertyOf mat:hasSupport .
-
-mat:isPerformedOn a owl:ObjectProperty ;
-    rdfs:comment "The property connects the technique to the material it is performed on." ;
-    rdfs:domain mat:Technique,
-        <https://github.com/Bianca-LM/art-criticism-ontology/mat/Decorative_Technique>,
-        <https://github.com/Bianca-LM/art-criticism-ontology/mat/Ornamental_Technique> ;
-    rdfs:range mat:Material .
-
-mat:isSigned a owl:ObjectProperty ;
-    rdfs:comment "The property connects the artwork to the signature of the artist that made it." ;
-    rdfs:domain mat:Artwork ;
-    rdfs:range mat:Signature .
-
-mat:transferredFrom a owl:ObjectProperty ;
-    rdfs:comment "The property connects the current support of an artwork to the previous support from which it has been transferred." ;
-    rdfs:domain mat:Support ;
-    rdfs:range mat:Support .
-
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Current_Support> a owl:NamedIndividual,
-        mat:Support ;
-    rdfs:comment "The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.)." ;
-    mat:transferredFrom <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> .
-
-mat-r:P000 a mat:Artwork ;
-    mat:hasAuthor mat-r:Antonello-da-Messina ;
-    mat:hasSupport mat-r:P000-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P000-Oil,
-        mat-r:P000-painting ;
-    mat:hasTitle "Portrait of a Young Man" .
-
-mat-r:P001 a mat:Artwork ;
-    mat:hasAuthor mat-r:Antonello-da-Messina ;
-    mat:hasSignature mat-r:Signature-P001 ;
-    mat:hasSupport mat-r:P001-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P001-Oil,
-        mat-r:P001-tempera ;
-    mat:hasTitle "Christ Crowned with Thorns" .
-
-mat-r:P002 a mat:Artwork ;
-    mat:hasAuthor mat-r:Antonello-de-Saliba ;
-    mat:hasSupport mat-r:P002-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P002-Tempera,
-        mat-r:P002-oil,
-        mat-r:P002-painting ;
-    mat:hasTitle "The Madonna Adoring the Child" .
-
-mat-r:P003 a mat:Artwork ;
-    mat:hasAuthor mat-r:Giovanni-Bellini ;
-    mat:hasSignature mat-r:Signature-P003 ;
-    mat:hasSupport mat-r:P003-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P003-Oil,
-        mat-r:P003-painting ;
-    mat:hasTitle "The Madonna and Child" .
-
-mat-r:P004 a mat:Artwork ;
-    mat:hasAuthor mat-r:Giovanni-Bellini ;
-    mat:hasSignature mat-r:Signature-P004 ;
-    mat:hasSupport mat-r:P004-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P004-Tempera,
-        mat-r:P004-painting ;
-    mat:hasTitle "The Madonna Adoring the Sleeping Child " .
-
-mat-r:P005 a mat:Artwork ;
-    mat:hasAuthor mat-r:Giovanni-Bellini ;
-    mat:hasInscription mat-r:Inscription-P005 ;
-    mat:hasSignature mat-r:Signature-P005 ;
-    mat:hasSupport mat-r:P005-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P005-oil,
-        mat-r:P005-painting ;
-    mat:hasTitle "The Madonna and Child with Saint" .
-
-mat-r:P006 a mat:Artwork ;
-    mat:hasAuthor mat-r:Workshop-of-Giovanni-Bellini ;
-    mat:hasSupport mat-r:P006-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P006-Tempera,
-        mat-r:P006-oil ;
-    mat:hasTitle "The Madonna and Child" .
-
-mat-r:P007 a mat:Artwork ;
-    mat:hasAuthor mat-r:Workshop-of-Giovanni-Bellini ;
-    mat:hasSignature mat-r:Signature-P007 ;
-    mat:hasSupport mat-r:P007-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P007-Oil,
-        mat-r:P007-painting ;
-    mat:hasTitle "The Presentation in the Temple" .
-
-mat-r:P008 a mat:Artwork ;
-    mat:hasAuthor mat-r:Jacopo-Bellini ;
-    mat:hasDecoration mat-r:Decoration-P008 ;
-    mat:hasInscription mat-r:Inscription-P008 ;
-    mat:hasSupport mat-r:P008-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P008-Tempera ;
-    mat:hasTitle "The Madonna and Child" .
-
-mat-r:P009 a mat:Artwork ;
-    mat:hasAuthor mat-r:Bernardo-Bellotto ;
-    mat:hasSupport mat-r:P009-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P009-Oil,
-        mat-r:P009-drawing,
-        mat-r:P009-painting ;
-    mat:hasTitle "Vaprio d'Adda" .
-
-mat-r:P010 a mat:Artwork ;
-    mat:hasAuthor mat-r:Bonifazio-Veronese ;
-    mat:hasSupport mat-r:P010-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P010-Oil,
-        mat-r:P010-painting ;
-    mat:hasTitle "A Miracle of Saint Ambrose" .
-
-mat-r:P011 a mat:Artwork ;
-    mat:hasAuthor mat-r:Antonio-Canal ;
-    mat:hasSupport mat-r:P011-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P011-Oil,
-        mat-r:P011-drawing ;
-    mat:hasTitle "Venice: the Piazzetta" .
-
-mat-r:P012 a mat:Artwork ;
-    mat:hasAuthor mat-r:Antonio-Canal ;
-    mat:hasSupport mat-r:P012-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P012-Oil,
-        mat-r:P012-painting ;
-    mat:hasTitle "Venice: Santa Maria della Salute" .
-
-mat-r:P013 a mat:Artwork ;
-    mat:hasAuthor mat-r:Vittore-Carpaccio ;
-    mat:hasInscription mat-r:Inscription-P013 ;
-    mat:hasSignature mat-r:Signature-P013 ;
-    mat:hasSupport mat-r:P013-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P013-Tempera ;
-    mat:hasTitle "The Meditatian on the Passion" .
-
-mat-r:P014 a mat:Artwork ;
-    mat:hasAuthor mat-r:Francesco-Casanova ;
-    mat:hasSupport mat-r:P014-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P014-Oil ;
-    mat:hasTitle "Cavalier and Shepherd" .
-
-mat-r:P015 a mat:Artwork ;
-    mat:hasAuthor mat-r:Vincenzo-Catena ;
-    mat:hasSupport mat-r:P015-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P015-Oil,
-        mat-r:P015-painting ;
-    mat:hasTitle "Portrait of a Venetian Senatar" .
-
-mat-r:P016 a mat:Artwork ;
-    mat:hasAuthor mat-r:Vincenzo-Catena ;
-    mat:hasSupport mat-r:P016-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P016-Oil,
-        mat-r:P016-engraving ;
-    mat:hasTitle "The Adoration of the Shepherds" .
-
-mat-r:P017 a mat:Artwork ;
-    mat:hasAuthor mat-r:Giovanni-Battista-Cima ;
-    mat:hasSupport mat-r:P017-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P017-Tempera,
-        mat-r:P017-oil,
-        mat-r:P017-painting ;
-    mat:hasTitle "Three Saints: Roch, Anthony Abbot, and Lucy" .
-
-mat-r:P018 a mat:Artwork ;
-    mat:hasAuthor mat-r:Giovanni-Battista-Cima ;
-    mat:hasInscription mat-r:Inscription-P018 ;
-    mat:hasSupport mat-r:P018-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P018-Tempera ;
-    mat:hasTitle "The Madonna and Child with Saint Francis and Saint Clare" .
-
-mat-r:P019 a mat:Artwork ;
-    mat:hasAuthor mat-r:Carlo-Crivelli ;
-    mat:hasDecoration mat-r:Decoration-P019 ;
-    mat:hasSupport mat-r:P019-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P019-Tempera,
-        mat-r:P019-painting ;
-    mat:hasTitle "Saint Dominic" .
-
-mat-r:P020 a mat:Artwork ;
-    mat:hasAuthor mat-r:Carlo-Crivelli ;
-    mat:hasDecoration mat-r:Decoration-P020 ;
-    mat:hasSupport mat-r:P020-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P020-Tempera ;
-    mat:hasTitle "Saint George" .
-
-mat-r:P021 a mat:Artwork ;
-    mat:hasAuthor mat-r:Carlo-Crivelli ;
-    mat:hasDecoration mat-r:Decoration-P021 ;
-    mat:hasSupport mat-r:P021-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P021-Tempera,
-        mat-r:P021-painting ;
-    mat:hasTitle "The Pietà" .
-
-mat-r:P022 a mat:Artwork ;
-    mat:hasAuthor mat-r:Carlo-Crivelli ;
-    mat:hasSignature mat-r:Signature-P022 ;
-    mat:hasSupport mat-r:P022-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P022-Tempera,
-        mat-r:P022-cabochon ;
-    mat:hasTitle "The Madonna and Child" .
-
-mat-r:P023 a mat:Artwork ;
-    mat:hasAuthor mat-r:Gasparo-Diziani ;
-    mat:hasSupport mat-r:P023-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P023-Oil,
-        mat-r:P023-painting ;
-    mat:hasTitle "Dawn (ceiling decoration) " .
-
-mat-r:P024 a mat:Artwork ;
-    mat:hasAuthor mat-r:Michele-Giambono ;
-    mat:hasDecoration mat-r:Decoration-P024 ;
-    mat:hasSupport mat-r:P024-CurrentSupport-wood ;
-    mat:hasTechnique mat-r:P024-Tempera ;
-    mat:hasTitle "The Man of Sorrows" .
-
-mat-r:P025 a mat:Artwork ;
-    mat:hasAuthor mat-r:Jacopo-Guarana ;
-    mat:hasSignature mat-r:Signature-P025 ;
-    mat:hasSupport mat-r:P025-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P025-Oil,
-        mat-r:P025-painting ;
-    mat:hasTitle "The Crowning with Thorns" .
-
-mat-r:P026 a mat:Artwork ;
-    mat:hasAuthor mat-r:Francesco-Guardi ;
-    mat:hasInscription mat-r:Inscription-P026 ;
-    mat:hasSignature mat-r:Signature-P026 ;
-    mat:hasSupport mat-r:P026-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P026-Oil,
-        mat-r:P026-cut,
-        mat-r:P026-drawing,
-        mat-r:P026-painting ;
-    mat:hasTitle "Venice: the Grand Canal above the Rialto" .
-
-mat-r:P027 a mat:Artwork ;
-    mat:hasAuthor mat-r:Francesco-Guardi ;
-    mat:hasInscription mat-r:Inscription-P027 ;
-    mat:hasSupport mat-r:P027-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P027-Oil ;
-    mat:hasTitle "Venice: Santa Maria de/la Salute" .
-
-mat-r:P028 a mat:Artwork ;
-    mat:hasAuthor mat-r:Francesco-Guardi ;
-    mat:hasSupport mat-r:P028-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P028-Oil,
-        mat-r:P028-painting ;
-    mat:hasTitle "Landscape" .
-
-mat-r:P029 a mat:Artwork ;
-    mat:hasAuthor mat-r:Francesco-Guardi ;
-    mat:hasSupport mat-r:P029-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P029-Oil ;
-    mat:hasTitle "Landscape" .
-
-mat-r:P030 a mat:Artwork ;
-    mat:hasAuthor mat-r:Francesco-Guardi ;
-    mat:hasSupport mat-r:P030-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P030-Oil,
-        mat-r:P030-drawing,
-        mat-r:P030-painting ;
-    mat:hasTitle "Fantastic Landscape" .
-
-mat-r:P031 a mat:Artwork ;
-    mat:hasAuthor mat-r:Francesco-Guardi ;
-    mat:hasSupport mat-r:P031-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P031-Oil ;
-    mat:hasTitle "Fantastic Landscape" .
-
-mat-r:P032 a mat:Artwork ;
-    mat:hasAuthor mat-r:Francesco-Guardi ;
-    mat:hasSupport mat-r:P032-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P032-Oil ;
-    mat:hasTitle "Fantastic Landscape" .
-
-mat-r:P033 a mat:Artwork ;
-    mat:hasAuthor mat-r:Francesco-Guardi ;
-    mat:hasSignature mat-r:Signature-P033 ;
-    mat:hasSupport mat-r:P033-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P033-Oil,
-        mat-r:P033-painting ;
-    mat:hasTitle "Venice: Piazza San Marco" .
-
-mat-r:P034 a mat:Artwork ;
-    mat:hasAuthor mat-r:Francesco-Guardi ;
-    mat:hasSupport mat-r:P034-CurrentSupport-canvas ;
-    mat:hasTechnique mat-r:P034-Oil ;
-    mat:hasTitle "Venice from the Sea" .
+mat-r: a owl:Ontology ;
+    owl:imports mat: .
 
 mat-r:P035 a mat:Artwork ;
     mat:hasAuthor mat-r:Francesco-Guardi ;
@@ -743,27 +377,6 @@ mat-r:P093 a mat:Artwork ;
         mat-r:P093-painting ;
     mat:hasTitle "The Last Supper" .
 
-mat:Mark_of_Carter a owl:Class ;
-    rdfs:comment "The mark of a workshop or factory for model plasters." ;
-    rdfs:subClassOf mat:Mark .
-
-mat:Mark_of_Founder a owl:Class ;
-    rdfs:comment "The mark of a workshop or factory for casting metal." ;
-    rdfs:subClassOf mat:Mark .
-
-mat:Signature_Datation a owl:Class ;
-    rdfs:comment "The date of  the signature, lived by the authors themselves on the artwork." ;
-    rdfs:subClassOf mat:Signature .
-
-mat:Title a owl:Class ;
-    rdfs:comment "The title given by the author to the artwork" .
-
-mat:hasSupport a owl:ObjectProperty ;
-    rdfs:comment "The property connects the artwork to its current support" ;
-    rdfs:domain mat:Artwork ;
-    rdfs:range mat:Support ;
-    rdfs:subPropertyOf owl:topObjectProperty .
-
 mat-r:Alessandro-Longhi a mat:Author ;
     rdfs:Literal "Alessandro Longhi" .
 
@@ -845,9 +458,17 @@ mat-r:Lambert-Sustris a mat:Author ;
 mat-r:Michele-Giambono a mat:Author ;
     rdfs:Literal "Michele Giambono" .
 
-mat-r:P000-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P000 a mat:Artwork ;
+    mat:hasAuthor mat-r:Antonello-da-Messina ;
+    mat:hasCurrentSupport mat-r:P000-CurrentSupport-wood ;
+    mat:hasTechnique mat-r:P000-Oil,
+        mat-r:P000-painting ;
+    mat:hasTitle "Portrait of a Young Man" .
+
+mat-r:P000-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P000 .
 
 mat-r:P000-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -857,9 +478,18 @@ mat-r:P000-painting a mat:Technique ;
     rdfs:Literal "painting" ;
     mat:isPerformedOn mat-r:P000-wood .
 
-mat-r:P001-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P001 a mat:Artwork ;
+    mat:hasAuthor mat-r:Antonello-da-Messina ;
+    mat:hasCurrentSupport mat-r:P001-CurrentSupport-wood ;
+    mat:hasSignature mat-r:Signature-P001 ;
+    mat:hasTechnique mat-r:P001-Oil,
+        mat-r:P001-tempera ;
+    mat:hasTitle "Christ Crowned with Thorns" .
+
+mat-r:P001-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P001 .
 
 mat-r:P001-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -869,9 +499,18 @@ mat-r:P001-tempera a mat:Technique ;
     rdfs:Literal "tempera" ;
     mat:isPerformedOn mat-r:P001-wood .
 
-mat-r:P002-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P002 a mat:Artwork ;
+    mat:hasAuthor mat-r:Antonello-de-Saliba ;
+    mat:hasCurrentSupport mat-r:P002-CurrentSupport-wood ;
+    mat:hasTechnique mat-r:P002-Tempera,
+        mat-r:P002-oil,
+        mat-r:P002-painting ;
+    mat:hasTitle "The Madonna Adoring the Child" .
+
+mat-r:P002-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P002 .
 
 mat-r:P002-Tempera a mat:Technique ;
     rdfs:Literal "Tempera" ;
@@ -885,9 +524,18 @@ mat-r:P002-painting a mat:Technique ;
     rdfs:Literal "painting" ;
     mat:isPerformedOn mat-r:P002-wood .
 
-mat-r:P003-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P003 a mat:Artwork ;
+    mat:hasAuthor mat-r:Giovanni-Bellini ;
+    mat:hasCurrentSupport mat-r:P003-CurrentSupport-wood ;
+    mat:hasSignature mat-r:Signature-P003 ;
+    mat:hasTechnique mat-r:P003-Oil,
+        mat-r:P003-painting ;
+    mat:hasTitle "The Madonna and Child" .
+
+mat-r:P003-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P003 .
 
 mat-r:P003-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -897,9 +545,18 @@ mat-r:P003-painting a mat:Technique ;
     rdfs:Literal "painting" ;
     mat:isPerformedOn mat-r:P003-wood .
 
-mat-r:P004-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P004 a mat:Artwork ;
+    mat:hasAuthor mat-r:Giovanni-Bellini ;
+    mat:hasCurrentSupport mat-r:P004-CurrentSupport-wood ;
+    mat:hasSignature mat-r:Signature-P004 ;
+    mat:hasTechnique mat-r:P004-Tempera,
+        mat-r:P004-painting ;
+    mat:hasTitle "The Madonna Adoring the Sleeping Child " .
+
+mat-r:P004-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P004 .
 
 mat-r:P004-Tempera a mat:Technique ;
     rdfs:Literal "Tempera" ;
@@ -909,9 +566,19 @@ mat-r:P004-painting a mat:Technique ;
     rdfs:Literal "painting" ;
     mat:isPerformedOn mat-r:P004-wood .
 
-mat-r:P005-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P005 a mat:Artwork ;
+    mat:hasAuthor mat-r:Giovanni-Bellini ;
+    mat:hasCurrentSupport mat-r:P005-CurrentSupport-wood ;
+    mat:hasInscription mat-r:Inscription-P005 ;
+    mat:hasSignature mat-r:Signature-P005 ;
+    mat:hasTechnique mat-r:P005-oil,
+        mat-r:P005-painting ;
+    mat:hasTitle "The Madonna and Child with Saint" .
+
+mat-r:P005-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P005 .
 
 mat-r:P005-oil a mat:Technique ;
     rdfs:Literal "oil" ;
@@ -921,9 +588,17 @@ mat-r:P005-painting a mat:Technique ;
     rdfs:Literal "painting" ;
     mat:isPerformedOn mat-r:P005-wood .
 
-mat-r:P006-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P006 a mat:Artwork ;
+    mat:hasAuthor mat-r:Workshop-of-Giovanni-Bellini ;
+    mat:hasCurrentSupport mat-r:P006-CurrentSupport-wood ;
+    mat:hasTechnique mat-r:P006-Tempera,
+        mat-r:P006-oil ;
+    mat:hasTitle "The Madonna and Child" .
+
+mat-r:P006-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P006 .
 
 mat-r:P006-Tempera a mat:Technique ;
     rdfs:Literal "Tempera" ;
@@ -933,9 +608,18 @@ mat-r:P006-oil a mat:Technique ;
     rdfs:Literal "oil" ;
     mat:isPerformedOn mat-r:P006-wood .
 
-mat-r:P007-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P007 a mat:Artwork ;
+    mat:hasAuthor mat-r:Workshop-of-Giovanni-Bellini ;
+    mat:hasCurrentSupport mat-r:P007-CurrentSupport-wood ;
+    mat:hasSignature mat-r:Signature-P007 ;
+    mat:hasTechnique mat-r:P007-Oil,
+        mat-r:P007-painting ;
+    mat:hasTitle "The Presentation in the Temple" .
+
+mat-r:P007-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P007 .
 
 mat-r:P007-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -945,9 +629,18 @@ mat-r:P007-painting a mat:Technique ;
     rdfs:Literal "painting" ;
     mat:isPerformedOn mat-r:P007-wood .
 
-mat-r:P008-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P008 a mat:Artwork ;
+    mat:hasAuthor mat-r:Jacopo-Bellini ;
+    mat:hasCurrentSupport mat-r:P008-CurrentSupport-wood ;
+    mat:hasDecoration mat-r:Decoration-P008 ;
+    mat:hasInscription mat-r:Inscription-P008 ;
+    mat:hasTechnique mat-r:P008-Tempera ;
+    mat:hasTitle "The Madonna and Child" .
+
+mat-r:P008-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P008 .
 
 mat-r:P008-Tempera a mat:Technique ;
     rdfs:Literal "Tempera" ;
@@ -960,9 +653,18 @@ mat-r:P008-gold a mat:Material ;
 mat-r:P008-wood a mat:Material ;
     rdfs:Literal "wood" .
 
-mat-r:P009-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P009 a mat:Artwork ;
+    mat:hasAuthor mat-r:Bernardo-Bellotto ;
+    mat:hasCurrentSupport mat-r:P009-CurrentSupport-canvas ;
+    mat:hasTechnique mat-r:P009-Oil,
+        mat-r:P009-drawing,
+        mat-r:P009-painting ;
+    mat:hasTitle "Vaprio d'Adda" .
+
+mat-r:P009-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P009 .
 
 mat-r:P009-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -976,9 +678,17 @@ mat-r:P009-painting a mat:Technique ;
     rdfs:Literal "painting" ;
     mat:isPerformedOn mat-r:P009-canvas .
 
-mat-r:P010-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P010 a mat:Artwork ;
+    mat:hasAuthor mat-r:Bonifazio-Veronese ;
+    mat:hasCurrentSupport mat-r:P010-CurrentSupport-canvas ;
+    mat:hasTechnique mat-r:P010-Oil,
+        mat-r:P010-painting ;
+    mat:hasTitle "A Miracle of Saint Ambrose" .
+
+mat-r:P010-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P010 .
 
 mat-r:P010-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -988,9 +698,17 @@ mat-r:P010-painting a mat:Technique ;
     rdfs:Literal "painting" ;
     mat:isPerformedOn mat-r:P010-canvas .
 
-mat-r:P011-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P011 a mat:Artwork ;
+    mat:hasAuthor mat-r:Antonio-Canal ;
+    mat:hasCurrentSupport mat-r:P011-CurrentSupport-canvas ;
+    mat:hasTechnique mat-r:P011-Oil,
+        mat-r:P011-drawing ;
+    mat:hasTitle "Venice: the Piazzetta" .
+
+mat-r:P011-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P011 .
 
 mat-r:P011-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1000,9 +718,17 @@ mat-r:P011-drawing a mat:Technique ;
     rdfs:Literal "drawing" ;
     mat:isPerformedOn mat-r:P011-canvas .
 
-mat-r:P012-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P012 a mat:Artwork ;
+    mat:hasAuthor mat-r:Antonio-Canal ;
+    mat:hasCurrentSupport mat-r:P012-CurrentSupport-canvas ;
+    mat:hasTechnique mat-r:P012-Oil,
+        mat-r:P012-painting ;
+    mat:hasTitle "Venice: Santa Maria della Salute" .
+
+mat-r:P012-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P012 .
 
 mat-r:P012-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1012,9 +738,18 @@ mat-r:P012-painting a mat:Technique ;
     rdfs:Literal "painting" ;
     mat:isPerformedOn mat-r:P012-canvas .
 
-mat-r:P013-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P013 a mat:Artwork ;
+    mat:hasAuthor mat-r:Vittore-Carpaccio ;
+    mat:hasCurrentSupport mat-r:P013-CurrentSupport-wood ;
+    mat:hasInscription mat-r:Inscription-P013 ;
+    mat:hasSignature mat-r:Signature-P013 ;
+    mat:hasTechnique mat-r:P013-Tempera ;
+    mat:hasTitle "The Meditatian on the Passion" .
+
+mat-r:P013-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P013 .
 
 mat-r:P013-Tempera a mat:Technique ;
     rdfs:Literal "Tempera" ;
@@ -1023,9 +758,16 @@ mat-r:P013-Tempera a mat:Technique ;
 mat-r:P013-wood a mat:Material ;
     rdfs:Literal "wood" .
 
-mat-r:P014-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P014 a mat:Artwork ;
+    mat:hasAuthor mat-r:Francesco-Casanova ;
+    mat:hasCurrentSupport mat-r:P014-CurrentSupport-canvas ;
+    mat:hasTechnique mat-r:P014-Oil ;
+    mat:hasTitle "Cavalier and Shepherd" .
+
+mat-r:P014-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P014 .
 
 mat-r:P014-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1034,9 +776,17 @@ mat-r:P014-Oil a mat:Technique ;
 mat-r:P014-canvas a mat:Material ;
     rdfs:Literal "canvas" .
 
-mat-r:P015-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P015 a mat:Artwork ;
+    mat:hasAuthor mat-r:Vincenzo-Catena ;
+    mat:hasCurrentSupport mat-r:P015-CurrentSupport-canvas ;
+    mat:hasTechnique mat-r:P015-Oil,
+        mat-r:P015-painting ;
+    mat:hasTitle "Portrait of a Venetian Senatar" .
+
+mat-r:P015-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P015 .
 
 mat-r:P015-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1046,9 +796,17 @@ mat-r:P015-painting a mat:Technique ;
     rdfs:Literal "painting" ;
     mat:isPerformedOn mat-r:P015-canvas .
 
-mat-r:P016-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P016 a mat:Artwork ;
+    mat:hasAuthor mat-r:Vincenzo-Catena ;
+    mat:hasCurrentSupport mat-r:P016-CurrentSupport-canvas ;
+    mat:hasTechnique mat-r:P016-Oil,
+        mat-r:P016-engraving ;
+    mat:hasTitle "The Adoration of the Shepherds" .
+
+mat-r:P016-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P016 .
 
 mat-r:P016-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1058,14 +816,11 @@ mat-r:P016-engraving a mat:Technique ;
     rdfs:Literal "engraving" ;
     mat:isPerformedOn mat-r:P016-canvas .
 
-mat-r:P017-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
+mat-r:P017-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
     rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P017 ;
     mat:transferredFrom mat-r:P017-PreviousSupport-wood .
-
-mat-r:P017-PreviousSupport-wood a mat:Material,
-        mat:Previous_Support ;
-    rdfs:Literal "wood" .
 
 mat-r:P017-Tempera a mat:Technique ;
     rdfs:Literal "Tempera" ;
@@ -1082,9 +837,17 @@ mat-r:P017-painting a mat:Technique ;
     mat:isPerformedOn mat-r:P017-canvas,
         mat-r:P017-wood .
 
-mat-r:P018-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P018 a mat:Artwork ;
+    mat:hasAuthor mat-r:Giovanni-Battista-Cima ;
+    mat:hasCurrentSupport mat-r:P018-CurrentSupport-wood ;
+    mat:hasInscription mat-r:Inscription-P018 ;
+    mat:hasTechnique mat-r:P018-Tempera ;
+    mat:hasTitle "The Madonna and Child with Saint Francis and Saint Clare" .
+
+mat-r:P018-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P018 .
 
 mat-r:P018-Tempera a mat:Technique ;
     rdfs:Literal "Tempera" ;
@@ -1093,9 +856,18 @@ mat-r:P018-Tempera a mat:Technique ;
 mat-r:P018-wood a mat:Material ;
     rdfs:Literal "wood" .
 
-mat-r:P019-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P019 a mat:Artwork ;
+    mat:hasAuthor mat-r:Carlo-Crivelli ;
+    mat:hasCurrentSupport mat-r:P019-CurrentSupport-wood ;
+    mat:hasDecoration mat-r:Decoration-P019 ;
+    mat:hasTechnique mat-r:P019-Tempera,
+        mat-r:P019-painting ;
+    mat:hasTitle "Saint Dominic" .
+
+mat-r:P019-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P019 .
 
 mat-r:P019-Tempera a mat:Technique ;
     rdfs:Literal "Tempera" ;
@@ -1107,9 +879,17 @@ mat-r:P019-painting a mat:Technique ;
     mat:isPerformedOn mat-r:P019-gold,
         mat-r:P019-wood .
 
-mat-r:P020-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P020 a mat:Artwork ;
+    mat:hasAuthor mat-r:Carlo-Crivelli ;
+    mat:hasCurrentSupport mat-r:P020-CurrentSupport-wood ;
+    mat:hasDecoration mat-r:Decoration-P020 ;
+    mat:hasTechnique mat-r:P020-Tempera ;
+    mat:hasTitle "Saint George" .
+
+mat-r:P020-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P020 .
 
 mat-r:P020-Tempera a mat:Technique ;
     rdfs:Literal "Tempera" ;
@@ -1122,9 +902,18 @@ mat-r:P020-gold a mat:Material ;
 mat-r:P020-wood a mat:Material ;
     rdfs:Literal "wood" .
 
-mat-r:P021-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P021 a mat:Artwork ;
+    mat:hasAuthor mat-r:Carlo-Crivelli ;
+    mat:hasCurrentSupport mat-r:P021-CurrentSupport-wood ;
+    mat:hasDecoration mat-r:Decoration-P021 ;
+    mat:hasTechnique mat-r:P021-Tempera,
+        mat-r:P021-painting ;
+    mat:hasTitle "The Pietà" .
+
+mat-r:P021-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P021 .
 
 mat-r:P021-Tempera a mat:Technique ;
     rdfs:Literal "Tempera" ;
@@ -1136,9 +925,18 @@ mat-r:P021-painting a mat:Technique ;
     mat:isPerformedOn mat-r:P021-gold,
         mat-r:P021-wood .
 
-mat-r:P022-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P022 a mat:Artwork ;
+    mat:hasAuthor mat-r:Carlo-Crivelli ;
+    mat:hasCurrentSupport mat-r:P022-CurrentSupport-wood ;
+    mat:hasSignature mat-r:Signature-P022 ;
+    mat:hasTechnique mat-r:P022-Tempera,
+        mat-r:P022-cabochon ;
+    mat:hasTitle "The Madonna and Child" .
+
+mat-r:P022-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P022 .
 
 mat-r:P022-Tempera a mat:Technique ;
     rdfs:Literal "Tempera" ;
@@ -1150,9 +948,17 @@ mat-r:P022-cabochon a mat:Technique ;
     mat:isPerformedOn mat-r:P022-Wood,
         mat-r:P022-gold .
 
-mat-r:P023-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P023 a mat:Artwork ;
+    mat:hasAuthor mat-r:Gasparo-Diziani ;
+    mat:hasCurrentSupport mat-r:P023-CurrentSupport-canvas ;
+    mat:hasTechnique mat-r:P023-Oil,
+        mat-r:P023-painting ;
+    mat:hasTitle "Dawn (ceiling decoration) " .
+
+mat-r:P023-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P023 .
 
 mat-r:P023-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1162,9 +968,17 @@ mat-r:P023-painting a mat:Technique ;
     rdfs:Literal "painting" ;
     mat:isPerformedOn mat-r:P023-canvas .
 
-mat-r:P024-CurrentSupport-wood a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "wood" .
+mat-r:P024 a mat:Artwork ;
+    mat:hasAuthor mat-r:Michele-Giambono ;
+    mat:hasCurrentSupport mat-r:P024-CurrentSupport-wood ;
+    mat:hasDecoration mat-r:Decoration-P024 ;
+    mat:hasTechnique mat-r:P024-Tempera ;
+    mat:hasTitle "The Man of Sorrows" .
+
+mat-r:P024-CurrentSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isCurrentSupportOf mat-r:P024 .
 
 mat-r:P024-Tempera a mat:Technique ;
     rdfs:Literal "Tempera" ;
@@ -1173,9 +987,18 @@ mat-r:P024-Tempera a mat:Technique ;
 mat-r:P024-wood a mat:Material ;
     rdfs:Literal "wood" .
 
-mat-r:P025-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P025 a mat:Artwork ;
+    mat:hasAuthor mat-r:Jacopo-Guarana ;
+    mat:hasCurrentSupport mat-r:P025-CurrentSupport-canvas ;
+    mat:hasSignature mat-r:Signature-P025 ;
+    mat:hasTechnique mat-r:P025-Oil,
+        mat-r:P025-painting ;
+    mat:hasTitle "The Crowning with Thorns" .
+
+mat-r:P025-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P025 .
 
 mat-r:P025-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1185,9 +1008,21 @@ mat-r:P025-painting a mat:Technique ;
     rdfs:Literal "painting" ;
     mat:isPerformedOn mat-r:P025-canvas .
 
-mat-r:P026-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P026 a mat:Artwork ;
+    mat:hasAuthor mat-r:Francesco-Guardi ;
+    mat:hasCurrentSupport mat-r:P026-CurrentSupport-canvas ;
+    mat:hasInscription mat-r:Inscription-P026 ;
+    mat:hasSignature mat-r:Signature-P026 ;
+    mat:hasTechnique mat-r:P026-Oil,
+        mat-r:P026-cut,
+        mat-r:P026-drawing,
+        mat-r:P026-painting ;
+    mat:hasTitle "Venice: the Grand Canal above the Rialto" .
+
+mat-r:P026-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P026 .
 
 mat-r:P026-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1205,9 +1040,17 @@ mat-r:P026-painting a mat:Technique ;
     rdfs:Literal "painting" ;
     mat:isPerformedOn mat-r:P026-canvas .
 
-mat-r:P027-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P027 a mat:Artwork ;
+    mat:hasAuthor mat-r:Francesco-Guardi ;
+    mat:hasCurrentSupport mat-r:P027-CurrentSupport-canvas ;
+    mat:hasInscription mat-r:Inscription-P027 ;
+    mat:hasTechnique mat-r:P027-Oil ;
+    mat:hasTitle "Venice: Santa Maria de/la Salute" .
+
+mat-r:P027-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P027 .
 
 mat-r:P027-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1216,9 +1059,17 @@ mat-r:P027-Oil a mat:Technique ;
 mat-r:P027-canvas a mat:Material ;
     rdfs:Literal "canvas" .
 
-mat-r:P028-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P028 a mat:Artwork ;
+    mat:hasAuthor mat-r:Francesco-Guardi ;
+    mat:hasCurrentSupport mat-r:P028-CurrentSupport-canvas ;
+    mat:hasTechnique mat-r:P028-Oil,
+        mat-r:P028-painting ;
+    mat:hasTitle "Landscape" .
+
+mat-r:P028-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P028 .
 
 mat-r:P028-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1230,9 +1081,16 @@ mat-r:P028-painting a mat:Technique ;
     mat:isPerformedOn mat-r:P028-canvas,
         mat-r:P028-paper .
 
-mat-r:P029-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P029 a mat:Artwork ;
+    mat:hasAuthor mat-r:Francesco-Guardi ;
+    mat:hasCurrentSupport mat-r:P029-CurrentSupport-canvas ;
+    mat:hasTechnique mat-r:P029-Oil ;
+    mat:hasTitle "Landscape" .
+
+mat-r:P029-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P029 .
 
 mat-r:P029-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1245,9 +1103,18 @@ mat-r:P029-canvas a mat:Material ;
 mat-r:P029-paper a mat:Material ;
     rdfs:Literal "paper" .
 
-mat-r:P030-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P030 a mat:Artwork ;
+    mat:hasAuthor mat-r:Francesco-Guardi ;
+    mat:hasCurrentSupport mat-r:P030-CurrentSupport-canvas ;
+    mat:hasTechnique mat-r:P030-Oil,
+        mat-r:P030-drawing,
+        mat-r:P030-painting ;
+    mat:hasTitle "Fantastic Landscape" .
+
+mat-r:P030-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P030 .
 
 mat-r:P030-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1261,9 +1128,16 @@ mat-r:P030-painting a mat:Technique ;
     rdfs:Literal "painting" ;
     mat:isPerformedOn mat-r:P030-canvas .
 
-mat-r:P031-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P031 a mat:Artwork ;
+    mat:hasAuthor mat-r:Francesco-Guardi ;
+    mat:hasCurrentSupport mat-r:P031-CurrentSupport-canvas ;
+    mat:hasTechnique mat-r:P031-Oil ;
+    mat:hasTitle "Fantastic Landscape" .
+
+mat-r:P031-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P031 .
 
 mat-r:P031-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1272,9 +1146,16 @@ mat-r:P031-Oil a mat:Technique ;
 mat-r:P031-canvas a mat:Material ;
     rdfs:Literal "canvas" .
 
-mat-r:P032-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P032 a mat:Artwork ;
+    mat:hasAuthor mat-r:Francesco-Guardi ;
+    mat:hasCurrentSupport mat-r:P032-CurrentSupport-canvas ;
+    mat:hasTechnique mat-r:P032-Oil ;
+    mat:hasTitle "Fantastic Landscape" .
+
+mat-r:P032-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P032 .
 
 mat-r:P032-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1283,9 +1164,18 @@ mat-r:P032-Oil a mat:Technique ;
 mat-r:P032-canvas a mat:Material ;
     rdfs:Literal "canvas" .
 
-mat-r:P033-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P033 a mat:Artwork ;
+    mat:hasAuthor mat-r:Francesco-Guardi ;
+    mat:hasCurrentSupport mat-r:P033-CurrentSupport-canvas ;
+    mat:hasSignature mat-r:Signature-P033 ;
+    mat:hasTechnique mat-r:P033-Oil,
+        mat-r:P033-painting ;
+    mat:hasTitle "Venice: Piazza San Marco" .
+
+mat-r:P033-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P033 .
 
 mat-r:P033-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1295,9 +1185,16 @@ mat-r:P033-painting a mat:Technique ;
     rdfs:Literal "painting" ;
     mat:isPerformedOn mat-r:P033-canvas .
 
-mat-r:P034-CurrentSupport-canvas a mat:Current_Support,
-        mat:Material ;
-    rdfs:Literal "canvas" .
+mat-r:P034 a mat:Artwork ;
+    mat:hasAuthor mat-r:Francesco-Guardi ;
+    mat:hasCurrentSupport mat-r:P034-CurrentSupport-canvas ;
+    mat:hasTechnique mat-r:P034-Oil ;
+    mat:hasTitle "Venice from the Sea" .
+
+mat-r:P034-CurrentSupport-canvas a mat:Material,
+        mat:Support ;
+    rdfs:Literal "canvas" ;
+    mat:isCurrentSupportOf mat-r:P034 .
 
 mat-r:P034-Oil a mat:Technique ;
     rdfs:Literal "Oil" ;
@@ -1927,30 +1824,6 @@ mat-r:Vittore-Carpaccio a mat:Author ;
 mat-r:Workshop-of-Antonio-Vivarini a mat:Author ;
     rdfs:Literal "Workshop of Antonio Vivarini" .
 
-<https://w3id.org/arco/ontology/denotative-description/Brand> rdfs:subClassOf mat:Artwork_Component .
-
-mat:Frame a owl:Class ;
-    rdfs:comment "Some works of art comes with a frame, which has a material and can  have a decoration." ;
-    rdfs:subClassOf <https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum> .
-
-mat:hasTechnique a owl:ObjectProperty ;
-    rdfs:comment "The property connects the artwork to the technique used to realize it" ;
-    rdfs:domain mat:Artwork ;
-    rdfs:range mat:Technique .
-
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Decorative_Technique> a owl:Class ;
-    rdfs:comment "A technique that traditionally is used  for the creation of decorative elements." ;
-    rdfs:subClassOf mat:Technique .
-
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Ornamental_Technique> a owl:Class ;
-    rdfs:comment "A technique that traditionally is used for the creation of ornaments." ;
-    rdfs:subClassOf mat:Technique .
-
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> a owl:NamedIndividual,
-        mat:Support ;
-    rdfs:comment "The original support used by the artist." ;
-    mat:transferredFrom <https://github.com/Bianca-LM/art-criticism-ontology/mat/Previous_Support> .
-
 mat-r:Antonello-da-Messina a mat:Author ;
     rdfs:Literal "Antonello da Messina" .
 
@@ -2001,6 +1874,20 @@ mat-r:P015-canvas a mat:Material ;
 
 mat-r:P016-canvas a mat:Material ;
     rdfs:Literal "canvas" .
+
+mat-r:P017 a mat:Artwork ;
+    mat:hasAuthor mat-r:Giovanni-Battista-Cima ;
+    mat:hasCurrentSupport mat-r:P017-CurrentSupport-canvas ;
+    mat:hasPreviousSupport mat-r:P017-PreviousSupport-wood ;
+    mat:hasTechnique mat-r:P017-Tempera,
+        mat-r:P017-oil,
+        mat-r:P017-painting ;
+    mat:hasTitle "Three Saints: Roch, Anthony Abbot, and Lucy" .
+
+mat-r:P017-PreviousSupport-wood a mat:Material,
+        mat:Support ;
+    rdfs:Literal "wood" ;
+    mat:isPreviousSupportOf mat-r:P017 .
 
 mat-r:P019-gold a mat:Material ;
     rdfs:Literal "gold" .
@@ -2152,18 +2039,6 @@ mat-r:Vincenzo-Catena a mat:Author ;
 mat-r:Workshop-of-Giovanni-Bellini a mat:Author ;
     rdfs:Literal "Workshop of Giovanni Bellini" .
 
-mat:Mark a owl:Class ;
-    rdfs:comment "The sign of an external contribution out of the author. It can be the founder or the carter, mainly used with scultpures." ;
-    rdfs:subClassOf mat:Artwork_Component ;
-    owl:equivalentClass <https://w3id.org/arco/ontology/denotative-description/Brand> .
-
-mat:Ornament a owl:Class ;
-    rdfs:comment "An additional element other from the main body of the artwork, which helps through repeated patterns, and natural elements at the visual organization of the artwork, in which prevails the aesthetic function." ;
-    rdfs:subClassOf mat:Artwork_Component .
-
-<https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum> a owl:Class ;
-    rdfs:comment "Every external physical datum of an artwork." .
-
 mat-r:Bartolomeo-Vivarini a mat:Author ;
     rdfs:Literal "Bartolomeo Vivarini" .
 
@@ -2260,26 +2135,10 @@ mat-r:Workshop-of-Giovanni-Battista-Tiepolo a mat:Author ;
 mat-r:Jacopo-Robusti a mat:Author ;
     rdfs:Literal "Jacopo Robusti" .
 
-mat:Artwork_Component a owl:Class ;
-    rdfs:comment "A subcomponent of an artwork which can have its own material and technique." .
-
 mat-r:P067-plaster a mat:Material,
         mat:Technique ;
     rdfs:Literal "plaster" ;
     mat:isPerformedOn mat-r:P067-plaster .
-
-mat:Decoration a owl:Class ;
-    rdfs:comment "An additional element which is main purpose is not practical or aesthetic, but brings \"decorum\" to another element." ;
-    rdfs:subClassOf mat:Artwork_Component ;
-    owl:disjointWith mat:Ornament .
-
-mat:Inscription a owl:Class ;
-    rdfs:comment "Any kind of text added to the artwork, which is not a signature, a date or a mark." ;
-    rdfs:subClassOf mat:Artwork_Component .
-
-mat:Support a owl:Class ;
-    rdfs:comment "The support on which the technique is performed, \"given from nature or elaborated by human beings\" (Sciolla)." ;
-    rdfs:subClassOf <https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum> .
 
 mat-r:Giovanni-Battista-Tiepolo a mat:Author ;
     rdfs:Literal "Giovanni Battista Tiepolo" .
@@ -2289,21 +2148,4 @@ mat-r:Titian a mat:Author ;
 
 mat-r:Francesco-Guardi a mat:Author ;
     rdfs:Literal "Francesco Guardi" .
-
-mat:Signature a owl:Class ;
-    rdfs:comment "The signature lived by the author on the artwork" ;
-    rdfs:subClassOf mat:Artwork_Component .
-
-mat:Author a owl:Class ;
-    rdfs:comment "The artists who made the artwork" .
-
-mat:Artwork a owl:Class ;
-    rdfs:comment "The entity which represents the work of art" .
-
-mat:Material a owl:Class ;
-    rdfs:comment "It is the proper material on which the work of art has been made. It can be different from the support." ;
-    rdfs:subClassOf <https://github.com/Bianca-LM/art-criticism-ontology/mat/External_Physical_Datum> .
-
-mat:Technique a owl:Class ;
-    rdfs:comment "\"The union of all the principles, rules and manners elaborated by the artists for the material processing over time, experimented in the workshops and artistic laboratories\" as defined by Sciolla." .
 
