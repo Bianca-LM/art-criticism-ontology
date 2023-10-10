@@ -7,16 +7,14 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://github.com/Bianca-LM/art-criticism-ontology/mat"
      versionIRI="https://github.com/Bianca-LM/art-criticism-ontology/1.0">
-    <Prefix name="" IRI="https://github.com/Bianca-LM/art-criticism-ontology/mat#"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="mat" IRI="https://github.com/Bianca-LM/art-criticism-ontology/mat#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="opla" IRI="http://ontologydesignpatterns.org/opla/"/>
+    <Prefix name="opla" IRI="http://www.ontologydesignpatterns.org/opla/"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="opla1" IRI="http://www.ontologydesignpatterns.org/opla/"/>
     <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
     <Prefix name="arco-dd" IRI="https://w3id.org/arco/ontology/denotative-description/1.2#"/>
     <Prefix name="catalogue" IRI="https://w3id.org/arco/ontology/catalogue/"/>
@@ -50,6 +48,12 @@
         <Class IRI="#Decoration"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Decorative_Technique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#External_Physical_Datum"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Frame"/>
     </Declaration>
     <Declaration>
@@ -71,6 +75,9 @@
         <Class IRI="#Ornament"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Ornamental_Technique"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Signature"/>
     </Declaration>
     <Declaration>
@@ -86,16 +93,10 @@
         <Class IRI="#Title"/>
     </Declaration>
     <Declaration>
-        <Class IRI="/Decorative_Technique"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="/External_Physical_Datum"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="/Ornamental_Technique"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasAuthor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCurrentSupport"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasDecoration"/>
@@ -116,6 +117,9 @@
         <ObjectProperty IRI="#hasOrnamentalTechnique"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasPreviousSupport"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasSupport"/>
     </Declaration>
     <Declaration>
@@ -123,6 +127,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasTitle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCurrentSupportOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isDated"/>
@@ -138,6 +145,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isPerformedOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPreviousSupportOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isSigned"/>
@@ -154,12 +164,6 @@
     <Declaration>
         <DataProperty IRI="#hasSignature"/>
     </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="/Current_Support"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="/Previous_Support"/>
-    </Declaration>
     <EquivalentClasses>
         <Class IRI="#Mark"/>
         <Class IRI="https://w3id.org/arco/ontology/denotative-description/Brand"/>
@@ -169,8 +173,12 @@
         <Class IRI="#Artwork_Component"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Decorative_Technique"/>
+        <Class IRI="#Technique"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Frame"/>
-        <Class IRI="/External_Physical_Datum"/>
+        <Class IRI="#External_Physical_Datum"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Inscription"/>
@@ -190,11 +198,15 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Material"/>
-        <Class IRI="/External_Physical_Datum"/>
+        <Class IRI="#External_Physical_Datum"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Ornament"/>
         <Class IRI="#Artwork_Component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ornamental_Technique"/>
+        <Class IRI="#Technique"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Signature"/>
@@ -206,15 +218,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Support"/>
-        <Class IRI="/External_Physical_Datum"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="/Decorative_Technique"/>
-        <Class IRI="#Technique"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="/Ornamental_Technique"/>
-        <Class IRI="#Technique"/>
+        <Class IRI="#External_Physical_Datum"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="https://w3id.org/arco/ontology/denotative-description/Brand"/>
@@ -224,24 +228,14 @@
         <Class IRI="#Decoration"/>
         <Class IRI="#Ornament"/>
     </DisjointClasses>
-    <ClassAssertion>
-        <Class IRI="#Support"/>
-        <NamedIndividual IRI="/Current_Support"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Support"/>
-        <NamedIndividual IRI="/Previous_Support"/>
-    </ClassAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#transferredFrom"/>
-        <NamedIndividual IRI="/Current_Support"/>
-        <NamedIndividual IRI="/Previous_Support"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#transferredFrom"/>
-        <NamedIndividual IRI="/Previous_Support"/>
-        <NamedIndividual IRI="/Previous_Support"/>
-    </ObjectPropertyAssertion>
+    <EquivalentObjectProperties>
+        <ObjectProperty IRI="#hasAuthor"/>
+        <ObjectProperty IRI="https://w3id.org/arco/ontology/context-description/hasAuthor"/>
+    </EquivalentObjectProperties>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCurrentSupport"/>
+        <ObjectProperty IRI="#hasSupport"/>
+    </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasDecorativeTechnique"/>
         <ObjectProperty IRI="#hasTechnique"/>
@@ -251,15 +245,39 @@
         <ObjectProperty IRI="#hasTechnique"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPreviousSupport"/>
+        <ObjectProperty IRI="#hasSupport"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasSupport"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isCurrentSupportOf"/>
+        <ObjectProperty IRI="#hasSupport"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isMountedOn"/>
         <ObjectProperty IRI="#hasSupport"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPreviousSupportOf"/>
+        <ObjectProperty IRI="#hasSupport"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasCurrentSupport"/>
+        <ObjectProperty IRI="#isCurrentSupportOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPreviousSupport"/>
+        <ObjectProperty IRI="#isPreviousSupportOf"/>
+    </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasAuthor"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCurrentSupport"/>
         <Class IRI="#Artwork"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -287,6 +305,10 @@
         <Class IRI="#Ornament"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPreviousSupport"/>
+        <Class IRI="#Artwork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSupport"/>
         <Class IRI="#Artwork"/>
     </ObjectPropertyDomain>
@@ -299,16 +321,19 @@
         <Class IRI="#Artwork"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isCurrentSupportOf"/>
+        <Class IRI="#Support"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isDated"/>
         <Class IRI="#Signature"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isMadeOf"/>
-        <Class IRI="#Frame"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isMadeOf"/>
-        <Class IRI="#Support"/>
+        <ObjectUnionOf>
+            <Class IRI="#Frame"/>
+            <Class IRI="#Support"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isMarked"/>
@@ -320,15 +345,19 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPerformedOn"/>
+        <Class IRI="#Decorative_Technique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPerformedOn"/>
+        <Class IRI="#Ornamental_Technique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPerformedOn"/>
         <Class IRI="#Technique"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPerformedOn"/>
-        <Class IRI="/Decorative_Technique"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPerformedOn"/>
-        <Class IRI="/Ornamental_Technique"/>
+        <ObjectProperty IRI="#isPreviousSupportOf"/>
+        <Class IRI="#Support"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isSigned"/>
@@ -343,12 +372,16 @@
         <Class IRI="#Author"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCurrentSupport"/>
+        <Class IRI="#Support"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasDecoration"/>
         <Class IRI="#Decoration"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasDecorativeTechnique"/>
-        <Class IRI="/Decorative_Technique"/>
+        <Class IRI="#Decorative_Technique"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasFrame"/>
@@ -364,7 +397,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasOrnamentalTechnique"/>
-        <Class IRI="/Ornamental_Technique"/>
+        <Class IRI="#Ornamental_Technique"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPreviousSupport"/>
+        <Class IRI="#Support"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSupport"/>
@@ -377,6 +414,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTitle"/>
         <Class IRI="#Title"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isCurrentSupportOf"/>
+        <Class IRI="#Artwork"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isDated"/>
@@ -405,6 +446,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isPerformedOn"/>
         <Class IRI="#Material"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPreviousSupportOf"/>
+        <Class IRI="#Artwork"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isSigned"/>
@@ -432,9 +477,19 @@
         <Literal>The entity which represents the work of art</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Artwork</IRI>
+        <Literal xml:lang="en">Artwork</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Artwork_Component</IRI>
         <Literal>A subcomponent of an artwork which can have its own material and technique.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Artwork_Component</IRI>
+        <Literal xml:lang="en">Artwork Component</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -442,9 +497,39 @@
         <Literal>The artists who made the artwork</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Author</IRI>
+        <Literal xml:lang="en">Author</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Decoration</IRI>
         <Literal>An additional element which is main purpose is not practical or aesthetic, but brings &quot;decorum&quot; to another element.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Decoration</IRI>
+        <Literal xml:lang="en">Decoration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Decorative_Technique</IRI>
+        <Literal>A technique that traditionally is used  for the creation of decorative elements.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Decorative_Technique</IRI>
+        <Literal xml:lang="en">Decorative Technique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#External_Physical_Datum</IRI>
+        <Literal>Every external physical datum of an artwork.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#External_Physical_Datum</IRI>
+        <Literal xml:lang="en">External Physical Datum</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -452,9 +537,19 @@
         <Literal>Some works of art comes with a frame, which has a material and can  have a decoration.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Frame</IRI>
+        <Literal xml:lang="en">Frame</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Inscription</IRI>
         <Literal>Any kind of text added to the artwork, which is not a signature, a date or a mark.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Inscription</IRI>
+        <Literal xml:lang="en">Inscription</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -462,9 +557,19 @@
         <Literal>The sign of an external contribution out of the author. It can be the founder or the carter, mainly used with scultpures.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Mark</IRI>
+        <Literal xml:lang="en">Mark</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Mark_of_Carter</IRI>
         <Literal>The mark of a workshop or factory for model plasters.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Mark_of_Carter</IRI>
+        <Literal xml:lang="en">Mark of Carter</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -472,9 +577,19 @@
         <Literal>The mark of a workshop or factory for casting metal.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Mark_of_Founder</IRI>
+        <Literal xml:lang="en">Mark of Founder</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Material</IRI>
         <Literal>It is the proper material on which the work of art has been made. It can be different from the support.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Material</IRI>
+        <Literal xml:lang="en">Material</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -482,9 +597,29 @@
         <Literal>An additional element other from the main body of the artwork, which helps through repeated patterns, and natural elements at the visual organization of the artwork, in which prevails the aesthetic function.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Ornament</IRI>
+        <Literal xml:lang="en">Ornament</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ornamental_Technique</IRI>
+        <Literal>A technique that traditionally is used for the creation of ornaments.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Ornamental_Technique</IRI>
+        <Literal xml:lang="en">Ornamental Technique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Signature</IRI>
         <Literal>The signature lived by the author on the artwork</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Signature</IRI>
+        <Literal xml:lang="en">Signature</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -492,9 +627,19 @@
         <Literal>The date of  the signature, lived by the authors themselves on the artwork.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Signature_Datation</IRI>
+        <Literal xml:lang="en">Signature Datation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Support</IRI>
         <Literal>The support on which the technique is performed, &quot;given from nature or elaborated by human beings&quot; (Sciolla).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Support</IRI>
+        <Literal xml:lang="en">Support</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -502,9 +647,19 @@
         <Literal>&quot;The union of all the principles, rules and manners elaborated by the artists for the material processing over time, experimented in the workshops and artistic laboratories&quot; as defined by Sciolla.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Technique</IRI>
+        <Literal xml:lang="en">Technique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Title</IRI>
         <Literal>The title given by the author to the artwork</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Title</IRI>
+        <Literal xml:lang="en">Title</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -512,9 +667,39 @@
         <Literal>The property represents the date of the signature datation</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#dateOfSignature</IRI>
+        <Literal xml:lang="en">date of signature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAuthor</IRI>
+        <Literal>This property connects the artwork to the author who made it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasAuthor</IRI>
+        <Literal xml:lang="en">has author</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCurrentSupport</IRI>
+        <Literal>This property connects an artwork to its current support.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasCurrentSupport</IRI>
+        <Literal xml:lang="en">has current support</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasDecoration</IRI>
         <Literal>The property connects the artwork to its decoration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasDecoration</IRI>
+        <Literal xml:lang="en">has decoration</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -522,9 +707,19 @@
         <Literal>The property connects the decoration that belongs to an artwork to the decorative technique used to realize it.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasDecorativeTechnique</IRI>
+        <Literal xml:lang="en">has decorative technique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasFrame</IRI>
         <Literal>The property connects the artwork to its frame</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasFrame</IRI>
+        <Literal xml:lang="en">has frame</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -532,9 +727,19 @@
         <Literal>The property connects the artwork to its inscription</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasInscription</IRI>
+        <Literal xml:lang="en">has inscription</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasInscriptionContent</IRI>
         <Literal>This property represents the content of an inscription.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasInscriptionContent</IRI>
+        <Literal xml:lang="en">has inscription content</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -542,9 +747,29 @@
         <Literal>The property connects the artwork to its ornament</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasOrnament</IRI>
+        <Literal xml:lang="en">has ornament</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasOrnamentalTechnique</IRI>
         <Literal>The property connects the ornament that belongs to an artwork to the ornamental technique that has been used to realize it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasOrnamentalTechnique</IRI>
+        <Literal xml:lang="en">has ornamental technique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPreviousSupport</IRI>
+        <Literal>This property connects the arttwork with its previous support.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPreviousSupport</IRI>
+        <Literal xml:lang="en">has previous support</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -552,9 +777,19 @@
         <Literal>This property represents the signature of the artist imposed on the artwork.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSignature</IRI>
+        <Literal xml:lang="en">has signature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasSupport</IRI>
         <Literal>The property connects the artwork to its current support</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSupport</IRI>
+        <Literal xml:lang="en">has support</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -562,9 +797,39 @@
         <Literal>The property connects the artwork to the technique used to realize it</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasTechnique</IRI>
+        <Literal xml:lang="en">has technique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTitle</IRI>
+        <Literal xml:lang="en">This property connects the artwork with its official title.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasTitle</IRI>
+        <Literal xml:lang="en">has title</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isCurrentSupportOf</IRI>
+        <Literal>Inverse property of mat:hasCurrentSupport</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isCurrentSupportOf</IRI>
+        <Literal xml:lang="en">is current support of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#isDated</IRI>
         <Literal>The property connects the signature to its datation, if it is written on the artwork itself.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isDated</IRI>
+        <Literal xml:lang="en">is dated</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -572,9 +837,19 @@
         <Literal>The property connects the frame and the support to the material which they are made of.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isMadeOf</IRI>
+        <Literal xml:lang="en">is made of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#isMarked</IRI>
         <Literal>The property connects the artwork to the mark that has been affixed on it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isMarked</IRI>
+        <Literal xml:lang="en">is marked</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -582,9 +857,29 @@
         <Literal>The property connects the material on which the artwork has been realised to the current support on which it is mounted</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isMountedOn</IRI>
+        <Literal xml:lang="en">is mounted on</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#isPerformedOn</IRI>
         <Literal>The property connects the technique to the material it is performed on.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPerformedOn</IRI>
+        <Literal xml:lang="en">is performed on</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPreviousSupportOf</IRI>
+        <Literal>Inverse property of mat:hasPreviousSupport</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPreviousSupportOf</IRI>
+        <Literal xml:lang="en">is previous support of</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -592,34 +887,19 @@
         <Literal>The property connects the artwork to the signature of the artist that made it.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isSigned</IRI>
+        <Literal xml:lang="en">is signed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#transferredFrom</IRI>
         <Literal>The property connects the current support of an artwork to the previous support from which it has been transferred.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>/Current_Support</IRI>
-        <Literal>The current support, which can be different from the original support for different reasons (restoration, demages, transfer etc.).</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>/Decorative_Technique</IRI>
-        <Literal>A technique that traditionally is used  for the creation of decorative elements.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>/External_Physical_Datum</IRI>
-        <Literal>Every external physical datum of an artwork.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>/Ornamental_Technique</IRI>
-        <Literal>A technique that traditionally is used for the creation of ornaments.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>/Previous_Support</IRI>
-        <Literal>The original support used by the artist.</Literal>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#transferredFrom</IRI>
+        <Literal xml:lang="en">transferred from</Literal>
     </AnnotationAssertion>
 </Ontology>
 
