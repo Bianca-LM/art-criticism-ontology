@@ -101,7 +101,7 @@ store.open((endpoint, endpoint))
 #Turtle serialization
 ttl = knowledgeGraph.serialize(destination='knowledgeGraph.txt', format='turtle')
 
-'''
+
 #load into blazegraph
 for triple in knowledgeGraph.triples((None, None, None)):
     try:
@@ -110,4 +110,3 @@ for triple in knowledgeGraph.triples((None, None, None)):
         print(triple)
     
 store.close()
-'''
