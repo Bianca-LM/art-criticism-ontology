@@ -425,10 +425,6 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isMarked"/>
-        <Class IRI="#Mark"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isMarked"/>
         <ObjectUnionOf>
             <Class IRI="#Mark"/>
             <Class IRI="#Mark_of_Carter"/>
