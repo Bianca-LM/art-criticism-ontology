@@ -1,6 +1,5 @@
 from pandas import *
-from rdflib import RDF, Graph, URIRef, RDFS, Literal, Namespace, serializer
-import os
+from rdflib import RDF, Graph, URIRef, RDFS, Literal, Namespace, OWL
 from ast import literal_eval
 
 from rdflib.plugins.stores.sparqlstore import SPARQLUpdateStore
@@ -16,7 +15,6 @@ with open("data/Dataset_paintings.csv", "r", encoding="utf-8") as f:
 data = merge(extractedData, otherData, left_on="identifier", right_on="ID", how="left")
 data = data.drop(columns=["Author", "Artwork", "Artwork component", "Material", "Technique", "ID"]).fillna('')
 
-
 #open blazegraph connection java -server -Xmx1g -jar blazegraph.jar
 endpoint = "http://192.168.56.1:9999/blazegraph/sparql"
 
@@ -27,11 +25,17 @@ directory = 'data'
 #create an empty knowledge graph
 knowledgeGraph = Graph()
 
-knowledgeGraph.parse('OMETA.ttl', format='ttl')
-
-mat = Namespace('https://github.com/Bianca-LM/art-criticism-ontology/mat#')
-
 knowledgeGraph.bind("mat-r", baseUrl)
+
+mat = Namespace('https://github.com/Bianca-LM/art-criticism-ontology/mat')
+
+knowledgeGraph.bind("mat", mat)
+
+#Ontology = URIRef('https://github.com/Bianca-LM/art-criticism-ontology/mat/knowledge-graph/')
+
+knowledgeGraph.add((URIRef('https://github.com/Bianca-LM/art-criticism-ontology/mat/resource/'), RDF.type, OWL.Ontology))
+knowledgeGraph.add((URIRef('https://github.com/Bianca-LM/art-criticism-ontology/mat/resource/'), OWL.imports, URIRef('https://github.com/Bianca-LM/art-criticism-ontology/mat')))
+
 
 for idx, row in data.iterrows():
     id = URIRef(baseUrl + row["identifier"])
@@ -55,16 +59,19 @@ for idx, row in data.iterrows():
 
     if row["Current support"] != '':
         currentSupport = URIRef(baseUrl + row["identifier"] + "-CurrentSupport-" + row["Current support"].replace(" ", "-"))
-        knowledgeGraph.add((id, mat.hasSupport, currentSupport))  
-        knowledgeGraph.add((currentSupport, RDF.type, mat.Current_Support))
+        knowledgeGraph.add((id, mat.hasCurrentSupport, currentSupport))  
+        knowledgeGraph.add((currentSupport, RDF.type, mat.Support))
         knowledgeGraph.add((currentSupport, RDF.type, mat.Material))
         knowledgeGraph.add((currentSupport, RDFS.Literal, Literal(row["Current support"])))
+        knowledgeGraph.add((currentSupport, mat.isCurrentSupportOf, id))
         if row["Previous support"] != '':
-            previousSupport =  URIRef(baseUrl + row["identifier"] + "-PreviousSupport-" + row["Previous support"].replace(" ", "-"))
+            previousSupport =  URIRef(baseUrl + row["identifier"] + "-PreviousSupport-" + row["Previous support"].replace(" ", "-")) 
             knowledgeGraph.add((currentSupport, mat.transferredFrom, previousSupport))
-            knowledgeGraph.add((previousSupport, RDF.type, mat.Previous_Support))
+            knowledgeGraph.add((id, mat.hasPreviousSupport, previousSupport))
+            knowledgeGraph.add((previousSupport, RDF.type, mat.Support))
             knowledgeGraph.add((previousSupport, RDF.type, mat.Material))
             knowledgeGraph.add((previousSupport, RDFS.Literal, Literal(row["Previous support"])))
+            knowledgeGraph.add((previousSupport, mat.isPreviousSupportOf, id))
     if row["Decoration"] != '':
         knowledgeGraph.add((id, mat.hasDecoration, URIRef(baseUrl + "Decoration-" + row["identifier"])))
         knowledgeGraph.add((URIRef(baseUrl + "Decoration-" + row["identifier"]), RDF.type, mat.Decoration))
@@ -94,7 +101,7 @@ store.open((endpoint, endpoint))
 #Turtle serialization
 ttl = knowledgeGraph.serialize(destination='knowledgeGraph.txt', format='turtle')
 
-
+'''
 #load into blazegraph
 for triple in knowledgeGraph.triples((None, None, None)):
     try:
@@ -103,3 +110,4 @@ for triple in knowledgeGraph.triples((None, None, None)):
         print(triple)
     
 store.close()
+'''
